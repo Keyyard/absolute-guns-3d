@@ -2,9 +2,10 @@ import {
   system,
   world
 } from "@minecraft/server";
-import { GUNS, playerFireCooldowns, playerGuns } from "./data/guns";
-import { reload, shoot } from "./utils/shoot";
-import { updateActionBar } from "./utils/ui";
+import { GUNS, playerFireCooldowns, playerGuns, playerReloadCooldowns } from "./data/guns";
+import { shoot } from "./utils/shoot";
+import { startReload, completeReload } from "./utils/reload";
+import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./utils/ui";
 
 // Initialize on script load
 world.afterEvents.itemUse.subscribe((event) => {
@@ -24,16 +25,17 @@ world.afterEvents.itemUse.subscribe((event) => {
   }
 
   const cooldown = playerFireCooldowns.get(player.id) || 0;
-  if (cooldown > 0) return; // Still cooling down
+  const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+  if (cooldown > 0 || reloadCooldown > 0) return; // Still cooling down or reloading
 
   if (currentGun.currentAmmo > 0) {
     shoot(player, currentGun);
   } else {
-    const reloaded = reload(player, currentGun);
-    if (reloaded) {
-      player.onScreenDisplay.setActionBar("Reloaded");
+    const started = startReload(player, currentGun);
+    if (started) {
+      setReloadingMessage(player);
     } else {
-      player.onScreenDisplay.setActionBar("Out of ammo");
+      setOutOfAmmoMessage(player);
     }
   }
 });
@@ -44,16 +46,30 @@ system.runInterval(() => {
     updateActionBar(player);
 
     // Decrement cooldowns
-    const cooldown = playerFireCooldowns.get(player.id);
-    if (cooldown && cooldown > 0) {
-      playerFireCooldowns.set(player.id, cooldown - 1);
+    const fireCooldown = playerFireCooldowns.get(player.id);
+    if (fireCooldown && fireCooldown > 0) {
+      playerFireCooldowns.set(player.id, fireCooldown - 1);
+    }
+
+    const reloadCooldown = playerReloadCooldowns.get(player.id);
+    if (reloadCooldown && reloadCooldown > 0) {
+      playerReloadCooldowns.set(player.id, reloadCooldown - 1);
+      if (reloadCooldown - 1 === 0) {
+        // Reload complete
+        const currentGun = playerGuns.get(player.id);
+        if (currentGun) {
+          completeReload(player, currentGun);
+          setReloadedMessage(player);
+        }
+      }
     }
   }
-}, 18); // Every 18 ticks
+}, 1); // Every tick
 
 // Cleanup on player leave
 world.afterEvents.playerLeave.subscribe((event) => {
   const playerId = event.playerId;
   playerGuns.delete(playerId);
   playerFireCooldowns.delete(playerId);
+  playerReloadCooldowns.delete(playerId);
 });

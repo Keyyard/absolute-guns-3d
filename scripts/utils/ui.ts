@@ -1,5 +1,5 @@
 import { Player, EntityInventoryComponent } from "@minecraft/server";
-import { GUNS, CurrentGun, playerGuns } from "../data/guns";
+import { GUNS, CurrentGun, playerGuns, playerReloadCooldowns } from "../data/guns";
 
 export function updateActionBar(player: Player): void {
   const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
@@ -21,10 +21,32 @@ export function updateActionBar(player: Player): void {
         };
         playerGuns.set(player.id, currentGun);
       }
-      player.onScreenDisplay.setActionBar(`${currentGun.name} | ${currentGun.currentAmmo}/${gun.maxAmmo}`);
+
+      const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+      if (reloadCooldown > 0) {
+        player.onScreenDisplay.setActionBar(`${currentGun.name} | Reloading... (${Math.ceil(reloadCooldown / 20)}s)`);
+      } else {
+        player.onScreenDisplay.setActionBar(`${currentGun.name} | ${currentGun.currentAmmo}/${gun.maxAmmo}`);
+      }
       return;
     }
   }
   // No gun equipped
   player.onScreenDisplay.setActionBar("");
+}
+
+export function setReloadMessage(player: Player, message: string): void {
+  player.onScreenDisplay.setActionBar(message);
+}
+
+export function setReloadingMessage(player: Player): void {
+  player.onScreenDisplay.setActionBar("Reloading...");
+}
+
+export function setReloadedMessage(player: Player): void {
+  player.onScreenDisplay.setActionBar("Reloaded");
+}
+
+export function setOutOfAmmoMessage(player: Player): void {
+  player.onScreenDisplay.setActionBar("Out of ammo");
 }
