@@ -1,14 +1,17 @@
 import { world, Player, EntityInventoryComponent, ItemStack, Vector3 } from "@minecraft/server";
 import { Vector3Utils } from "@minecraft/math";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
-import { GUNS, CurrentGun, playerGuns, playerFireCooldowns } from "../data/guns";
+import { GUNS, Gun, playerGuns, playerFireCooldowns } from "../data/guns";
 
-export function shoot(player: Player, currentGun: CurrentGun): void {
-  const gun = GUNS.find(g => g.id === currentGun.id);
-  if (!gun) return;
-
+export function shoot(player: Player, gun: Gun): void {
   // Decrement ammo
-  currentGun.currentAmmo--;
+  let playerGunAmmo = playerGuns.get(player.id);
+  if (playerGunAmmo) {
+    const currentAmmo = playerGunAmmo.get(gun.id) || 0;
+    if (currentAmmo > 0) {
+      playerGunAmmo.set(gun.id, currentAmmo - 1);
+    }
+  }
 
   // Spawn arrow projectile
   const arrow = player.dimension.spawnEntity("minecraft:arrow", player.location);
@@ -17,7 +20,9 @@ export function shoot(player: Player, currentGun: CurrentGun): void {
     if (projectileComponent) {
       // Shoot towards player's view direction
       const direction = player.getViewDirection();
-      projectileComponent.shoot(Vector3Utils.scale(direction, gun.shootPower));
+      projectileComponent.shoot(Vector3Utils.scale(direction, gun.shootPower), {
+        uncertainty: 0.1
+      });
     }
   }
 

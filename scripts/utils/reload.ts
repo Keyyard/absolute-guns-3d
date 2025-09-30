@@ -1,11 +1,8 @@
 import { Player, EntityInventoryComponent } from "@minecraft/server";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
-import { GUNS, CurrentGun, playerReloadCooldowns } from "../data/guns";
+import { GUNS, Gun, playerReloadCooldowns, playerGuns } from "../data/guns";
 
-export function startReload(player: Player, currentGun: CurrentGun): boolean {
-  const gun = GUNS.find(g => g.id === currentGun.id);
-  if (!gun) return false;
-
+export function startReload(player: Player, gun: Gun): boolean {
   const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
   if (!inventory) return false;
 
@@ -13,7 +10,7 @@ export function startReload(player: Player, currentGun: CurrentGun): boolean {
   let hasAmmo = false;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
-    if (item && item.typeId === "minecraft:apple" && item.amount > 0) {
+    if (item && item.typeId === gun.ammoType && item.amount > 0) {
       hasAmmo = true;
       break;
     }
@@ -27,10 +24,7 @@ export function startReload(player: Player, currentGun: CurrentGun): boolean {
   return false; // No ammo
 }
 
-export function completeReload(player: Player, currentGun: CurrentGun): void {
-  const gun = GUNS.find(g => g.id === currentGun.id);
-  if (!gun) return;
-
+export function completeReload(player: Player, gun: Gun): void {
   // Consume ammo
   const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
   if (!inventory) return;
@@ -38,8 +32,8 @@ export function completeReload(player: Player, currentGun: CurrentGun): void {
   const container = inventory.container;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
-    if (item && item.typeId === "minecraft:apple" && item.amount > 0) {
-      // Consume one apple
+    if (item && item.typeId === gun.ammoType && item.amount > 0) {
+      // Consume one ammo
       if (item.amount > 1) {
         item.amount--;
         container.setItem(i, item);
@@ -51,5 +45,10 @@ export function completeReload(player: Player, currentGun: CurrentGun): void {
   }
 
   // Set ammo to max
-  currentGun.currentAmmo = gun.maxAmmo;
+  let playerGunAmmo = playerGuns.get(player.id);
+  if (!playerGunAmmo) {
+    playerGunAmmo = new Map();
+    playerGuns.set(player.id, playerGunAmmo);
+  }
+  playerGunAmmo.set(gun.id, gun.maxAmmo);
 }

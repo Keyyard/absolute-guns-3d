@@ -7,43 +7,73 @@ import { shoot } from "./utils/shoot";
 import { startReload, completeReload } from "./utils/reload";
 import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./utils/ui";
 
+const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
+
 // Initialize on script load
+
 world.afterEvents.itemUse.subscribe((event) => {
   const { source: player, itemStack } = event;
   const gun = GUNS.find(g => g.id === itemStack.typeId);
   if (!gun) return;
 
-  let currentGun = playerGuns.get(player.id);
-  if (!currentGun) {
-    currentGun = {
-      id: gun.id,
-      name: gun.name,
-      type: gun.type,
-      currentAmmo: gun.maxAmmo
-    };
-    playerGuns.set(player.id, currentGun);
+  let playerGunAmmo = playerGuns.get(player.id);
+  if (!playerGunAmmo) {
+    playerGunAmmo = new Map();
+    playerGuns.set(player.id, playerGunAmmo);
   }
 
-  const cooldown = playerFireCooldowns.get(player.id) || 0;
-  const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-  if (cooldown > 0 || reloadCooldown > 0) return; // Still cooling down or reloading
+  let currentAmmo = playerGunAmmo.get(gun.id);
+  if (currentAmmo === undefined) {
+    currentAmmo = gun.maxAmmo;
+    playerGunAmmo.set(gun.id, currentAmmo);
+  }
 
-  if (currentGun.currentAmmo > 0) {
-    shoot(player, currentGun);
-  } else {
-    const started = startReload(player, currentGun);
+  const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+  if (reloadCooldown > 0) return; // Still reloading
+
+  if (currentAmmo <= 0) {
+    const started = startReload(player, gun);
     if (started) {
       setReloadingMessage(player);
     } else {
       setOutOfAmmoMessage(player);
     }
+  } else {
+    // Start shooting
+    playerShooting.set(player.id, true);
   }
+});
+
+world.afterEvents.itemStopUse.subscribe((event) => {
+  const { source: player } = event;
+  playerShooting.set(player.id, false);
 });
 
 // Periodic updates for action bar and cooldowns
 system.runInterval(() => {
   for (const player of world.getAllPlayers()) {
     updateActionBar(player);
+
+    // Handle continuous shooting
+    if (playerShooting.get(player.id)) {
+      const inventory = player.getComponent("minecraft:inventory");
+      if (inventory) {
+        const heldItem = inventory.container.getItem(player.selectedSlotIndex);
+        if (heldItem) {
+          const gun = GUNS.find(g => g.id === heldItem.typeId);
+          if (gun) {
+            const playerGunAmmo = playerGuns.get(player.id);
+            const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
+
+            const cooldown = playerFireCooldowns.get(player.id) || 0;
+            const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+            if (currentAmmo > 0 && cooldown === 0 && reloadCooldown === 0) {
+              shoot(player, gun);
+            }
+          }
+        }
+      }
+    }
 
     // Decrement cooldowns
     const fireCooldown = playerFireCooldowns.get(player.id);
@@ -56,10 +86,16 @@ system.runInterval(() => {
       playerReloadCooldowns.set(player.id, reloadCooldown - 1);
       if (reloadCooldown - 1 === 0) {
         // Reload complete
-        const currentGun = playerGuns.get(player.id);
-        if (currentGun) {
-          completeReload(player, currentGun);
-          setReloadedMessage(player);
+        const inventory = player.getComponent("minecraft:inventory");
+        if (inventory) {
+          const heldItem = inventory.container.getItem(player.selectedSlotIndex);
+          if (heldItem) {
+            const gun = GUNS.find(g => g.id === heldItem.typeId);
+            if (gun) {
+              completeReload(player, gun);
+              setReloadedMessage(player);
+            }
+          }
         }
       }
     }
@@ -72,4 +108,5 @@ world.afterEvents.playerLeave.subscribe((event) => {
   playerGuns.delete(playerId);
   playerFireCooldowns.delete(playerId);
   playerReloadCooldowns.delete(playerId);
+  playerShooting.delete(playerId);
 });
