@@ -14,14 +14,15 @@ export function shoot(player: Player, gun: Gun): void {
   }
 
   // Spawn arrow projectile
-  const arrow = player.dimension.spawnEntity("minecraft:arrow", player.location);
+  const spawnLoc = Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5));
+  const arrow = player.dimension.spawnEntity("minecraft:arrow", spawnLoc);
   if (arrow) {
     const projectileComponent = arrow.getComponent("minecraft:projectile");
     if (projectileComponent) {
       // Shoot towards player's view direction
       const direction = player.getViewDirection();
       projectileComponent.shoot(Vector3Utils.scale(direction, gun.shootPower), {
-        uncertainty: 0.1
+        uncertainty: gun.uncertainty || 0,
       });
     }
   }

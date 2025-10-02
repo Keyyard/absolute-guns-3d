@@ -1,7 +1,7 @@
 import { Player } from "@minecraft/server";
 
 const gunTypes = ["rifle", "sniper", "shotgun", "smg"] as const;
-type GunType = typeof gunTypes[number];
+type GunType = (typeof gunTypes)[number];
 
 function getAmmoType(type: GunType): string {
   switch (type) {
@@ -26,6 +26,7 @@ export interface Gun {
   shootPower: number; // velocity of bullet / speed of bullet traveling
   reloadTime: number; // ticks to reload
   ammoType: string;
+  uncertainty?: number; // Optional: lower is more accurate
 }
 
 export interface CurrentGun {
@@ -36,8 +37,27 @@ export interface CurrentGun {
 }
 
 export const GUNS: readonly Gun[] = [
-  { id: "minecraft:bow", name: "Rifle", type: "rifle", maxAmmo: 20, fireRate: 1, shootPower: 13, reloadTime: 60, ammoType: getAmmoType("rifle") },
-  { id: "minecraft:crossbow", name: "Sniper", type: "sniper", maxAmmo: 5, fireRate: 40, shootPower: 80, reloadTime: 100, ammoType: getAmmoType("sniper") },
+  {
+    id: "minecraft:bow",
+    name: "Rifle",
+    type: "rifle",
+    maxAmmo: 20,
+    fireRate: 1,
+    shootPower: 13,
+    reloadTime: 60,
+    ammoType: getAmmoType("rifle"),
+  },
+  {
+    id: "minecraft:crossbow",
+    name: "Sniper",
+    type: "sniper",
+    maxAmmo: 5,
+    fireRate: 40,
+    shootPower: 80,
+    reloadTime: 100,
+    ammoType: getAmmoType("sniper"),
+    uncertainty: 0.01,
+  },
 ];
 
 export const playerGuns = new Map<string, Map<string, number>>(); // player.id -> gun.id -> currentAmmo

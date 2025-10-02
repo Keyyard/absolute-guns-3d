@@ -1,7 +1,4 @@
-import {
-  system,
-  world
-} from "@minecraft/server";
+import { system, world } from "@minecraft/server";
 import { GUNS, playerFireCooldowns, playerGuns, playerReloadCooldowns } from "./data/guns";
 import { shoot } from "./utils/shoot";
 import { startReload, completeReload } from "./utils/reload";
@@ -13,7 +10,7 @@ const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
 
 world.afterEvents.itemUse.subscribe((event) => {
   const { source: player, itemStack } = event;
-  const gun = GUNS.find(g => g.id === itemStack.typeId);
+  const gun = GUNS.find((g) => g.id === itemStack.typeId);
   if (!gun) return;
 
   let playerGunAmmo = playerGuns.get(player.id);
@@ -60,14 +57,14 @@ system.runInterval(() => {
       if (inventory) {
         const heldItem = inventory.container.getItem(player.selectedSlotIndex);
         if (heldItem) {
-          const gun = GUNS.find(g => g.id === heldItem.typeId);
+          const gun = GUNS.find((g) => g.id === heldItem.typeId);
           if (gun) {
             const playerGunAmmo = playerGuns.get(player.id);
             const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
 
             const cooldown = playerFireCooldowns.get(player.id) || 0;
             const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-            if (currentAmmo > 0 && cooldown === 0 && reloadCooldown === 0) {
+            if (currentAmmo > 0 && cooldown === 0 && reloadCooldown === 0 && playerShooting.get(player.id) === true) {
               shoot(player, gun);
             }
           }
@@ -90,7 +87,7 @@ system.runInterval(() => {
         if (inventory) {
           const heldItem = inventory.container.getItem(player.selectedSlotIndex);
           if (heldItem) {
-            const gun = GUNS.find(g => g.id === heldItem.typeId);
+            const gun = GUNS.find((g) => g.id === heldItem.typeId);
             if (gun) {
               completeReload(player, gun);
               setReloadedMessage(player);

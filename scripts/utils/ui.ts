@@ -27,7 +27,7 @@ export function updateActionBar(player: Player): void {
           }
         }
         if (!canReload) {
-          player.onScreenDisplay.setActionBar("§cOut of ammo");
+          player.onScreenDisplay.setActionBar(`${gun.name} | §cOut of ammo`);
         } else {
           player.onScreenDisplay.setActionBar(`${gun.name} | ${currentAmmo}/${gun.maxAmmo}`);
         }
