@@ -8,8 +8,7 @@ const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
 
 // Initialize on script load
 
-// Use beforeEvents.itemUse to set shooting flag and handle ammo/reload checks
-world.beforeEvents.itemUse.subscribe((event) => {
+world.afterEvents.itemStartUse.subscribe((event) => {
   const { source: player, itemStack } = event;
   const gun = GUNS.find((g) => g.id === itemStack.typeId);
   if (!gun) return;
@@ -43,27 +42,7 @@ world.beforeEvents.itemUse.subscribe((event) => {
   }
 });
 
-world.afterEvents.itemCompleteUse.subscribe((event) => {
-  const { source: player, itemStack } = event;
-  const gun = GUNS.find((g) => g.id === itemStack.typeId);
-  if (!gun) return;
-
-  // Stop shooting (flag off on after-event)
-  world.sendMessage(`Stopped shooting for player ${player.name}`);
-  playerShooting.set(player.id, false);
-});
-
 world.afterEvents.itemReleaseUse.subscribe((event) => {
-  const { source: player, itemStack } = event;
-  const gun = GUNS.find((g) => g.id === itemStack?.typeId);
-  if (!gun) return;
-
-  // Stop shooting (flag off on after-event)
-  world.sendMessage(`Stopped shooting for player ${player.name}`);
-  playerShooting.set(player.id, false);
-});
-
-world.afterEvents.itemStopUse.subscribe((event) => {
   const { source: player, itemStack } = event;
   const gun = GUNS.find((g) => g.id === itemStack?.typeId);
   if (!gun) return;
