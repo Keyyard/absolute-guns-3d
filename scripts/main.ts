@@ -68,10 +68,11 @@ system.runInterval(() => {
             const playerGunAmmo = playerGuns.get(player.id);
             const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
 
-            const cooldown = playerFireCooldowns.get(player.id) || 0;
             const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-            if (currentAmmo > 0 && cooldown === 0 && reloadCooldown === 0 && playerShooting.get(player.id) === true) {
-              shoot(player, gun);
+            if (currentAmmo > 0 && reloadCooldown === 0 && playerShooting.get(player.id) === true) {
+              if ((playerFireCooldowns.get(player.id) || 0) === 0) {
+                shoot(player, gun);
+              }
             }
           }
         }

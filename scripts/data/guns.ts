@@ -77,7 +77,7 @@ export const GUNS: readonly Gun[] = [
     name: "Rifle",
     type: "rifle",
     maxAmmo: 20,
-    fireRate: 1,
+    fireRate: 4,
     shootPower: 13,
     reloadTime: 60,
   }),
