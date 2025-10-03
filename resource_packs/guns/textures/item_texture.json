@@ -1,11 +1,12 @@
 {
+  "texture_name": "atlas.items",
   "resource_pack_name": "keyyard_guns",
   "texture_data": {
-    "keyyard_rifle_basic": {
-      "textures": "textures/items/iron_hoe"
+    "keyyard_rifle_ak47": {
+      "textures": "textures/items/keyyard/guns/rifle_ak47"
     },
     "keyyard_rifle_ammo": {
-      "textures": "textures/items/apple"
+      "textures": "textures/items/keyyard/guns/rifle_ammo"
     }
   }
 }

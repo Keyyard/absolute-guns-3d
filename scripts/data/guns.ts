@@ -73,7 +73,7 @@ export function createGun(input: GunInput): Gun {
 
 export const GUNS: readonly Gun[] = [
   createGun({
-    id: "keyyard:rifle_basic",
+    id: "keyyard:rifle_ak47",
     name: "Rifle",
     type: "rifle",
     maxAmmo: 20,

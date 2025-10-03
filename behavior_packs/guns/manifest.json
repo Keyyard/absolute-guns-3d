@@ -1,19 +1,11 @@
 {
   "format_version": 2,
   "header": {
-    "name": ". BP",
+    "name": "Keyyard Guns",
     "description": "Generated from npx create-mc-bedrock",
     "uuid": "1df4871f-0d0c-4c2f-a596-c23d8550536f",
-    "version": [
-      1,
-      0,
-      0
-    ],
-    "min_engine_version": [
-      1,
-      20,
-      30
-    ]
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 30]
   },
   "modules": [
     {
@@ -21,18 +13,14 @@
       "language": "javascript",
       "type": "script",
       "uuid": "8194bfc9-a092-4d95-b2ee-fba238cc40b1",
-      "version": [
-        1,
-        0,
-        0
-      ],
+      "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }
   ],
   "dependencies": [
     {
-      "module_name": "@minecraft/server",
-      "version": "2.0.0"
+      "uuid": "41b2d2ac-831d-4d5f-933b-86f7e7446663",
+      "version": [1, 0, 0]
     }
   ]
 }

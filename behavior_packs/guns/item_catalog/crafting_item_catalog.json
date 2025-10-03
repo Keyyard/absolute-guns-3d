@@ -7,10 +7,10 @@
         "groups": [
           {
             "group_identifier": {
-              "icon": "minecraft:apple",
+              "icon": "keyyard:rifle_ak47",
               "name": "keyyard:itemGroup.name.rifles"
             },
-            "items": ["keyyard:rifle_basic", "keyyard:rifle_ammo"]
+            "items": ["keyyard:rifle_ak47", "keyyard:rifle_ammo"]
           }
         ]
       }

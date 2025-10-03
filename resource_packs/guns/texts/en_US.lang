@@ -1,0 +1,3 @@
+item.keyyard:rifle_ak47.name=AK-47\nRifle (Auto)\nFire Rate: 4 ticks
+item.keyyard:rifle_ammo.name=Rifle Ammo\nAmmunition for rifles
+keyyard:itemGroup.name.rifles=Rifles
