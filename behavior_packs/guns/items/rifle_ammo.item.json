@@ -15,22 +15,6 @@
       "minecraft:hand_equipped": false,
       "minecraft:tags": {
         "tags": ["keyyard:rifle"]
-      },
-      "minecraft:cooldown": {
-        "category": "keyyard:rifle_ammo",
-        "duration": 5
-      },
-      "minecraft:use_modifiers": {
-        "use_duration": 99999,
-        "movement_modifier": 0
-      },
-      "minecraft:food": {
-        "can_always_eat": true,
-        "nutrition": 0,
-        "using_converts_to": "keyyard:rifle_ammo"
-      },
-      "minecraft:use_animation": {
-        "value": "none"
       }
     }
   }

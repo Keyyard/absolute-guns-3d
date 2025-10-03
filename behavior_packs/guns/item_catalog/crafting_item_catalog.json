@@ -10,7 +10,7 @@
               "icon": "minecraft:apple",
               "name": "keyyard:itemGroup.name.rifles"
             },
-            "items": ["keyyard:basic_rifle", "keyyard:basic_rifle_ammo"]
+            "items": ["keyyard:rifle_basic", "keyyard:rifle_ammo"]
           }
         ]
       }

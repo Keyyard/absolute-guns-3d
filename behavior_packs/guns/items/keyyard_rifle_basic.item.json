@@ -16,10 +16,6 @@
       "minecraft:tags": {
         "tags": ["keyyard:rifle"]
       },
-      "minecraft:cooldown": {
-        "category": "keyyard:rifle_basic",
-        "duration": 5
-      },
       "minecraft:use_modifiers": {
         "use_duration": 99999,
         "movement_modifier": 0
