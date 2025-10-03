@@ -21,7 +21,7 @@ export function updateActionBar(player: Player): void {
         let canReload = false;
         for (let i = 0; i < container.size; i++) {
           const item = container.getItem(i);
-          if (item && item.typeId === gun.projectileTypeId && item.amount > 0) {
+          if (item && item.typeId === gun.ammoTypeId && item.amount > 0) {
             canReload = true;
             break;
           }

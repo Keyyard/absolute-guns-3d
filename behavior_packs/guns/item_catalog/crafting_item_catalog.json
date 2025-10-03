@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "minecraft:apple",
+              "name": "keyyard:itemGroup.name.rifles"
+            },
+            "items": ["keyyard:basic_rifle", "keyyard:basic_rifle_ammo"]
+          }
+        ]
+      }
+    ]
+  }
+}

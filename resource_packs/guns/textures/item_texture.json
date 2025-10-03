@@ -1,0 +1,11 @@
+{
+  "resource_pack_name": "keyyard_guns",
+  "texture_data": {
+    "keyyard_rifle_basic": {
+      "textures": "textures/items/iron_hoe"
+    },
+    "keyyard_rifle_ammo": {
+      "textures": "textures/items/apple"
+    }
+  }
+}
