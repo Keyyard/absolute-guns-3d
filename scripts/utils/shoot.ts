@@ -1,7 +1,6 @@
-import { world, Player, EntityInventoryComponent, ItemStack, Vector3 } from "@minecraft/server";
 import { Vector3Utils } from "@minecraft/math";
-import { MinecraftItemTypes } from "@minecraft/vanilla-data";
-import { GUNS, Gun, playerGuns, playerFireCooldowns } from "../data/guns";
+import { Player } from "@minecraft/server";
+import { Gun, playerFireCooldowns, playerGuns } from "../data/guns";
 
 export function shoot(player: Player, gun: Gun): void {
   // Decrement ammo
@@ -15,7 +14,7 @@ export function shoot(player: Player, gun: Gun): void {
 
   // Spawn arrow projectile
   const spawnLoc = Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5));
-  const arrow = player.dimension.spawnEntity("minecraft:arrow", spawnLoc);
+  const arrow = player.dimension.spawnEntity(gun.projectileTypeId, spawnLoc);
   if (arrow) {
     const projectileComponent = arrow.getComponent("minecraft:projectile");
     if (projectileComponent) {

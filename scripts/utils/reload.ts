@@ -10,7 +10,7 @@ export function startReload(player: Player, gun: Gun): boolean {
   let hasAmmo = false;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
-    if (item && item.typeId === gun.ammoType && item.amount > 0) {
+    if (item && item.typeId === gun.projectileTypeId && item.amount > 0) {
       hasAmmo = true;
       break;
     }
@@ -32,7 +32,7 @@ export function completeReload(player: Player, gun: Gun): void {
   const container = inventory.container;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
-    if (item && item.typeId === gun.ammoType && item.amount > 0) {
+    if (item && item.typeId === gun.projectileTypeId && item.amount > 0) {
       // Consume one ammo
       if (item.amount > 1) {
         item.amount--;

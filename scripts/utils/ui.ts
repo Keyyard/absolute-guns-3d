@@ -8,7 +8,7 @@ export function updateActionBar(player: Player): void {
   const container = inventory.container;
   const heldItem = container.getItem(player.selectedSlotIndex);
   if (heldItem) {
-    const gun = GUNS.find(g => g.id === heldItem.typeId);
+    const gun = GUNS.find((g) => g.id === heldItem.typeId);
     if (gun) {
       const playerGunAmmo = playerGuns.get(player.id);
       const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
@@ -21,7 +21,7 @@ export function updateActionBar(player: Player): void {
         let canReload = false;
         for (let i = 0; i < container.size; i++) {
           const item = container.getItem(i);
-          if (item && item.typeId === gun.ammoType && item.amount > 0) {
+          if (item && item.typeId === gun.projectileTypeId && item.amount > 0) {
             canReload = true;
             break;
           }

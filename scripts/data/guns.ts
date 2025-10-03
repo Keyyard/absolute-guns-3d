@@ -3,7 +3,7 @@ import { Player } from "@minecraft/server";
 const gunTypes = ["rifle", "sniper", "shotgun", "smg"] as const;
 type GunType = (typeof gunTypes)[number];
 
-function getAmmoType(type: GunType): string {
+function getProjectileTypeId(type: GunType): string {
   switch (type) {
     case "rifle":
       return "minecraft:apple";
@@ -25,8 +25,8 @@ export interface Gun {
   fireRate: number; // ticks between shots (for cooldown)
   shootPower: number; // velocity of bullet / speed of bullet traveling
   reloadTime: number; // ticks to reload
-  ammoType: string;
-  uncertainty?: number; // Optional: lower is more accurate
+  projectileTypeId: string;
+  uncertainty?: number;
 }
 
 export interface CurrentGun {
@@ -45,7 +45,7 @@ export const GUNS: readonly Gun[] = [
     fireRate: 1,
     shootPower: 13,
     reloadTime: 60,
-    ammoType: getAmmoType("rifle"),
+    projectileTypeId: getProjectileTypeId("rifle"),
   },
   {
     id: "minecraft:crossbow",
@@ -55,8 +55,7 @@ export const GUNS: readonly Gun[] = [
     fireRate: 40,
     shootPower: 80,
     reloadTime: 100,
-    ammoType: getAmmoType("sniper"),
-    uncertainty: 0.01,
+    projectileTypeId: getProjectileTypeId("sniper"),
   },
 ];
 
