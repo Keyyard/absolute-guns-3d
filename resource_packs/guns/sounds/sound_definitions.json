@@ -1,0 +1,12 @@
+{
+  "format_version": "1.20.41",
+  "sound_definitions": {
+    "rifle.shoot": {
+      "__use_legacy_max_distance": true,
+      "category": "player",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": ["sounds/crossbow/shoot1", "sounds/crossbow/shoot2", "sounds/crossbow/shoot3"]
+    }
+  }
+}
