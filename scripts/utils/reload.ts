@@ -18,6 +18,7 @@ export function startReload(player: Player, gun: Gun): boolean {
 
   if (hasAmmo) {
     // Start reload
+    player.playAnimation("animation.gun_sprite_wield.reload");
     playerReloadCooldowns.set(player.id, gun.reloadTime);
     return true;
   }
