@@ -43,6 +43,7 @@ export interface Gun {
   reloadTime: number; // ticks to reload
   ammoTypeId: string;
   projectileTypeId: string;
+  recoil: number; // camera shake
   uncertainty?: number;
 }
 
@@ -79,6 +80,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 20,
     fireRate: 4,
     shootPower: 13,
+    recoil: 0.5,
     reloadTime: 60,
   }),
   createGun({
@@ -88,6 +90,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 5,
     fireRate: 40,
     shootPower: 80,
+    recoil: 1.2,
     reloadTime: 100,
   }),
 ];

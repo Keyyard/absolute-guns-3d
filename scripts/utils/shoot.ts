@@ -49,7 +49,7 @@ export function shoot(player: Player, gun: Gun): void {
   }
 
   try {
-    player.runCommand(`camerashake add @s 1 0.1 positional`);
+    player.runCommand(`camerashake add @s ${gun.recoil} 0.1 positional`);
   } catch {}
 
   try {
