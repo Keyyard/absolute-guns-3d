@@ -43,9 +43,13 @@
           "stick_in_ground": {
             "shake_time": 0
           },
-          "particle_on_hit": {
-            "num_particles": 5,
-            "on_entity_hit": true
+
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "gun:muzzle",
+              "target": "self"
+            }
           }
         },
         "power": 5,
@@ -67,11 +71,13 @@
     },
     "events": {
       "entity:despawn": {
-        "add": {
-          "component_groups": ["entity:despawn"]
-        },
         "queue_command": {
           "command": ["kill @s"]
+        }
+      },
+      "gun:muzzle": {
+        "queue_command": {
+          "command": ["particle absolute_guns:muzzle_gold_particle ~~~"]
         }
       }
     }

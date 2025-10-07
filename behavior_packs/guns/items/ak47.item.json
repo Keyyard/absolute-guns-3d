@@ -17,7 +17,7 @@
       "minecraft:max_stack_size": 1,
       "minecraft:hand_equipped": false,
       "minecraft:tags": {
-        "tags": ["absolute_guns:rifle"]
+        "tags": ["absolute_guns:rifle", "gun"]
       },
       "minecraft:use_modifiers": {
         "use_duration": 99999,

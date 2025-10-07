@@ -37,6 +37,10 @@ export function shoot(player: Player, gun: Gun): void {
     player.playSound("gun.shoot", { volume: 0.4, pitch: 1 });
   } catch {}
 
+  try {
+    player.playAnimation("animation.player.wields_gun");
+  } catch {}
+
   if (bullet) {
     const projectileComponent = bullet.getComponent("minecraft:projectile");
     if (projectileComponent) {

@@ -72,9 +72,13 @@
           "stick_in_ground": {
             "shake_time": 0
           },
-          "particle_on_hit": {
-            "num_particles": 5,
-            "on_entity_hit": true
+
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "gun:particle",
+              "target": "self"
+            }
           }
         },
         "power": 1.5,

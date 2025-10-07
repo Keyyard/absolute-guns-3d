@@ -1,7 +1,7 @@
 {
   "format_version": "1.10.0",
   "animations": {
-    "animation.gun_sprite_wield.reload": {
+    "animation.player.reload": {
       "animation_length": 3,
       "bones": {
         "rightArm": {
@@ -11,12 +11,23 @@
             "3.0": [0, 0, 0]
           }
         },
-        "rightItem": {
+        "leftArm": {
           "rotation": {
             "0.0": [0, 0, 0],
-            "1.5": [-80, 15, 30],
+            "1.5": [-60.34386, 28.57892, 55.89419],
             "3.0": [0, 0, 0]
           }
+        }
+      }
+    },
+    "animation.player.wields_gun": {
+      "animation_length": 1,
+      "bones": {
+        "rightArm": {
+          "rotation": [-95.58709, -26.17674, 27.69119]
+        },
+        "leftArm": {
+          "rotation": [-73.52917, 29.17327, -8.13608]
         }
       }
     }
