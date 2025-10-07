@@ -1,23 +1,15 @@
 {
-  "format_version": "1.10.0",
-  "animations": {
-    "animation.gun_sprite_wield.wield": {
-      "loop": true,
-      "bones": {
-        "rightitem": {
-          "rotation": [
-            "c.is_first_person ?-60.0 : 160",
-            "c.is_first_person ? 90.0 : 4.0",
-            "c.is_first_person ? -5.0 : -7.0"
-          ],
-          "position": [
-            "c.is_first_person ? -5.5 : -1.5",
-            "c.is_first_person ? -3.0 : 2.0",
-            "c.is_first_person ? -3.0 : -2.0"
-          ],
-          "scale": 0.9
-        }
-      }
-    }
-  }
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.gun_sprite_wield.wield": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": ["c.is_first_person ?-60.0 : 160", "c.is_first_person ? 95.0 : 2.0", "c.is_first_person ? -5.0 : -7.0"],
+					"position": ["c.is_first_person ? -4.0: 160", "c.is_first_person ? -5.0 : 2.0", "c.is_first_person ? -3.0 : -2.0"],
+					"scale": 0.9
+				}
+			}
+		}
+	}
 }

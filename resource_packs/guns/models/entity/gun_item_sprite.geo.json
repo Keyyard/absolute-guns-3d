@@ -1,29 +1,29 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:geometry": [
-    {
-      "description": {
-        "identifier": "geometry.gun_item_sprite",
-        "texture_width": 16,
-        "texture_height": 16,
-        "visible_bounds_width": 1,
-        "visible_bounds_height": 1,
-        "visible_bounds_offset": [0, 0, 0]
-      },
-      "bones": [
-        {
-          "name": "rightitem",
-          "pivot": [0, 0, 0],
-          "texture_meshes": [
-            {
-              "texture": "default",
-              "position": [2, 1, -2],
-              "rotation": [0, -135, 90],
-              "local_pivot": [6, 0, 6]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.gun_item_sprite",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [2, 1, -2],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
+						}
+					]
+				}
+			]
+		}
+	]
 }

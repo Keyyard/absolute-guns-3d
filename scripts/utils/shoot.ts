@@ -12,11 +12,33 @@ export function shoot(player: Player, gun: Gun): void {
     }
   }
 
-  // Spawn arrow projectile
-  const spawnLoc = Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5));
-  const arrow = player.dimension.spawnEntity(gun.projectileTypeId, spawnLoc);
-  if (arrow) {
-    const projectileComponent = arrow.getComponent("minecraft:projectile");
+  // Compute muzzle position and spawn projectile from there
+  const headPos = player.getHeadLocation();
+  const viewDir = player.getViewDirection();
+  const FORWARD_DIST = 1.2;
+  const forward = Vector3Utils.scale(viewDir, FORWARD_DIST);
+
+  // Compute right vector perpendicular to view using up=(0,1,0): right = (-z, 0, x)
+  let right = { x: -viewDir.z, y: 0, z: viewDir.x };
+  const rightLen = Math.sqrt(right.x * right.x + right.y * right.y + right.z * right.z);
+  if (rightLen < 1e-4) {
+    right = { x: 1, y: 0, z: 0 };
+  } else {
+    right.x /= rightLen;
+    right.y /= rightLen;
+    right.z /= rightLen;
+  }
+  const rightOffset = Vector3Utils.scale(right, 0.22);
+
+  const spawnLoc = Vector3Utils.add(Vector3Utils.add(headPos, forward), rightOffset);
+  const bullet = player.dimension.spawnEntity(gun.projectileTypeId, spawnLoc);
+
+  try {
+    player.playSound("gun.shoot", { volume: 0.4, pitch: 1 });
+  } catch {}
+
+  if (bullet) {
+    const projectileComponent = bullet.getComponent("minecraft:projectile");
     if (projectileComponent) {
       // Shoot towards player's view direction
       const direction = player.getViewDirection();
@@ -25,6 +47,15 @@ export function shoot(player: Player, gun: Gun): void {
       });
     }
   }
+
+  try {
+    player.runCommand(`camerashake add @s 1 0.1 positional`);
+  } catch {}
+
+  try {
+    // Spawn the muzzle particle at the same spawn location used for the projectile
+    player.dimension.spawnParticle("minecraft:basic_smoke_particle", spawnLoc);
+  } catch {}
 
   // Set cooldown
   playerFireCooldowns.set(player.id, gun.fireRate);
