@@ -6,30 +6,30 @@ type GunType = (typeof gunTypes)[number];
 function getAmmoItemId(type: GunType): string {
   switch (type) {
     case "rifle":
-      return "keyyard:rifle_ammo";
+      return "absolute_guns:rifle_ammo";
     case "sniper":
-      return "minecraft:arrow";
+      return "absolute_guns:sniper_ammo";
     case "shotgun":
-      return "minecraft:snowball";
+      return "absolute_guns:shotgun_ammo";
     case "smg":
-      return "minecraft:egg";
+      return "absolute_guns:smg_ammo";
     default:
-      return "minecraft:apple";
+      return "absolute_guns:rifle_ammo";
   }
 }
 
 function getProjectileTypeId(type: GunType): string {
   switch (type) {
     case "rifle":
-      return "minecraft:arrow";
+      return "absolute_guns_bullet:gun";
     case "sniper":
-      return "minecraft:arrow";
+      return "absolute_guns_bullet:gun";
     case "shotgun":
-      return "minecraft:snowball";
+      return "absolute_guns_bullet:shotgun";
     case "smg":
-      return "minecraft:egg";
+      return "absolute_guns_bullet:gun";
     default:
-      return "minecraft:arrow";
+      return "absolute_guns_bullet:gun";
   }
 }
 
@@ -74,24 +74,229 @@ export function createGun(input: GunInput): Gun {
 
 export const GUNS: readonly Gun[] = [
   createGun({
-    id: "keyyard:rifle_ak47",
-    name: "Rifle",
+    id: "absolute_guns:ak47",
+    name: "AK47",
     type: "rifle",
-    maxAmmo: 20,
+    maxAmmo: 30,
     fireRate: 4,
     shootPower: 13,
     recoil: 0.5,
     reloadTime: 60,
   }),
   createGun({
-    id: "minecraft:crossbow",
-    name: "Sniper",
-    type: "sniper",
-    maxAmmo: 5,
-    fireRate: 40,
-    shootPower: 80,
-    recoil: 1.2,
+    id: "absolute_guns:ak47_gold",
+    name: "AK47 Gold",
+    type: "rifle",
+    maxAmmo: 30,
+    fireRate: 4,
+    shootPower: 13,
+    recoil: 0.5,
+    reloadTime: 60,
+  }),
+  createGun({
+    id: "absolute_guns:ak74u",
+    name: "AK74U",
+    type: "rifle",
+    maxAmmo: 30,
+    fireRate: 4,
+    shootPower: 13,
+    recoil: 0.5,
+    reloadTime: 60,
+  }),
+  createGun({
+    id: "absolute_guns:bizon",
+    name: "Bizon",
+    type: "smg",
+    maxAmmo: 64,
+    fireRate: 2,
+    shootPower: 12,
+    recoil: 0.3,
+    reloadTime: 50,
+  }),
+  createGun({
+    id: "absolute_guns:flamethrower",
+    name: "Flamethrower",
+    type: "rifle",
+    maxAmmo: 100,
+    fireRate: 1,
+    shootPower: 10,
+    recoil: 0.2,
+    reloadTime: 80,
+    projectileTypeId: "absolute_guns_bullet:flame",
+  }),
+  createGun({
+    id: "absolute_guns:glock",
+    name: "Glock",
+    type: "smg",
+    maxAmmo: 17,
+    fireRate: 3,
+    shootPower: 12,
+    recoil: 0.4,
+    reloadTime: 40,
+  }),
+  createGun({
+    id: "absolute_guns:glock_tactical",
+    name: "Glock Tactical",
+    type: "smg",
+    maxAmmo: 17,
+    fireRate: 3,
+    shootPower: 12,
+    recoil: 0.4,
+    reloadTime: 40,
+  }),
+  createGun({
+    id: "absolute_guns:m1014",
+    name: "M1014",
+    type: "shotgun",
+    maxAmmo: 8,
+    fireRate: 20,
+    shootPower: 15,
+    recoil: 1.0,
+    reloadTime: 70,
+  }),
+  createGun({
+    id: "absolute_guns:m16",
+    name: "M16",
+    type: "rifle",
+    maxAmmo: 30,
+    fireRate: 4,
+    shootPower: 13,
+    recoil: 0.5,
+    reloadTime: 60,
+  }),
+  createGun({
+    id: "absolute_guns:m3",
+    name: "M3",
+    type: "shotgun",
+    maxAmmo: 8,
+    fireRate: 20,
+    shootPower: 15,
+    recoil: 1.0,
+    reloadTime: 70,
+  }),
+  createGun({
+    id: "absolute_guns:m4",
+    name: "M4",
+    type: "rifle",
+    maxAmmo: 30,
+    fireRate: 4,
+    shootPower: 13,
+    recoil: 0.5,
+    reloadTime: 60,
+  }),
+  createGun({
+    id: "absolute_guns:mg42",
+    name: "MG42",
+    type: "rifle",
+    maxAmmo: 250,
+    fireRate: 1,
+    shootPower: 13,
+    recoil: 0.6,
+    reloadTime: 120,
+  }),
+  createGun({
+    id: "absolute_guns:mgl",
+    name: "MGL",
+    type: "rifle",
+    maxAmmo: 6,
+    fireRate: 10,
+    shootPower: 20,
+    recoil: 0.8,
+    reloadTime: 90,
+    projectileTypeId: "absolute_guns_bullet:mgl",
+  }),
+  createGun({
+    id: "absolute_guns:mgl_bullet",
+    name: "MGL Bullet",
+    type: "rifle",
+    maxAmmo: 6,
+    fireRate: 10,
+    shootPower: 20,
+    recoil: 0.8,
+    reloadTime: 90,
+    projectileTypeId: "absolute_guns_bullet:mgl",
+  }),
+  createGun({
+    id: "absolute_guns:mp40",
+    name: "MP40",
+    type: "smg",
+    maxAmmo: 32,
+    fireRate: 2,
+    shootPower: 12,
+    recoil: 0.3,
+    reloadTime: 50,
+  }),
+  createGun({
+    id: "absolute_guns:mp5",
+    name: "MP5",
+    type: "smg",
+    maxAmmo: 30,
+    fireRate: 3,
+    shootPower: 12,
+    recoil: 0.4,
+    reloadTime: 50,
+  }),
+  createGun({
+    id: "absolute_guns:mp5k",
+    name: "MP5K",
+    type: "smg",
+    maxAmmo: 30,
+    fireRate: 3,
+    shootPower: 12,
+    recoil: 0.4,
+    reloadTime: 50,
+  }),
+  createGun({
+    id: "absolute_guns:pkm",
+    name: "PKM",
+    type: "rifle",
+    maxAmmo: 100,
+    fireRate: 2,
+    shootPower: 13,
+    recoil: 0.5,
     reloadTime: 100,
+  }),
+  createGun({
+    id: "absolute_guns:rpg7",
+    name: "RPG7",
+    type: "rifle",
+    maxAmmo: 1,
+    fireRate: 40,
+    shootPower: 50,
+    recoil: 2.0,
+    reloadTime: 100,
+    ammoTypeId: "absolute_guns:rpg7_ammo",
+    projectileTypeId: "absolute_guns_bullet:rpg7",
+  }),
+  createGun({
+    id: "absolute_guns:rpk",
+    name: "RPK",
+    type: "rifle",
+    maxAmmo: 75,
+    fireRate: 2,
+    shootPower: 13,
+    recoil: 0.5,
+    reloadTime: 80,
+  }),
+  createGun({
+    id: "absolute_guns:spas",
+    name: "SPAS",
+    type: "shotgun",
+    maxAmmo: 8,
+    fireRate: 20,
+    shootPower: 15,
+    recoil: 1.0,
+    reloadTime: 70,
+  }),
+  createGun({
+    id: "absolute_guns:ump45",
+    name: "UMP45",
+    type: "smg",
+    maxAmmo: 25,
+    fireRate: 3,
+    shootPower: 12,
+    recoil: 0.4,
+    reloadTime: 50,
   }),
 ];
 

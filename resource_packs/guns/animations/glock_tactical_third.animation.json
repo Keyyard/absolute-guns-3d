@@ -1,0 +1,60 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_glock": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [105, 0, 0],
+					"position": [19, 0, 50],
+					"scale": 1
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, 22, -23],
+					"scale": 2
+				},
+				"stick2_t": {
+					"position": [0, 2, 0],
+					"scale": 0.8
+				}
+			}
+		},
+		"animation.absolute_guns_.scope_glock": {
+			"loop": true,
+			"animation_length": 0.28,
+			"bones": {
+				"stick": {
+					"rotation": [0, 180, 0],
+					"position": [13, 4, 49],
+					"scale": 1
+				},
+				"stick2": {
+					"scale": 2
+				},
+				"stick2_t": {
+					"position": [0, 2, 0],
+					"scale": 0.8
+				}
+			}
+		},
+		"animation.cso.run_glock": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [82.5, 0, 0],
+					"position": [19, 0, 50],
+					"scale": 1
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, 22, -23],
+					"scale": 2
+				},
+				"root": {
+					"scale": 1
+				}
+			}
+		}
+	}
+}

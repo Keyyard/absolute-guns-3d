@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.mp5": {
+			"textures": [
+				"Texture.mp5"
+			],
+			"geometry": "Geometry.mp5",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "absolute_guns_bullet:mgl",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/ammo"
+      },
+      "geometry": {
+        "default": "geometry.bullet_old"
+      },
+      
+"spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 21
+      },
+      
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

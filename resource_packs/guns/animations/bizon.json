@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_bizon": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [168.6328, 82.87777, 59.31037],
+					"position": [17, -6, 116],
+					"scale": 1.6
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, -25, -23],
+					"scale": 3
+				},
+				"stick2_t": {
+					"scale": 0.6
+				},
+				"stick_t": {
+					"rotation": [90, 0, 89.75],
+					"position": [-6.425, 9.975, -2],
+					"scale": 1.2
+				}
+			}
+		}
+	}
+}

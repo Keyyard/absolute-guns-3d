@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_mp5": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [107.5, 0, 0],
+					"position": [26, 0, 50],
+					"scale": 1.5
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, -25, -23],
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.6
+				}
+			}
+		},
+		"animation.absolute_guns_.scope_mp5": {
+			"loop": true,
+			"animation_length": 0.52,
+			"bones": {
+				"stick": {
+					"rotation": [0, 180, 0],
+					"position": [12.5, 43, 47],
+					"scale": 1.5
+				},
+				"stick2": {
+					"position": [-2, -26, -25],
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.6
+				}
+			}
+		}
+	}
+}

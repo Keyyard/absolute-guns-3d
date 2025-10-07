@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_ump45": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [168.6328, 82.87777, 59.31037],
+					"position": [17, -6, 107],
+					"scale": 1.1
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, -25, -23],
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.6
+				},
+				"stick_t": {
+					"rotation": [90, 0, 89.75],
+					"position": [-6, 9.975, -2],
+					"scale": 0.5
+				}
+			}
+		},
+		"animation.absolute_guns_.scope_ump45": {
+			"loop": true,
+			"animation_length": 0.52,
+			"bones": {
+				"stick": {
+					"rotation": [0, 180, 0],
+					"position": [12.5, 43, 47],
+					"scale": 1.5
+				},
+				"stick2": {
+					"position": [-2, -26, -25],
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.6
+				}
+			}
+		}
+	}
+}

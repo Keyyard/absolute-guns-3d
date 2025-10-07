@@ -1,0 +1,83 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "absolute_guns_bullet:rpg7",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 3,
+          "fire_affected_by_griefing": true,
+          "destroy_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["grenade", "bullets"]
+      },
+      "minecraft:is_baby": {},
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 2,
+        "fire_affected_by_griefing": true,
+        "destroy_affected_by_griefing": true
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.0,
+        "randomInterval": false,
+        "time_down_event": {
+          "event": "gun:particle"
+        }
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 1.7,
+        "gravity": 0.01,
+        "angleoffset": 0.5
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": ["minecraft:exploding"]
+        }
+      },
+      "gun:particle": {
+        "queue_command": {
+          "command": [
+            "particle gun:mgl_smoke_particle ~~~",
+            "particle gun:mgl_smoke_particle ~~~",
+            "particle gun:mgl_smoke_particle ~~~",
+            "particle gun:mgl_smoke_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

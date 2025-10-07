@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.gun_sprite_wield.reload": {
+      "animation_length": 3,
+      "bones": {
+        "rightArm": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "1.5": [-80, 15, 30],
+            "3.0": [0, 0, 0]
+          }
+        },
+        "rightItem": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "1.5": [-80, 15, 30],
+            "3.0": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

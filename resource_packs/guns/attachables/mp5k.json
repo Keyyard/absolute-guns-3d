@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "absolute_guns:mp5k",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint",
+"ghost": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/3d/absolute_guns/mp5",
+        "sword0": "textures/3d/absolute_guns/mp5",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "first_0": "geometry.mp5k_first",
+        "third_0": "geometry.mp5k_third"
+      },
+      "animations": {
+        "wield_3d": "animation.absolute_guns_.wield_mp5",
+        "scope_3d": "animation.absolute_guns_.scope_mp5"
+	},
+      "scripts": {
+        "animate": [
+					{
+						"wield_3d": "!query.is_sneaking"
+					},
+					{
+						"scope_3d": "query.is_sneaking"
+					}
+        ]
+      },
+      "render_controllers": [
+          {"controller.render.first_glock_tactical_0": "c.is_first_person"},
+          {"controller.render.third_glock_tactical_0": "!c.is_first_person"}
+      ]
+    }
+  }
+}

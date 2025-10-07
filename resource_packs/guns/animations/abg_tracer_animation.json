@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.abg_tracer": {
+			"loop": true,
+			"animation_length": 0.125,
+			"bones": {
+				"projectile": {
+					"rotation": ["-query.target_x_rotation", "-query.body_y_rotation", 0],
+					"position": [0, 0, 0],
+					"scale": 0
+				}
+			}
+		}
+	}
+}

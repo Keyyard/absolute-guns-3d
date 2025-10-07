@@ -1,0 +1,113 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "absolute_guns_bullet:flame",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "fire": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 0.0,
+          "randomInterval": false,
+          "time_down_event": {
+            "event": "gun:particle"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "in_water_or_rain",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": true
+                }
+              ]
+            },
+            "event": "despawn"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "in_water_or_rain",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": false
+                }
+              ]
+            },
+            "event": "gun:particle"
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:explode": {
+        "fuseLength": 1,
+        "fuseLit": true,
+        "power": 0,
+        "fire_affected_by_griefing": true,
+        "destroy_affected_by_griefing": true
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": [5, 5],
+            "knockback": false,
+            "catch_fire": true
+          },
+          "remove_on_hit": {},
+          "stick_in_ground": {
+            "shake_time": 0
+          },
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true
+          }
+        },
+        "power": 1.5,
+        "gravity": 0.01,
+        "inertia": 1,
+        "uncertaintyBase": 5.0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [0, 0, 0],
+        "reflectOnHurt": false,
+        "catch_fire": true
+      },
+      "minecraft:tick_world": {
+        "distance_to_players": 70,
+        "never_despawn": false,
+        "radius": 2
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "gun:particle": {
+        "add": {
+          "component_groups": ["fire"]
+        },
+        "queue_command": {
+          "command": ["particle gun:flamethrower_particle ~~~", "fill ~~~ ~~~ fire 0 replace air"]
+        }
+      },
+      "despawn": {
+        "queue_command": {
+          "command": ["kill @s"]
+        }
+      }
+    }
+  }
+}

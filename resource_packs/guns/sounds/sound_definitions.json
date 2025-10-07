@@ -1,12 +1,21 @@
 {
-  "format_version": "1.20.41",
+  "format_version": "1.21.60",
   "sound_definitions": {
-    "gun.shoot": {
-      "__use_legacy_max_distance": true,
-      "category": "player",
-      "max_distance": null,
-      "min_distance": null,
-      "sounds": ["sounds/gunshot"]
-    }
+    "gun.shoot": { "sounds": ["sounds/gunshot"] },
+    "gun.gun": { "sounds": ["sounds/guns/gun"] },
+    "gun.mgl": { "sounds": ["sounds/guns/mgl"] },
+    "gun.abgmp5": { "sounds": ["sounds/guns/abg_mp5"] },
+    "gun.abgmp40": { "sounds": ["sounds/guns/abg_mp40"] },
+    "gun.abgmg42": { "sounds": ["sounds/guns/abg_mg42"] },
+    "gun.abgrpg7": { "sounds": ["sounds/guns/abg_rpg"] },
+    "gun.abgbizon": { "sounds": ["sounds/guns/abg_bizon"] },
+    "gun.abgm3": { "sounds": ["sounds/guns/abg_m3"] },
+    "gun.abgump45": { "sounds": ["sounds/guns/abg_ump45"] },
+    "gun.abgak47": { "sounds": ["sounds/guns/abg_ak47"] },
+    "gun.abgm1014": { "sounds": ["sounds/guns/abg_m1014"] },
+    "gun.abgm4": { "sounds": ["sounds/guns/abg_m4"] },
+    "gun.abgglock": { "sounds": ["sounds/guns/abg_glock"] },
+    "gun.abgsilenced": { "sounds": ["sounds/guns/abg_silenced"] },
+    "gun.flamethrower": { "sounds": ["sounds/guns/flamethrower"] }
   }
 }

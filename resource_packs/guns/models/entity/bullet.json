@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"geometry.bullet_old": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 1,
+		"visible_bounds_offset": [0, 0.5, 0],
+		"bones": [
+			{
+				"name": "projectile",
+				"pivot": [0.5, 0.5, 0.5],
+				"cubes": [
+					{"origin": [-0.5, -0.5, -0.5], "size": [1, 1, 1], "uv": [0, 0]}
+				],
+				"locators": {
+					"effect_locator": [0, 0, 0],
+					"effect_locator3": [-0.1, 0, 0],
+					"effect_locator4": [-0.05, 0, 0],
+					"effect_locator2": [0.1, 0, 0],
+					"effect_locator5": [0.05, 0, 0]
+				}
+			}
+		]
+	}
+}

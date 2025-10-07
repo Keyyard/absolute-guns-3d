@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_ak74u": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [105, 0, 0],
+					"position": [77, 31, -39],
+					"scale": [2, 2, 2]
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, -25, -23],
+					"scale": [2, 2, 2]
+				},
+				"stick2_t": {
+					"position": [0, 2, 0],
+					"scale": [0.4, 0.4, 0.4]
+				},
+				"stick_t": {
+					"rotation": [90, 0, 0],
+					"position": [-1, 11, 3]
+				}
+			}
+		}
+	}
+}

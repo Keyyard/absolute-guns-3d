@@ -1,0 +1,79 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "absolute_guns_bullet:tactical_knife_scope",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:break_blocks": {
+        "breakable_blocks": [
+          "glass",
+          "glass_pane",
+          "stained_glass",
+          "stained_glass_pane",
+          "standing_sign",
+          "vine",
+          "wall_banner",
+          "wall_sign",
+          "web",
+          "wheat"
+        ]
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "fire_affected_by_griefing": true,
+        "destroy_affected_by_griefing": true
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": [25, 25],
+            "knockback": true
+          },
+          "remove_on_hit": {},
+          "stick_in_ground": {
+            "shake_time": 0
+          },
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true
+          }
+        },
+        "power": 5,
+        "gravity": 0,
+        "inertia": 1,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [0, 0, 0],
+        "reflectOnHurt": false,
+        "catch_fire": false
+      },
+      "minecraft:tick_world": {
+        "distance_to_players": 70,
+        "never_despawn": false,
+        "radius": 2
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "entity:despawn": {
+        "add": {
+          "component_groups": ["entity:despawn"]
+        },
+        "queue_command": {
+          "command": ["kill @s"]
+        }
+      }
+    }
+  }
+}

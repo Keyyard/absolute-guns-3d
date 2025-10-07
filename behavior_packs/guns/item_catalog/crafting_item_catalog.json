@@ -7,10 +7,58 @@
         "groups": [
           {
             "group_identifier": {
-              "icon": "keyyard:rifle_ak47",
-              "name": "keyyard:itemGroup.name.rifles"
+              "icon": "absolute_guns:ak47",
+              "name": "absolute_guns:itemGroup.name.rifles"
             },
-            "items": ["keyyard:rifle_ak47", "keyyard:rifle_ammo"]
+            "items": [
+              "absolute_guns:ak47",
+              "absolute_guns:ak47_gold",
+              "absolute_guns:ak74u",
+              "absolute_guns:flamethrower",
+              "absolute_guns:m16",
+              "absolute_guns:m4",
+              "absolute_guns:mg42",
+              "absolute_guns:mgl",
+              "absolute_guns:mgl_bullet",
+              "absolute_guns:pkm",
+              "absolute_guns:rpg7",
+              "absolute_guns:rpk"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "absolute_guns:mp5",
+              "name": "absolute_guns:itemGroup.name.smgs"
+            },
+            "items": [
+              "absolute_guns:bizon",
+              "absolute_guns:glock",
+              "absolute_guns:glock_tactical",
+              "absolute_guns:mp40",
+              "absolute_guns:mp5",
+              "absolute_guns:mp5k",
+              "absolute_guns:ump45"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "absolute_guns:m1014",
+              "name": "absolute_guns:itemGroup.name.shotguns"
+            },
+            "items": ["absolute_guns:m1014", "absolute_guns:m3", "absolute_guns:spas"]
+          },
+          {
+            "group_identifier": {
+              "icon": "absolute_guns:rifle_ammo",
+              "name": "absolute_guns:itemGroup.name.ammo"
+            },
+            "items": [
+              "absolute_guns:rifle_ammo",
+              "absolute_guns:smg_ammo",
+              "absolute_guns:shotgun_ammo",
+              "absolute_guns:sniper_ammo",
+              "absolute_guns:rpg7_ammo"
+            ]
           }
         ]
       }

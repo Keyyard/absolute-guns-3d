@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.scope_tactical_knife": {
+			"loop": true,
+			"animation_length": 0.52,
+			"bones": {
+				"stick": {
+					"rotation": [0, 180, 0],
+					"position": [16.67, 46, -92],
+					"scale": 3
+				},
+				"stick2_t": {
+					"scale": 0.9
+				},
+				"stick2": {
+					"position": [5.51, -19.375, -36]
+				},
+				"stick_t": {
+					"rotation": [-31.9708, -53.1141, 33.9032],
+					"position": [-27.5, -21, -10],
+					"scale": 0.6
+				},
+				"scope2": {
+					"position": [0, -1, -1],
+					"scale": 1
+				}
+			}
+		}
+	}
+}

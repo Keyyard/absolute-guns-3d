@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.scope_awm_0": {
+    "arrays": {
+        "textures": {
+          "array.swords": [
+            "texture.sword0"
+          ]
+        }
+      },
+      "geometry": "geometry.scope_0",
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : material.default" } ],
+      "textures": [ "array.swords[(query.anim_time * 1000)]" ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_m4": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [107.73379, 2.37682, 0.75983],
+					"position": [18, 24, 44],
+					"scale": 1
+				},
+				"stick2": {
+					"rotation": [-73.09111, 2.81551, 183.29329],
+					"position": [-6, -25, -10],
+					"scale": 2.7
+				},
+				"stick2_t": {
+					"rotation": [90, 0, 0],
+					"position": [-7, 1, 3],
+					"scale": 0.6
+				},
+				"rightitem": {
+					"position": [2.5, 3.8, 1.3],
+					"scale": 1.2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_flamethrower": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"rotation": [107.5, 0, 0],
+					"position": [26, 0, 50],
+					"scale": [1.5, 1.5, 1.5]
+				},
+				"stick2": {
+					"rotation": [-73.22121, 3.22147, 180.82304],
+					"position": [-3, -25, -23],
+					"scale": [2, 2, 2]
+				},
+				"stick2_t": {
+					"scale": [0.6, 0.6, 0.6]
+				},
+				"stick_t": {
+					"rotation": [90, 0, 0],
+					"position": [-5, -9, 3]
+				}
+			}
+		}
+	}
+}

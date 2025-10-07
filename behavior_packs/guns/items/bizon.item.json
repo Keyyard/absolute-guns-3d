@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "absolute_guns:bizon",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": { "default": "absolute_guns_bizon" }
+      },
+      "minecraft:display_name": {
+        "value": "item.absolute_guns:bizon.name"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": false,
+      "minecraft:tags": {
+        "tags": ["absolute_guns:smg"]
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 0
+      },
+      "minecraft:food": {
+        "can_always_eat": true,
+        "nutrition": 0,
+        "using_converts_to": "absolute_guns:bizon"
+      },
+      "minecraft:use_animation": {
+        "value": "none"
+      }
+    }
+  }
+}

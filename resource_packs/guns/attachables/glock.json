@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "absolute_guns:glock",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint",
+"ghost": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/3d/absolute_guns/glock",
+        "sword0": "textures/3d/absolute_guns/glock",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "first_0": "geometry.glock_first",
+        "third_0": "geometry.glock_third"
+      },
+      "animations": {
+        "wield_3d": "animation.absolute_guns_.wield_glock",
+        "run_3d": "animation.absolute_guns_.run_glock"
+	},
+      "scripts": {
+        "animate": [
+						"wield_3d"
+        ]
+      },
+      "render_controllers": [
+          {"controller.render.first_glock_tactical_0": "c.is_first_person"},
+          {"controller.render.third_glock_tactical_0": "!c.is_first_person"}
+      ]
+    }
+  }
+}

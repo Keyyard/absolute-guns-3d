@@ -1,12 +1,96 @@
 {
+  "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
-  "resource_pack_name": "keyyard_guns",
   "texture_data": {
-    "keyyard_rifle_ak47": {
-      "textures": "textures/items/keyyard/guns/rifle_ak47"
+    "absolute_guns_mg42": {
+      "textures": "textures/guns/absolute_guns_mg42"
     },
-    "keyyard_rifle_ammo": {
-      "textures": "textures/items/keyyard/guns/rifle_ammo"
+    "absolute_guns_ak74u": {
+      "textures": "textures/guns/absolute_guns_ak74u"
+    },
+    "absolute_guns_mp40": {
+      "textures": "textures/guns/absolute_guns_mp40"
+    },
+    "absolute_guns_ak47": {
+      "textures": "textures/guns/absolute_guns_ak47"
+    },
+    "absolute_guns_ump45": {
+      "textures": "textures/guns/absolute_guns_ump45"
+    },
+    "absolute_guns_bizon": {
+      "textures": "textures/guns/absolute_guns_bizon"
+    },
+    "absolute_guns_rpg7": {
+      "textures": "textures/guns/absolute_guns_rpg7"
+    },
+    "absolute_guns_ak47_gold": {
+      "textures": "textures/guns/absolute_guns_ak47_gold"
+    },
+    "absolute_guns_rpk": {
+      "textures": "textures/guns/absolute_guns_rpk"
+    },
+    "absolute_guns_pkm": {
+      "textures": "textures/guns/absolute_guns_pkm"
+    },
+    "absolute_guns_m16": {
+      "textures": "textures/guns/absolute_guns_m16"
+    },
+    "absolute_guns_m4": {
+      "textures": "textures/guns/absolute_guns_m4"
+    },
+    "absolute_guns_spas": {
+      "textures": "textures/guns/absolute_guns_spas"
+    },
+    "absolute_guns_m3": {
+      "textures": "textures/guns/absolute_guns_m3"
+    },
+    "absolute_guns_m1014": {
+      "textures": "textures/guns/absolute_guns_m1014"
+    },
+    "absolute_guns_glock": {
+      "textures": "textures/guns/absolute_guns_glock"
+    },
+    "absolute_guns_glock2": {
+      "textures": "textures/guns/absolute_guns_glock2"
+    },
+    "absolute_guns_mgl": {
+      "textures": "textures/guns/absolute_guns_mgl"
+    },
+    "absolute_guns_mp5": {
+      "textures": "textures/guns/absolute_guns_mp5"
+    },
+    "absolute_guns_mp5k": {
+      "textures": "textures/guns/absolute_guns_mp5k"
+    },
+    "absolute_guns_flamethrower": {
+      "textures": "textures/guns/absolute_guns_flamethrower"
+    },
+    "absolute_guns_knife": {
+      "textures": "textures/melee/absolute_guns_knife"
+    },
+    "absolute_guns_knife_scope": {
+      "textures": "textures/melee/absolute_guns_knife_scope"
+    },
+    "ammo_machinegun": {
+      "textures": "textures/ammo/machinegun"
+    },
+    "ammo_rifle": {
+      "textures": "textures/ammo/rifle"
+    },
+    "ammo_smg": {
+      "textures": "textures/ammo/smg"
+    },
+    "ammo_rpg7": {
+      "textures": "textures/ammo/rpg7"
+    },
+    "ammo_shotgun": {
+      "textures": "textures/ammo/shotgun"
+    },
+    "ammo_pistol": {
+      "textures": "textures/ammo/pistol"
+    },
+    "ammo_sniper": {
+      "textures": "textures/ammo/sniper"
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "absolute_guns:ak47_gold",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint",
+		"ghost": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/3d/absolute_guns/ak47_gold",
+        "glint_frame_1": "textures/3d/absolute_guns/animated/ak47_gold_frame_1",
+        "glint_frame_2": "textures/3d/absolute_guns/animated/ak47_gold_frame_2",
+        "glint_frame_3": "textures/3d/absolute_guns/animated/ak47_gold_frame_3",
+        "glint_frame_4": "textures/3d/absolute_guns/animated/ak47_gold_frame_4",
+        "glint_frame_5": "textures/3d/absolute_guns/animated/ak47_gold_frame_5",
+        "glint_frame_6": "textures/3d/absolute_guns/animated/ak47_gold_frame_6",
+        "glint_frame_7": "textures/3d/absolute_guns/animated/ak47_gold_frame_7",
+        "glint_frame_8": "textures/3d/absolute_guns/animated/ak47_gold_frame_8",
+        "glint_frame_9": "textures/3d/absolute_guns/animated/ak47_gold_frame_9",
+        "glint_frame_10": "textures/3d/absolute_guns/animated/ak47_gold_frame_10",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "first_0": "geometry.ak47_first",
+        "third_0": "geometry.ak47_third"
+      },
+      "animations": {
+        "wield_3d": "animation.absolute_guns_.wield_ak47"
+	},
+      "scripts": {
+        "animate": [
+			"wield_3d"
+        ]
+      },
+      "render_controllers": [
+          {"controller.render.first_ak47_gold": "c.is_first_person"},
+          {"controller.render.third_ak47_gold": "!c.is_first_person"}
+      ]
+    }
+  }
+}
