@@ -1,5 +1,5 @@
 {
-  "format_version": "1.12.0",
+  "format_version": "1.21.60",
   "minecraft:entity": {
     "description": {
       "identifier": "absolute_guns_bullet:gun",
@@ -43,13 +43,9 @@
           "stick_in_ground": {
             "shake_time": 0
           },
-
-          "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
-              "event": "gun:muzzle",
-              "target": "self"
-            }
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true
           }
         },
         "power": 5,
@@ -71,13 +67,11 @@
     },
     "events": {
       "entity:despawn": {
+        "add": {
+          "component_groups": ["entity:despawn"]
+        },
         "queue_command": {
           "command": ["kill @s"]
-        }
-      },
-      "gun:muzzle": {
-        "queue_command": {
-          "command": ["particle absolute_guns:muzzle_gold_particle ~~~"]
         }
       }
     }

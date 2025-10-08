@@ -1,6 +1,6 @@
 import { Player } from "@minecraft/server";
 
-const gunTypes = ["rifle", "sniper", "shotgun", "smg"] as const;
+const gunTypes = ["rifle", "sniper", "shotgun", "smg", "special"] as const;
 type GunType = (typeof gunTypes)[number];
 
 function getAmmoItemId(type: GunType): string {
@@ -65,10 +65,35 @@ export type GunInput = Omit<Gun, "ammoTypeId" | "projectileTypeId"> &
 
 export function createGun(input: GunInput): Gun {
   const { ammoTypeId, projectileTypeId, ...rest } = input;
+  // Compute ammo and projectile, with overrides for 'special' guns
+  const computedAmmo =
+    ammoTypeId ??
+    (rest.type === "special"
+      ? rest.id === "absolute_guns:flamethrower"
+        ? "minecraft:slime_ball"
+        : rest.id === "absolute_guns:rpg7"
+        ? "absolute_guns:rpg7_ammo"
+        : rest.id === "absolute_guns:mgl"
+        ? "absolute_guns:mgl_ammo"
+        : "absolute_guns:rifle_ammo"
+      : getAmmoItemId(rest.type));
+
+  const computedProjectile =
+    projectileTypeId ??
+    (rest.type === "special"
+      ? rest.id === "absolute_guns:flamethrower"
+        ? "absolute_guns_bullet:flame"
+        : rest.id === "absolute_guns:rpg7"
+        ? "absolute_guns_bullet:rpg7"
+        : rest.id === "absolute_guns:mgl"
+        ? "absolute_guns_bullet:mgl"
+        : "absolute_guns_bullet:gun"
+      : getProjectileTypeId(rest.type));
+
   return {
     ...rest,
-    ammoTypeId: ammoTypeId ?? getAmmoItemId(rest.type),
-    projectileTypeId: projectileTypeId ?? getProjectileTypeId(rest.type),
+    ammoTypeId: computedAmmo,
+    projectileTypeId: computedProjectile,
   } as Gun;
 }
 
@@ -96,7 +121,7 @@ export const GUNS: readonly Gun[] = [
   createGun({
     id: "absolute_guns:ak74u",
     name: "AK74U",
-    type: "rifle",
+    type: "smg",
     maxAmmo: 30,
     fireRate: 4,
     shootPower: 13,
@@ -116,13 +141,12 @@ export const GUNS: readonly Gun[] = [
   createGun({
     id: "absolute_guns:flamethrower",
     name: "Flamethrower",
-    type: "rifle",
+    type: "special",
     maxAmmo: 100,
     fireRate: 1,
     shootPower: 10,
     recoil: 0.2,
     reloadTime: 80,
-    projectileTypeId: "absolute_guns_bullet:flame",
   }),
   createGun({
     id: "absolute_guns:glock",
@@ -197,23 +221,13 @@ export const GUNS: readonly Gun[] = [
   createGun({
     id: "absolute_guns:mgl",
     name: "MGL",
-    type: "rifle",
+    type: "special",
     maxAmmo: 6,
     fireRate: 10,
     shootPower: 20,
     recoil: 0.8,
     reloadTime: 90,
-    projectileTypeId: "absolute_guns_bullet:mgl",
-  }),
-  createGun({
-    id: "absolute_guns:mgl_bullet",
-    name: "MGL Bullet",
-    type: "rifle",
-    maxAmmo: 6,
-    fireRate: 10,
-    shootPower: 20,
-    recoil: 0.8,
-    reloadTime: 90,
+    ammoTypeId: "absolute_guns:mgl_ammo",
     projectileTypeId: "absolute_guns_bullet:mgl",
   }),
   createGun({
@@ -259,7 +273,7 @@ export const GUNS: readonly Gun[] = [
   createGun({
     id: "absolute_guns:rpg7",
     name: "RPG7",
-    type: "rifle",
+    type: "special",
     maxAmmo: 1,
     fireRate: 40,
     shootPower: 50,
@@ -268,6 +282,8 @@ export const GUNS: readonly Gun[] = [
     ammoTypeId: "absolute_guns:rpg7_ammo",
     projectileTypeId: "absolute_guns_bullet:rpg7",
   }),
+  // mgl_ammo is ammo, not a weapon - it's defined as an item elsewhere
+
   createGun({
     id: "absolute_guns:rpk",
     name: "RPK",

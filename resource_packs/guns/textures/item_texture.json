@@ -33,7 +33,7 @@
       "textures": "textures/guns/absolute_guns_pkm"
     },
     "absolute_guns_m16": {
-      "textures": "textures/guns/absolute_guns_m16"
+      "textures": "textures/guns/absolute_guns_m4"
     },
     "absolute_guns_m4": {
       "textures": "textures/guns/absolute_guns_m4"
@@ -55,6 +55,9 @@
     },
     "absolute_guns_mgl": {
       "textures": "textures/guns/absolute_guns_mgl"
+    },
+    "absolute_guns_mgl_ammo": {
+      "textures": "textures/ammo/rpg7"
     },
     "absolute_guns_mp5": {
       "textures": "textures/guns/absolute_guns_mp5"

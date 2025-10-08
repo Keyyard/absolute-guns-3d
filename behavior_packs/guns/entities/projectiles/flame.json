@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.60",
   "minecraft:entity": {
     "description": {
       "identifier": "absolute_guns_bullet:flame",
@@ -72,13 +72,9 @@
           "stick_in_ground": {
             "shake_time": 0
           },
-
-          "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
-              "event": "gun:particle",
-              "target": "self"
-            }
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true
           }
         },
         "power": 1.5,

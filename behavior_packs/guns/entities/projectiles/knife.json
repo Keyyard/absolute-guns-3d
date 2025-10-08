@@ -1,5 +1,5 @@
 {
-  "format_version": "1.12.0",
+  "format_version": "1.21.60",
   "minecraft:entity": {
     "description": {
       "identifier": "absolute_guns_bullet:tactical_knife_scope",
@@ -42,6 +42,10 @@
           "remove_on_hit": {},
           "stick_in_ground": {
             "shake_time": 0
+          },
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true
           }
         },
         "power": 5,

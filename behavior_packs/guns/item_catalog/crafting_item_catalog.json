@@ -14,14 +14,10 @@
               "absolute_guns:ak47",
               "absolute_guns:ak47_gold",
               "absolute_guns:ak74u",
-              "absolute_guns:flamethrower",
               "absolute_guns:m16",
               "absolute_guns:m4",
               "absolute_guns:mg42",
-              "absolute_guns:mgl",
-              "absolute_guns:mgl_bullet",
               "absolute_guns:pkm",
-              "absolute_guns:rpg7",
               "absolute_guns:rpk"
             ]
           },
@@ -46,6 +42,13 @@
               "name": "absolute_guns:itemGroup.name.shotguns"
             },
             "items": ["absolute_guns:m1014", "absolute_guns:m3", "absolute_guns:spas"]
+          },
+          {
+            "group_identifier": {
+              "icon": "absolute_guns:flamethrower",
+              "name": "absolute_guns:itemGroup.name.specials"
+            },
+            "items": ["absolute_guns:flamethrower", "absolute_guns:rpg7", "absolute_guns:mgl"]
           },
           {
             "group_identifier": {

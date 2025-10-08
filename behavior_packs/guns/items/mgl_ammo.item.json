@@ -2,7 +2,7 @@
   "format_version": "1.21.60",
   "minecraft:item": {
     "description": {
-      "identifier": "absolute_guns:mgl_bullet",
+      "identifier": "absolute_guns:mgl_ammo",
       "menu_category": {
         "category": "equipment"
       }
@@ -12,10 +12,10 @@
         "textures": { "default": "absolute_guns_mgl" }
       },
       "minecraft:display_name": {
-        "value": "item.absolute_guns:mgl_bullet.name"
+        "value": "item.absolute_guns:mgl_ammo.name"
       },
       "minecraft:max_stack_size": 1,
-      "minecraft:hand_equipped": false,
+      "minecraft:hand_equipped": true,
       "minecraft:tags": {
         "tags": ["absolute_guns:rifle"]
       },
@@ -26,7 +26,7 @@
       "minecraft:food": {
         "can_always_eat": true,
         "nutrition": 0,
-        "using_converts_to": "absolute_guns:mgl_bullet"
+        "using_converts_to": "absolute_guns:mgl_ammo"
       },
       "minecraft:use_animation": {
         "value": "none"
