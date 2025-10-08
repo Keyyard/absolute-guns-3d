@@ -44,7 +44,7 @@ export interface Gun {
   ammoTypeId: string;
   projectileTypeId: string;
   recoil: number; // camera shake
-  uncertainty?: number;
+  uncertainty?: number; //accuracy
 }
 
 export interface CurrentGun {

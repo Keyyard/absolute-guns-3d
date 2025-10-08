@@ -56,11 +56,6 @@ export function shoot(player: Player, gun: Gun): void {
     player.runCommand(`camerashake add @s ${gun.recoil} 0.1 positional`);
   } catch {}
 
-  try {
-    // Spawn the muzzle particle at the same spawn location used for the projectile
-    player.dimension.spawnParticle("minecraft:basic_smoke_particle", spawnLoc);
-  } catch {}
-
   // Set cooldown
   playerFireCooldowns.set(player.id, gun.fireRate);
 }
