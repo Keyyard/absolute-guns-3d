@@ -36,8 +36,6 @@ world.afterEvents.itemStartUse.subscribe((event) => {
       setOutOfAmmoMessage(player);
     }
   } else {
-    // Start shooting (flag on before-event)
-    world.sendMessage(`Started shooting for player ${player.name}`);
     playerShooting.set(player.id, true);
   }
 });
@@ -48,7 +46,6 @@ world.afterEvents.itemReleaseUse.subscribe((event) => {
   if (!gun) return;
 
   // Stop shooting (flag off on after-event)
-  world.sendMessage(`Stopped shooting for player ${player.name}`);
   playerShooting.set(player.id, false);
 });
 

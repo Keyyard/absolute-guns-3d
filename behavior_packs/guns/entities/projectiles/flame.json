@@ -5,7 +5,8 @@
       "identifier": "absolute_guns_bullet:flame",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
     },
     "component_groups": {
       "fire": {
@@ -100,7 +101,7 @@
           "component_groups": ["fire"]
         },
         "queue_command": {
-          "command": ["particle gun:flamethrower_particle ~~~", "fill ~~~ ~~~ fire 0 replace air"]
+          "command": ["particle gun:flamethrower_particle ~~~", "fill ~~~ ~~~ fire [] replace air"]
         }
       },
       "despawn": {
