@@ -1,5 +1,6 @@
 import { Player } from "@minecraft/server";
-import { GUNS, Gun, playerGuns } from "../../data/guns";
+import { GUNS, playerGuns } from "../../data/guns";
+import { Gun } from "../../data/types";
 import { getHeldItem } from "./inventoryUtils";
 
 export function getHeldGun(player: Player): Gun | undefined {

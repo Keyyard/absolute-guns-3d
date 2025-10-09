@@ -1,6 +1,7 @@
 import { Vector3Utils } from "@minecraft/math";
 import { Player, Vector3 } from "@minecraft/server";
-import { Gun, playerFireCooldowns, playerGuns } from "../data/guns";
+import { playerFireCooldowns, playerGuns } from "../data/guns";
+import { Gun } from "../data/types";
 
 import { decreaseAmmo, fireVfx, fireBullet } from "./utils/shootUtils";
 

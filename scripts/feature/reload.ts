@@ -1,6 +1,7 @@
 import { Player } from "@minecraft/server";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
-import { GUNS, Gun, playerReloadCooldowns, playerGuns } from "../data/guns";
+import { GUNS, playerReloadCooldowns, playerGuns } from "../data/guns";
+import { Gun } from "../data/types";
 import { getContainer } from "./utils/inventoryUtils";
 import { hasAmmoInContainer, findAndConsumeAmmo } from "./utils/gunUtils";
 
