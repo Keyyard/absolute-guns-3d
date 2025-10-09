@@ -33,7 +33,7 @@ function getProjectileTypeId(type: GunType): string {
   }
 }
 
-enum FireMode {
+export enum FireMode {
   SEMI = "semi",
   AUTO = "auto",
   BURST = "burst",
@@ -185,6 +185,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
+    mode: FireMode.SHOTGUN,
   }),
   createGun({
     id: "absolute_guns:m16",
@@ -205,6 +206,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
+    mode: FireMode.SHOTGUN,
   }),
   createGun({
     id: "absolute_guns:m4",
@@ -311,6 +313,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
+    mode: FireMode.SHOTGUN,
   }),
   createGun({
     id: "absolute_guns:ump45",

@@ -1,43 +1,36 @@
 import { Player } from "@minecraft/server";
 import { GUNS, playerGuns, playerReloadCooldowns } from "../data/guns";
-import { getContainer, getHeldItem } from "./utils/inventoryUtils";
+import { getContainer } from "./utils/inventoryUtils";
+import { getHeldGun, getCurrentAmmo, hasAmmoInContainer } from "./utils/gunUtils";
 
 export function updateActionBar(player: Player): void {
   const container = getContainer(player);
   if (!container) return;
-  const heldItem = getHeldItem(player);
-  if (heldItem) {
-    const gun = GUNS.find((g) => g.id === heldItem.typeId);
-    if (gun) {
-      const playerGunAmmo = playerGuns.get(player.id);
-      const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
 
-      const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-      if (reloadCooldown > 0) {
-        player.onScreenDisplay.setActionBar(`${gun.name} | Reloading... (${Math.ceil(reloadCooldown / 20)}s)`);
-      } else if (currentAmmo <= 0) {
-        // Check if can reload
-        let canReload = false;
-        for (let i = 0; i < container.size; i++) {
-          const item = container.getItem(i);
-          if (item && item.typeId === gun.ammoTypeId && item.amount > 0) {
-            canReload = true;
-            break;
-          }
-        }
-        if (!canReload) {
-          player.onScreenDisplay.setActionBar(`${gun.name} | §cOut of ammo`);
-        } else {
-          player.onScreenDisplay.setActionBar(`${gun.name} | ${currentAmmo}/${gun.maxAmmo}`);
-        }
-      } else {
-        player.onScreenDisplay.setActionBar(`${gun.name} | ${currentAmmo}/${gun.maxAmmo}`);
-      }
-      return;
-    }
+  const gun = getHeldGun(player);
+  if (!gun) {
+    // No gun equipped
+    player.onScreenDisplay.setActionBar("");
+    return;
   }
-  // No gun equipped
-  player.onScreenDisplay.setActionBar("");
+
+  const currentAmmo = getCurrentAmmo(player, gun);
+  const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+  if (reloadCooldown > 0) {
+    player.onScreenDisplay.setActionBar(`${gun.name} | Reloading... (${Math.ceil(reloadCooldown / 20)}s)`);
+    return;
+  }
+
+  if (currentAmmo <= 0) {
+    if (!hasAmmoInContainer(container, gun.ammoTypeId)) {
+      player.onScreenDisplay.setActionBar(`${gun.name} | §cOut of ammo`);
+    } else {
+      player.onScreenDisplay.setActionBar(`${gun.name} | ${currentAmmo}/${gun.maxAmmo}`);
+    }
+    return;
+  }
+
+  player.onScreenDisplay.setActionBar(`${gun.name} | ${currentAmmo}/${gun.maxAmmo}`);
 }
 
 export function setReloadMessage(player: Player, message: string): void {

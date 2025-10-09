@@ -3,6 +3,7 @@ import { GUNS, playerFireCooldowns, playerGuns, playerReloadCooldowns } from "./
 import { shoot } from "./feature/shoot";
 import { startReload, completeReload } from "./feature/reload";
 import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./feature/ui";
+import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./feature/utils/gunUtils";
 
 const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
 
@@ -10,20 +11,10 @@ const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
 
 world.afterEvents.itemStartUse.subscribe((event) => {
   const { source: player, itemStack } = event;
-  const gun = GUNS.find((g) => g.id === itemStack.typeId);
+  const gun = getHeldGun(player) || GUNS.find((g) => g.id === itemStack.typeId);
   if (!gun) return;
-
-  let playerGunAmmo = playerGuns.get(player.id);
-  if (!playerGunAmmo) {
-    playerGunAmmo = new Map();
-    playerGuns.set(player.id, playerGunAmmo);
-  }
-
-  let currentAmmo = playerGunAmmo.get(gun.id);
-  if (currentAmmo === undefined) {
-    currentAmmo = gun.maxAmmo;
-    playerGunAmmo.set(gun.id, currentAmmo);
-  }
+  ensurePlayerGunInitialized(player, gun);
+  const currentAmmo = getCurrentAmmo(player, gun);
 
   const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
   if (reloadCooldown > 0) return; // Still reloading
@@ -56,21 +47,13 @@ system.runInterval(() => {
 
     // Handle continuous shooting
     if (playerShooting.get(player.id)) {
-      const inventory = player.getComponent("minecraft:inventory");
-      if (inventory) {
-        const heldItem = inventory.container.getItem(player.selectedSlotIndex);
-        if (heldItem) {
-          const gun = GUNS.find((g) => g.id === heldItem.typeId);
-          if (gun) {
-            const playerGunAmmo = playerGuns.get(player.id);
-            const currentAmmo = playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
-
-            const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-            if (currentAmmo > 0 && reloadCooldown === 0 && playerShooting.get(player.id) === true) {
-              if ((playerFireCooldowns.get(player.id) || 0) === 0) {
-                shoot(player, gun);
-              }
-            }
+      const gun = getHeldGun(player);
+      const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
+      if (gun) {
+        const currentAmmo = getCurrentAmmo(player, gun);
+        if (currentAmmo > 0 && reloadCooldown === 0 && playerShooting.get(player.id) === true) {
+          if ((playerFireCooldowns.get(player.id) || 0) === 0) {
+            shoot(player, gun);
           }
         }
       }
@@ -89,13 +72,10 @@ system.runInterval(() => {
         // Reload complete
         const inventory = player.getComponent("minecraft:inventory");
         if (inventory) {
-          const heldItem = inventory.container.getItem(player.selectedSlotIndex);
-          if (heldItem) {
-            const gun = GUNS.find((g) => g.id === heldItem.typeId);
-            if (gun) {
-              completeReload(player, gun);
-              setReloadedMessage(player);
-            }
+          const gun = getHeldGun(player);
+          if (gun) {
+            completeReload(player, gun);
+            setReloadedMessage(player);
           }
         }
       }

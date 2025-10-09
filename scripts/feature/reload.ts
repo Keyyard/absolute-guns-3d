@@ -2,48 +2,27 @@ import { Player } from "@minecraft/server";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
 import { GUNS, Gun, playerReloadCooldowns, playerGuns } from "../data/guns";
 import { getContainer } from "./utils/inventoryUtils";
+import { hasAmmoInContainer, findAndConsumeAmmo } from "./utils/gunUtils";
 
 export function startReload(player: Player, gun: Gun): boolean {
   const container = getContainer(player);
   if (!container) return false;
-  let hasAmmo = false;
-  for (let i = 0; i < container.size; i++) {
-    const item = container.getItem(i);
-    if (item && item.typeId === gun.ammoTypeId && item.amount > 0) {
-      hasAmmo = true;
-      break;
-    }
-  }
+  if (!hasAmmoInContainer(container, gun.ammoTypeId)) return false;
 
-  if (hasAmmo) {
-    // Start reload
-    try {
-      player.playAnimation("animation.player.reload");
-    } catch {}
-    playerReloadCooldowns.set(player.id, gun.reloadTime);
-    return true;
-  }
-  return false; // No ammo
+  // Start reload
+  try {
+    player.playAnimation("animation.player.reload");
+  } catch {}
+  playerReloadCooldowns.set(player.id, gun.reloadTime);
+  return true;
 }
 
 export function completeReload(player: Player, gun: Gun): void {
   // Consume ammo
   const container = getContainer(player);
   if (!container) return;
-  for (let i = 0; i < container.size; i++) {
-    const item = container.getItem(i);
-    if (item && item.typeId === gun.ammoTypeId && item.amount > 0) {
-      // Consume one ammo
-      if (item.amount > 1) {
-        item.amount--;
-        container.setItem(i, item);
-      } else {
-        container.setItem(i, undefined);
-      }
-      break;
-    }
-  }
-
+  // Consume one ammo from container
+  findAndConsumeAmmo(container, gun.ammoTypeId);
   // Set ammo to max
   let playerGunAmmo = playerGuns.get(player.id);
   if (!playerGunAmmo) {
