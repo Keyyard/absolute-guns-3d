@@ -1,6 +1,7 @@
 import { Vector3Utils } from "@minecraft/math";
 import { Player, Vector3 } from "@minecraft/server";
-import { Gun, playerFireCooldowns, playerGuns, FireMode } from "../../data/guns";
+import { playerFireCooldowns, playerGuns } from "../../data/guns";
+import { Gun, FireMode } from "../../data/types";
 import { ensurePlayerGunInitialized } from "./gunUtils";
 
 function getSpawnLoc(player: Player, gun: Gun): Vector3 {
