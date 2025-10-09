@@ -1,3 +1,41 @@
-item.keyyard:rifle_ak47.name=AK-47\nRifle (Auto)\nFire Rate: 4 ticks
-item.keyyard:rifle_ammo.name=Rifle Ammo\nAmmunition for rifles
-keyyard:itemGroup.name.rifles=Rifles
+
+item.absolute_guns:ak47.name=AK47
+item.absolute_guns:ak47_gold.name=AK47 Gold
+item.absolute_guns:ak74u.name=AK74U
+item.absolute_guns:bizon.name=Bizon
+item.absolute_guns:flamethrower.name=Flamethrower
+item.absolute_guns:glock.name=Glock
+item.absolute_guns:glock_tactical.name=Glock Tactical
+item.absolute_guns:m1014.name=M1014
+item.absolute_guns:m16.name=M16
+item.absolute_guns:m3.name=M3
+item.absolute_guns:m4.name=M4
+item.absolute_guns:mg42.name=MG42
+item.absolute_guns:mgl.name=MGL
+item.absolute_guns:mp40.name=MP40
+item.absolute_guns:mp5.name=MP5
+item.absolute_guns:mp5k.name=MP5K
+item.absolute_guns:pkm.name=PKM
+item.absolute_guns:rpg7.name=RPG7
+item.absolute_guns:rpk.name=RPK
+item.absolute_guns:spas.name=SPAS
+item.absolute_guns:ump45.name=UMP45
+
+item.absolute_guns:tactical_knife.name=Tactical Knife
+item.absolute_guns:tactical_knife_scope.name=Tactical Knife (Scoped)
+
+item.absolute_guns:rifle_ammo.name=Rifle Ammo
+item.absolute_guns:smg_ammo.name=SMG Ammo
+item.absolute_guns:shotgun_ammo.name=Shotgun Ammo
+item.absolute_guns:sniper_ammo.name=Sniper Ammo
+item.absolute_guns:rpg7_ammo.name=RPG7 Ammo
+item.absolute_guns:mgl_ammo.name=MGL Ammo
+
+item.absolute_guns:mgl_bullet.name=MGL Shell
+
+absolute_guns:itemGroup.name.rifles=Rifles
+absolute_guns:itemGroup.name.smgs=SMGs
+absolute_guns:itemGroup.name.shotguns=Shotguns
+absolute_guns:itemGroup.name.specials=Specials
+absolute_guns:itemGroup.name.ammo=Ammo
+
