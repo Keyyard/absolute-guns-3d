@@ -1,12 +1,11 @@
-import { Player, EntityInventoryComponent } from "@minecraft/server";
+import { Player } from "@minecraft/server";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
 import { GUNS, Gun, playerReloadCooldowns, playerGuns } from "../data/guns";
+import { getContainer } from "./utils/inventoryUtils";
 
 export function startReload(player: Player, gun: Gun): boolean {
-  const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
-  if (!inventory) return false;
-
-  const container = inventory.container;
+  const container = getContainer(player);
+  if (!container) return false;
   let hasAmmo = false;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
@@ -29,10 +28,8 @@ export function startReload(player: Player, gun: Gun): boolean {
 
 export function completeReload(player: Player, gun: Gun): void {
   // Consume ammo
-  const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
-  if (!inventory) return;
-
-  const container = inventory.container;
+  const container = getContainer(player);
+  if (!container) return;
   for (let i = 0; i < container.size; i++) {
     const item = container.getItem(i);
     if (item && item.typeId === gun.ammoTypeId && item.amount > 0) {

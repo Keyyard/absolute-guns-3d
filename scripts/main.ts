@@ -1,8 +1,8 @@
 import { system, world, ItemStack } from "@minecraft/server";
 import { GUNS, playerFireCooldowns, playerGuns, playerReloadCooldowns } from "./data/guns";
-import { shoot } from "./utils/shoot";
-import { startReload, completeReload } from "./utils/reload";
-import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./utils/ui";
+import { shoot } from "./feature/shoot";
+import { startReload, completeReload } from "./feature/reload";
+import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./feature/ui";
 
 const playerShooting = new Map<string, boolean>(); // player.id -> is shooting
 

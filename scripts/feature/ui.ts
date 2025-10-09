@@ -1,12 +1,11 @@
-import { Player, EntityInventoryComponent } from "@minecraft/server";
+import { Player } from "@minecraft/server";
 import { GUNS, playerGuns, playerReloadCooldowns } from "../data/guns";
+import { getContainer, getHeldItem } from "./utils/inventoryUtils";
 
 export function updateActionBar(player: Player): void {
-  const inventory = player.getComponent("minecraft:inventory") as EntityInventoryComponent;
-  if (!inventory) return;
-
-  const container = inventory.container;
-  const heldItem = container.getItem(player.selectedSlotIndex);
+  const container = getContainer(player);
+  if (!container) return;
+  const heldItem = getHeldItem(player);
   if (heldItem) {
     const gun = GUNS.find((g) => g.id === heldItem.typeId);
     if (gun) {

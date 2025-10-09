@@ -33,6 +33,13 @@ function getProjectileTypeId(type: GunType): string {
   }
 }
 
+enum FireMode {
+  SEMI = "semi",
+  AUTO = "auto",
+  BURST = "burst",
+  SHOTGUN = "shotgun",
+}
+
 export interface Gun {
   id: string; // Item ID, e.g., "minecraft:iron_hoe"
   name: string;
@@ -45,6 +52,7 @@ export interface Gun {
   projectileTypeId: string;
   recoil: number; // camera shake
   uncertainty?: number; //accuracy
+  mode?: FireMode; // default to semi for pistols, auto for rifles/smgs, shotgun for shotguns
 }
 
 export interface CurrentGun {
