@@ -28,7 +28,10 @@ class GameController {
       `<Keyyard> Join our Discord to request features or report bugs.`,
       `<Keyyard> Type this URL to your browser to get in: discord.gg/s2VfQr69uz`,
       `<Keyyard> Or type the code: s2VfQr69uz`,
-      `<Keyyard> Enjoy!`,
+      `<Keyyard> You can star the project on GitHub at github.com/Keyyard/absolute-guns-3d`,
+      `<Keyyard> Starring on GitHub encourages us to update the addon`,
+      `<Keyyard> And you can request feature, report bug directly at Issues tab too!`,
+      `<Keyyard> Enjoy the addon!`,
     ];
     messages.forEach((m) => {
       system.runTimeout(() => {
