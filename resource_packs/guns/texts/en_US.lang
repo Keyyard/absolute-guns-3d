@@ -37,5 +37,7 @@ absolute_guns:itemGroup.name.rifles=Rifles
 absolute_guns:itemGroup.name.smgs=SMGs
 absolute_guns:itemGroup.name.shotguns=Shotguns
 absolute_guns:itemGroup.name.specials=Specials
+item.absolute_guns:pistol_ammo.name=Pistol Ammo
 absolute_guns:itemGroup.name.ammo=Ammo
+absolute_guns:itemGroup.name.pistols=Pistols
 

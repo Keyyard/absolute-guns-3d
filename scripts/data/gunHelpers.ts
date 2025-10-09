@@ -4,6 +4,8 @@ function getAmmoItemId(type: GunType): string {
   switch (type) {
     case "rifle":
       return "absolute_guns:rifle_ammo";
+    case "pistol":
+      return "absolute_guns:pistol_ammo";
     case "sniper":
       return "absolute_guns:sniper_ammo";
     case "shotgun":
@@ -18,6 +20,8 @@ function getAmmoItemId(type: GunType): string {
 function getProjectileTypeId(type: GunType): string {
   switch (type) {
     case "rifle":
+      return "absolute_guns_bullet:gun";
+    case "pistol":
       return "absolute_guns_bullet:gun";
     case "sniper":
       return "absolute_guns_bullet:gun";

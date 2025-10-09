@@ -11,8 +11,8 @@
     "component_groups": {
       "minecraft:exploding": {
         "minecraft:explode": {
-          "fuseLength": 0,
-          "fuseLit": true,
+          "fuse_length": 0,
+          "fuse_lit": true,
           "power": 3,
           "fire_affected_by_griefing": true,
           "destroy_affected_by_griefing": true
@@ -32,8 +32,8 @@
         "value": 1
       },
       "minecraft:explode": {
-        "fuseLength": 3,
-        "fuseLit": true,
+        "fuse_length": 3,
+        "fuse_lit": true,
         "power": 2,
         "fire_affected_by_griefing": true,
         "destroy_affected_by_griefing": true
@@ -47,10 +47,10 @@
         }
       },
       "minecraft:projectile": {
-        "onHit": {
+        "on_hit": {
           "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
+            "affect_projectile": true,
+            "event_trigger": {
               "event": "minecraft:explode",
               "target": "self"
             }
@@ -58,7 +58,7 @@
         },
         "power": 1.7,
         "gravity": 0.01,
-        "angleoffset": 0.5
+        "angle_offset": 0.5
       },
       "minecraft:physics": {}
     },

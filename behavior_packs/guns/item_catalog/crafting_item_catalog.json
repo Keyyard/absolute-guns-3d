@@ -28,13 +28,18 @@
             },
             "items": [
               "absolute_guns:bizon",
-              "absolute_guns:glock",
-              "absolute_guns:glock_tactical",
               "absolute_guns:mp40",
               "absolute_guns:mp5",
               "absolute_guns:mp5k",
               "absolute_guns:ump45"
             ]
+          },
+          {
+            "group_identifier": {
+              "icon": "absolute_guns:glock",
+              "name": "absolute_guns:itemGroup.name.pistols"
+            },
+            "items": ["absolute_guns:glock", "absolute_guns:glock_tactical"]
           },
           {
             "group_identifier": {
@@ -60,6 +65,7 @@
               "absolute_guns:smg_ammo",
               "absolute_guns:shotgun_ammo",
               "absolute_guns:sniper_ammo",
+              "absolute_guns:pistol_ammo",
               "absolute_guns:rpg7_ammo"
             ]
           }

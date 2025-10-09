@@ -1,4 +1,4 @@
-export const gunTypes = ["rifle", "sniper", "shotgun", "smg", "special"] as const;
+export const gunTypes = ["rifle", "sniper", "shotgun", "smg", "lmg", "pistol", "special"] as const;
 export type GunType = (typeof gunTypes)[number];
 
 export enum FireMode {
