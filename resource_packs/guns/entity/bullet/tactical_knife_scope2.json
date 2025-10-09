@@ -11,10 +11,7 @@
         "default": "geometry.bullet_old"
       },
       "scripts": {
-        "animate": [
-          "particles",
-         "face"
-        ]
+        "animate": ["particles", "face"]
       },
       "animations": {
         "particles": "controller.animation.abg_particles",
@@ -23,12 +20,7 @@
       "particle_effects": {
         "tracer": "abg:laser"
       },
-      
-"spawn_egg": {
-        "texture": "spawn_egg",
-        "texture_index": 21
-			},
-      "render_controllers": [ "controller.render.iron_golem" ]
+      "render_controllers": ["controller.render.default"]
     }
   }
 }

@@ -6,7 +6,7 @@
       "materials": {
         "default": "entity_emissive_alpha",
         "enchanted": "entity_alphatest_glint",
-		"ghost": "entity_alphablend"
+        "ghost": "entity_alphablend"
       },
       "textures": {
         "default": "textures/3d/absolute_guns/ak47_gold",
@@ -28,15 +28,13 @@
       },
       "animations": {
         "wield_3d": "animation.absolute_guns_.wield_ak47"
-	},
+      },
       "scripts": {
-        "animate": [
-			"wield_3d"
-        ]
+        "animate": ["wield_3d"]
       },
       "render_controllers": [
-          {"controller.render.first_ak47_gold": "c.is_first_person"},
-          {"controller.render.third_ak47_gold": "!c.is_first_person"}
+        { "controller.render.first_ak47_gold": "c.is_first_person" },
+        { "controller.render.third_ak47_gold": "!c.is_first_person" }
       ]
     }
   }

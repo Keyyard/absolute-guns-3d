@@ -42,10 +42,6 @@
           },
           "stick_in_ground": {
             "shake_time": 0
-          },
-          "particle_on_hit": {
-            "num_particles": 5,
-            "on_entity_hit": true
           }
         },
         "power": 5,
