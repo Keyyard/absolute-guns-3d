@@ -20,13 +20,10 @@
         "tags": ["absolute_guns:rifle", "gun"]
       },
       "minecraft:use_modifiers": {
-        "use_duration": 99999,
-        "movement_modifier": 0
+        "use_duration": 99999
       },
       "minecraft:food": {
-        "can_always_eat": true,
-        "nutrition": 0,
-        "using_converts_to": "absolute_guns:ak47_gold"
+        "can_always_eat": true
       },
       "minecraft:use_animation": {
         "value": "none"
