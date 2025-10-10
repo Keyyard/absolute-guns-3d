@@ -20,8 +20,7 @@
         "tags": ["absolute_guns:rifle", "gun"]
       },
       "minecraft:use_modifiers": {
-        "use_duration": 99999,
-        "movement_modifier": 0
+        "use_duration": 99999
       },
       "minecraft:food": {
         "can_always_eat": true,
