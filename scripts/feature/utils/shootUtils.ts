@@ -102,6 +102,6 @@ export function fireVfx(player: Player, gun: Gun): void {
   try {
     player.playSound("gun.shoot", { volume: 0.4, pitch: 1 });
     player.playAnimation("animation.player.wields_gun");
-    player.runCommand(`camerashake add @s ${gun.recoil} 0.1 positional`);
+    player.runCommand(`camerashake add @s ${gun.recoil} 0.1 rotational`);
   } catch {}
 }
