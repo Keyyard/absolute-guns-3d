@@ -11,19 +11,20 @@
       "minecraft:max_stack_size": 1,
       "minecraft:hand_equipped": true,
       "minecraft:tags": { "tags": ["absolute_guns:knife"] },
-      "minecraft:use_modifiers": { "use_duration": 20, "movement_modifier": 0 },
-      "minecraft:use_animation": { "value": "none" },
-      "minecraft:throwable": {
-        "do_swing_animation": false,
-        "min_draw_duration": 0,
-        "max_draw_duration": 1,
-        "launch_power_scale": 1,
-        "max_launch_power": 2,
-        "scale_power_by_draw_duration": false
+      "minecraft:use_modifiers": {
+        "use_duration": 99999
       },
-      "minecraft:projectile": {
-        "projectile_entity": "absolute_guns_bullet:tactical_knife_scope2"
-      }
+      "minecraft:durability": {
+        "damage_chance": {
+          "min": 10,
+          "max": 50
+        },
+        "max_durability": 36
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:use_animation": "none"
     }
   }
 }
