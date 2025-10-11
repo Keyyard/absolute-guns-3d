@@ -16,37 +16,25 @@
 				"destroy_speeds": [
 					{
 						"block": "minecraft:web",
-						"speed": 5,
-						"on_dig": {
-							"event": "damage"
-						}
+						"speed": 5
 					},
 					{
 						"block": {
 							"tags": "query.any_tag('wood')"
 						},
-						"speed": 2,
-						"on_dig": {
-							"event": "damage"
-						}
+						"speed": 2
 					},
 					{
 						"block": {
 							"tags": "query.any_tag('chest')"
 						},
-						"speed": 3,
-						"on_dig": {
-							"event": "damage"
-						}
+						"speed": 3
 					},
 					{
 						"block": {
 							"tags": "query.any_tag('crafting_table')"
 						},
-						"speed": 3,
-						"on_dig": {
-							"event": "damage"
-						}
+						"speed": 3
 					}
 				]
 			},
