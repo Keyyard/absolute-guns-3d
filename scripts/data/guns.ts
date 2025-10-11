@@ -2,7 +2,6 @@ import { Player } from "@minecraft/server";
 import { Gun, FireMode } from "./types";
 import { createGun } from "./gunHelpers";
 
-// createGun moved to gunHelpers; re-export for convenience
 export { createGun } from "./gunHelpers";
 
 export const GUNS: readonly Gun[] = [
@@ -15,6 +14,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.3,
     reloadTime: 60,
+    shootSound: "gun.gun",
   }),
   createGun({
     id: "absolute_guns:ak47_gold",
@@ -196,8 +196,6 @@ export const GUNS: readonly Gun[] = [
     ammoTypeId: "absolute_guns:rpg7_ammo",
     projectileTypeId: "absolute_guns_bullet:rpg7",
   }),
-  // mgl_ammo is ammo, not a weapon - it's defined as an item elsewhere
-
   createGun({
     id: "absolute_guns:rpk",
     name: "RPK",
