@@ -23,6 +23,106 @@
 					"position": [-2, 11, 1]
 				}
 			}
+		},
+	  },
+		"animation.ak47.recoil": {
+			"animation_length": 1,
+			"anim_time_update": "query.anim_time + query.delta_time * 2.4",
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0833": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.1667": ["-7.5*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.2917": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					}
+				},
+				"body": {
+					"position": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					}
+				},
+				"shell": {
+					"rotation": {
+						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.3333": ["-32.5*variable.is_first_person", "187.5*variable.is_first_person", "0*variable.is_first_person"]
+					},
+					"position": {
+						"0.0833": ["0*variable.is_first_person", "0*variable.is_first_person", "1*variable.is_first_person"],
+						"0.125": ["-0.9997*variable.is_first_person", "1.26723*variable.is_first_person", "1.96394*variable.is_first_person"],
+						"0.2083": ["-4*variable.is_first_person", "3.27*variable.is_first_person", "1.96*variable.is_first_person"],
+						"0.3333": ["-9*variable.is_first_person", "2.27*variable.is_first_person", "1.96*variable.is_first_person"]
+					},
+					"scale": {
+						"0.2917": ["1*variable.is_first_person", "1*variable.is_first_person", "1*variable.is_first_person"],
+						"0.3333": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					}
+				},
+				"slide": {
+					"position": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.375": ["0*variable.is_first_person", "0*variable.is_first_person", "1.6*variable.is_first_person"],
+						"0.5833": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					}
+				},
+				"trigger": {
+					"rotation": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.0417": ["15*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["15*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.2083": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["-5.00954*variable.is_first_person", "4.99523*variable.is_first_person", "-0.21865*variable.is_first_person"],
+						"0.25": ["5.23*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.4167": ["4.0806*variable.is_first_person", "-2.59485*variable.is_first_person", "-0.54533*variable.is_first_person"],
+						"0.5833": ["-2.26425*variable.is_first_person", "-2.49805*variable.is_first_person", "-0.13771*variable.is_first_person"],
+						"0.7083": ["-3.6077*variable.is_first_person", "0*variable.is_first_person", "-0.2662*variable.is_first_person"],
+						"0.8333": ["-2.5*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					},
+					"position": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
+						"0.2917": ["0*variable.is_first_person", "0.3*variable.is_first_person", "0.5*variable.is_first_person"],
+						"0.4583": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["-5.00954*variable.is_first_person", "4.99523*variable.is_first_person", "-0.21865*variable.is_first_person"],
+						"0.25": ["5.23*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.4167": ["4.0806*variable.is_first_person", "-2.59485*variable.is_first_person", "-0.54533*variable.is_first_person"],
+						"0.5833": ["-2.26425*variable.is_first_person", "-2.49805*variable.is_first_person", "-0.13771*variable.is_first_person"],
+						"0.7083": ["-3.6077*variable.is_first_person", "0*variable.is_first_person", "-0.2662*variable.is_first_person"],
+						"0.8333": ["-2.5*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+					},
+					"position": {
+						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
+						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
+						"0.2917": ["0*variable.is_first_person", "0.3*variable.is_first_person", "0.5*variable.is_first_person"],
+						"0.4583": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
+						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"]
+					}
+				},
+				"root": {
+					"position": ["0*variable.is_first_person", "0*variable.is_first_person", "-0.465*variable.is_first_person"]
+				}
+			},
+			"particle_effects": {
+				"0.25": {
+					"effect": "smoke",
+					"locator": "smoke"
+				}
+			}
 		}
 	}
 }
