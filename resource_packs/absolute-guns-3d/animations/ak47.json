@@ -24,7 +24,7 @@
 				}
 			}
 		},
-		"animation.ak47.recoil": {
+		"animation.recoil.generic": {
 			"animation_length": 1,
 			"anim_time_update": "query.anim_time + query.delta_time * 2.4",
 			"bones": {
@@ -114,12 +114,6 @@
 				},
 				"root": {
 					"position": ["0*variable.is_first_person", "0*variable.is_first_person", "-0.465*variable.is_first_person"]
-				}
-			},
-			"particle_effects": {
-				"0.25": {
-					"effect": "smoke",
-					"locator": "smoke"
 				}
 			}
 		}
