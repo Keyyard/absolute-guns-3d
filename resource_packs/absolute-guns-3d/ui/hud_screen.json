@@ -7,7 +7,7 @@
     "size": ["100%c + 10px", "100%c + 3px"],
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom",
-    "offset": [-135, -15],
+    "offset": [-140, -15],
     "alpha": 0.7,
     "controls": [
       {
