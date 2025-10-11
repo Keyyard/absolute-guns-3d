@@ -6,6 +6,7 @@ import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoM
 import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./feature/utils/gunUtils";
 import { Vector3Utils } from "@minecraft/math";
 import { getHeldItem } from "./feature/utils/inventoryUtils";
+import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
 
 class GameController {
   private playerShooting = new Map<string, boolean>();
@@ -27,7 +28,6 @@ class GameController {
   private afterItemUse(event: any) {
     const { source: player, itemStack } = event;
     if (itemStack.typeId !== "absolute_guns:tactical_knife_scope") return;
-    player.sendMessage("Throwing Tactical Knife!");
     const throwKnife = player.dimension.spawnEntity(
       "absolute_guns_bullet:tactical_knife_scope2",
       Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5))
@@ -39,41 +39,7 @@ class GameController {
     }
     // Update durability for the held item (uses minecraft:durability component).
     const held = getHeldItem(player);
-    if (held) this.handleDurabilityDamage(player, held);
-  }
-
-  // Decrease durability on the provided item, taking Unbreaking into account.
-  private handleDurabilityDamage(player: Player, itemUsed: ItemStack) {
-    if (!itemUsed) return;
-
-    const durComp: any = itemUsed.getComponent("minecraft:durability");
-    if (!durComp) return;
-
-    const durabilityModifier = 1;
-    durComp.damage = (durComp.damage ?? 0) + durabilityModifier;
-
-    const maxDurability = durComp.maxDurability ?? durComp.max_durability ?? 100;
-    const currentDamage = durComp.damage ?? 0;
-
-    // If item is broken, play a break sound and remove it from the player's slot.
-    if (currentDamage >= maxDurability) {
-      try {
-        player.playSound("random.break", { volume: 0.8, pitch: 0.9 });
-      } catch {}
-
-      const inv = player.getComponent("minecraft:inventory");
-      if (inv && inv.container) {
-        const slot = (player as any).selectedSlotIndex ?? 0;
-        inv.container.setItem(slot, undefined);
-      }
-    } else {
-      // Update the item in the player's slot so the new damage value is visible.
-      const inv = player.getComponent("minecraft:inventory");
-      if (inv && inv.container) {
-        const slot = (player as any).selectedSlotIndex ?? 0;
-        inv.container.setItem(slot, itemUsed);
-      }
-    }
+    if (held) applyDurabilityDamage(player, held);
   }
 
   private afterPlayerJoin(event: any) {
