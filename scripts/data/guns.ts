@@ -129,7 +129,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 250,
     fireRate: 1,
     shootPower: 13,
-    recoil: 0.3,
+    recoil: 0.1,
     reloadTime: 120,
   }),
   createGun({
@@ -181,7 +181,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 100,
     fireRate: 2,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.3,
     reloadTime: 100,
   }),
   createGun({
@@ -205,7 +205,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 75,
     fireRate: 2,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.2,
     reloadTime: 80,
   }),
   createGun({
