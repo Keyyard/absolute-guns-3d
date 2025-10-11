@@ -14,7 +14,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.3,
     reloadTime: 60,
-    shootSound: "gun.gun",
+    shootSound: "gun.abgak47",
   }),
   createGun({
     id: "absolute_guns:ak47_gold",
