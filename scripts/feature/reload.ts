@@ -1,6 +1,6 @@
 import { Player } from "@minecraft/server";
 import { MinecraftItemTypes } from "@minecraft/vanilla-data";
-import { GUNS, playerReloadCooldowns, playerGuns } from "../data/guns";
+import { GUNS, playerReloadCooldowns, getPlayerAmmo, setPlayerAmmo } from "../data/guns";
 import { Gun } from "../data/types";
 import { getContainer } from "./utils/inventoryUtils";
 import { hasAmmoInContainer, findAndConsumeAmmo } from "./utils/gunUtils";
@@ -25,10 +25,6 @@ export function completeReload(player: Player, gun: Gun): void {
   // Consume one ammo from container
   findAndConsumeAmmo(container, gun.ammoTypeId);
   // Set ammo to max
-  let playerGunAmmo = playerGuns.get(player.id);
-  if (!playerGunAmmo) {
-    playerGunAmmo = new Map();
-    playerGuns.set(player.id, playerGunAmmo);
-  }
-  playerGunAmmo.set(gun.id, gun.maxAmmo);
+  // Set the player's ammo score for this gun back to max.
+  setPlayerAmmo(player, gun, gun.maxAmmo);
 }

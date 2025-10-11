@@ -1,8 +1,6 @@
 import { Vector3Utils } from "@minecraft/math";
 import { Player, Vector3 } from "@minecraft/server";
-import { playerFireCooldowns, playerGuns } from "../../data/guns";
 import { Gun, FireMode } from "../../data/types";
-import { ensurePlayerGunInitialized } from "./gunUtils";
 
 function getSpawnLoc(player: Player, gun: Gun): Vector3 {
   const headPos = player.getHeadLocation();
@@ -23,13 +21,6 @@ function getSpawnLoc(player: Player, gun: Gun): Vector3 {
   const rightOffset = Vector3Utils.scale(right, 0.22);
   const spawnLoc = Vector3Utils.add(Vector3Utils.add(headPos, forward), rightOffset);
   return spawnLoc;
-}
-
-export function decreaseAmmo(player: Player, gun: Gun): void {
-  ensurePlayerGunInitialized(player, gun);
-  const playerGunAmmo = playerGuns.get(player.id)!;
-  const currentAmmo = playerGunAmmo.get(gun.id) ?? gun.maxAmmo;
-  if (currentAmmo > 0) playerGunAmmo.set(gun.id, currentAmmo - 1);
 }
 
 export function fireBullet(player: Player, gun: Gun): void {

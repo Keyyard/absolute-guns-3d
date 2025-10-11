@@ -1,5 +1,5 @@
 import { system, world, ItemStack, Player } from "@minecraft/server";
-import { GUNS, playerFireCooldowns, playerGuns, playerReloadCooldowns } from "./data/guns";
+import { GUNS, playerFireCooldowns, playerReloadCooldowns } from "./data/guns";
 import { shoot } from "./feature/shoot";
 import { startReload, completeReload } from "./feature/reload";
 import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./feature/ui";
@@ -124,7 +124,6 @@ class GameController {
 
   private afterPlayerLeave(event: any) {
     const playerId = event.playerId;
-    playerGuns.delete(playerId);
     playerFireCooldowns.delete(playerId);
     playerReloadCooldowns.delete(playerId);
     this.playerShooting.delete(playerId);

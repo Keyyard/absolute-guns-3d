@@ -1,5 +1,5 @@
 import { Player } from "@minecraft/server";
-import { GUNS, playerGuns } from "../../data/guns";
+import { GUNS, ensurePlayerAmmoInitialized, getPlayerAmmo } from "../../data/guns";
 import { Gun } from "../../data/types";
 import { getHeldItem } from "./inventoryUtils";
 
@@ -10,19 +10,12 @@ export function getHeldGun(player: Player): Gun | undefined {
 }
 
 export function ensurePlayerGunInitialized(player: Player, gun: Gun): void {
-  let playerGunAmmo = playerGuns.get(player.id);
-  if (!playerGunAmmo) {
-    playerGunAmmo = new Map<string, number>();
-    playerGuns.set(player.id, playerGunAmmo);
-  }
-  if (playerGunAmmo.get(gun.id) === undefined) {
-    playerGunAmmo.set(gun.id, gun.maxAmmo);
-  }
+  // Ensure a scoreboard-backed ammo entry exists for this player/gun.
+  ensurePlayerAmmoInitialized(player as Player, gun);
 }
 
 export function getCurrentAmmo(player: Player, gun: Gun): number {
-  const playerGunAmmo = playerGuns.get(player.id);
-  return playerGunAmmo?.get(gun.id) ?? gun.maxAmmo;
+  return getPlayerAmmo(player as Player, gun);
 }
 
 export function hasAmmoInContainer(container: any, ammoTypeId: string): boolean {

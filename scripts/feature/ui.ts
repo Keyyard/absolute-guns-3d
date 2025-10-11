@@ -1,7 +1,7 @@
 import { Player, system, world } from "@minecraft/server";
-import { GUNS, playerGuns, playerReloadCooldowns } from "../data/guns";
+import { GUNS, playerReloadCooldowns, getPlayerAmmo } from "../data/guns";
 import { getContainer } from "./utils/inventoryUtils";
-import { getHeldGun, getCurrentAmmo, hasAmmoInContainer } from "./utils/gunUtils";
+import { getHeldGun, hasAmmoInContainer } from "./utils/gunUtils";
 
 export function updateActionBar(player: Player): void {
   let uiTimer = (player.getDynamicProperty("uiTimer") as number) || 0;
@@ -17,7 +17,7 @@ export function updateActionBar(player: Player): void {
     return;
   }
 
-  const currentAmmo = getCurrentAmmo(player, gun);
+  const currentAmmo = getPlayerAmmo(player, gun);
   const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
   if (reloadCooldown > 0) {
     if (uiTimer == 3) player.onScreenDisplay.setTitle(`ammo:"§cR.."`);
