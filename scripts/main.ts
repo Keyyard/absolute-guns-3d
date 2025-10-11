@@ -139,7 +139,7 @@ class GameController {
       for (const player of world.getAllPlayers()) {
         updateActionBar(player);
       }
-    }, 4);
+    }, 1);
   }
 }
 

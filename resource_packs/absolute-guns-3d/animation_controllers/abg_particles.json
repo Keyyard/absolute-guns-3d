@@ -2,12 +2,10 @@
   "format_version": "1.10.0",
   "animation_controllers": {
     "controller.animation.abg_particles": {
-      "initial_state" : "default",
+      "initial_state": "default",
       "states": {
         "default": {
-          "transitions": [
-            { "bdc": "query.distance_from_camera > 0.1" }
-          ]
+          "transitions": [{ "bdc": "query.distance_from_camera > 0.1" }]
         },
         "bdc": {
           "particle_effects": [
@@ -15,9 +13,7 @@
               "effect": "tracer"
             }
           ],
-          "transitions": [
-            { "default": "query.is_alive" }
-          ]
+          "transitions": [{ "default": "query.is_alive" }]
         }
       }
     }

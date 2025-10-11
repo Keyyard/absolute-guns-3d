@@ -8,8 +8,13 @@ export function updateActionBar(player: Player): void {
   if (!container) return;
 
   const gun = getHeldGun(player);
+
+  // No gun equipped
   if (!gun) {
-    player.onScreenDisplay.setTitle(``);
+    player.onScreenDisplay.setTitle(`ammo:""`);
+    system.runTimeout(() => {
+      player.onScreenDisplay.setTitle(`ammo2:""`);
+    }, 2);
     return;
   }
 
@@ -18,11 +23,21 @@ export function updateActionBar(player: Player): void {
     player.onScreenDisplay.setTitle(`ammo:"§cR.."`);
     return;
   }
-  player.onScreenDisplay.setTitle(`ammo2:[${gun.maxAmmo}]`, {
+
+  const currentAmmo = getPlayerAmmo(player, gun);
+  player.onScreenDisplay.setTitle(`ammo:[${currentAmmo}]`, {
     stayDuration: 1,
     fadeInDuration: 1,
     fadeOutDuration: 1,
   });
+
+  system.runTimeout(() => {
+    player.onScreenDisplay.setTitle(`ammo2:[${gun.maxAmmo}]`, {
+      stayDuration: 1,
+      fadeInDuration: 1,
+      fadeOutDuration: 1,
+    });
+  }, 2);
 }
 
 export function setShootMessage(player: Player): void {
