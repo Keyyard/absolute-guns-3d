@@ -1,8 +1,7 @@
-import { Player, world } from "@minecraft/server";
+import { Player } from "@minecraft/server";
 import { Gun, FireMode } from "./types";
 import { createGun } from "./gunHelpers";
 
-// createGun moved to gunHelpers; re-export for convenience
 export { createGun } from "./gunHelpers";
 
 export const GUNS: readonly Gun[] = [
@@ -15,6 +14,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.3,
     reloadTime: 60,
+    shootSound: "gun.gun",
   }),
   createGun({
     id: "absolute_guns:ak47_gold",
@@ -29,11 +29,11 @@ export const GUNS: readonly Gun[] = [
   createGun({
     id: "absolute_guns:ak74u",
     name: "AK74U",
-    type: "smg",
+    type: "rifle",
     maxAmmo: 30,
-    fireRate: 4,
+    fireRate: 2,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.4,
     reloadTime: 60,
   }),
   createGun({
@@ -43,7 +43,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 64,
     fireRate: 2,
     shootPower: 12,
-    recoil: 0.3,
+    recoil: 0.1,
     reloadTime: 50,
   }),
   createGun({
@@ -51,9 +51,9 @@ export const GUNS: readonly Gun[] = [
     name: "Flamethrower",
     type: "special",
     maxAmmo: 100,
-    fireRate: 1,
-    shootPower: 10,
-    recoil: 0.2,
+    fireRate: 2,
+    shootPower: 4,
+    recoil: 0.05,
     reloadTime: 80,
   }),
   createGun({
@@ -61,9 +61,9 @@ export const GUNS: readonly Gun[] = [
     name: "Glock",
     type: "pistol",
     maxAmmo: 17,
-    fireRate: 12,
+    fireRate: 10,
     shootPower: 12,
-    recoil: 0.4,
+    recoil: 0.1,
     reloadTime: 40,
     ammoTypeId: "absolute_guns:pistol_ammo",
     mode: FireMode.SEMI,
@@ -73,9 +73,9 @@ export const GUNS: readonly Gun[] = [
     name: "Glock Tactical",
     type: "pistol",
     maxAmmo: 17,
-    fireRate: 12,
+    fireRate: 10,
     shootPower: 12,
-    recoil: 0.4,
+    recoil: 0.1,
     reloadTime: 40,
     ammoTypeId: "absolute_guns:pistol_ammo",
     mode: FireMode.SEMI,
@@ -84,8 +84,8 @@ export const GUNS: readonly Gun[] = [
     id: "absolute_guns:m1014",
     name: "M1014",
     type: "shotgun",
-    maxAmmo: 8,
-    fireRate: 20,
+    maxAmmo: 7,
+    fireRate: 15,
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
@@ -96,9 +96,9 @@ export const GUNS: readonly Gun[] = [
     name: "M16",
     type: "rifle",
     maxAmmo: 30,
-    fireRate: 4,
+    fireRate: 3,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.2,
     reloadTime: 60,
   }),
   createGun({
@@ -106,7 +106,7 @@ export const GUNS: readonly Gun[] = [
     name: "M3",
     type: "shotgun",
     maxAmmo: 8,
-    fireRate: 20,
+    fireRate: 22,
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
@@ -117,9 +117,9 @@ export const GUNS: readonly Gun[] = [
     name: "M4",
     type: "rifle",
     maxAmmo: 30,
-    fireRate: 4,
+    fireRate: 3,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.21,
     reloadTime: 60,
   }),
   createGun({
@@ -129,7 +129,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 250,
     fireRate: 1,
     shootPower: 13,
-    recoil: 0.6,
+    recoil: 0.1,
     reloadTime: 120,
   }),
   createGun({
@@ -138,8 +138,8 @@ export const GUNS: readonly Gun[] = [
     type: "special",
     maxAmmo: 6,
     fireRate: 10,
-    shootPower: 20,
-    recoil: 0.8,
+    shootPower: 4,
+    recoil: 0.3,
     reloadTime: 90,
     ammoTypeId: "absolute_guns:mgl_ammo",
     projectileTypeId: "absolute_guns_bullet:mgl",
@@ -161,7 +161,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 30,
     fireRate: 3,
     shootPower: 12,
-    recoil: 0.4,
+    recoil: 0.35,
     reloadTime: 50,
   }),
   createGun({
@@ -172,7 +172,7 @@ export const GUNS: readonly Gun[] = [
     fireRate: 3,
     shootPower: 12,
     recoil: 0.4,
-    reloadTime: 50,
+    reloadTime: 40,
   }),
   createGun({
     id: "absolute_guns:pkm",
@@ -181,7 +181,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 100,
     fireRate: 2,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.3,
     reloadTime: 100,
   }),
   createGun({
@@ -190,14 +190,12 @@ export const GUNS: readonly Gun[] = [
     type: "special",
     maxAmmo: 1,
     fireRate: 40,
-    shootPower: 50,
+    shootPower: 5,
     recoil: 2.0,
     reloadTime: 100,
     ammoTypeId: "absolute_guns:rpg7_ammo",
     projectileTypeId: "absolute_guns_bullet:rpg7",
   }),
-  // mgl_ammo is ammo, not a weapon - it's defined as an item elsewhere
-
   createGun({
     id: "absolute_guns:rpk",
     name: "RPK",
@@ -205,7 +203,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 75,
     fireRate: 2,
     shootPower: 13,
-    recoil: 0.5,
+    recoil: 0.2,
     reloadTime: 80,
   }),
   createGun({
@@ -213,7 +211,7 @@ export const GUNS: readonly Gun[] = [
     name: "SPAS",
     type: "shotgun",
     maxAmmo: 8,
-    fireRate: 20,
+    fireRate: 18,
     shootPower: 15,
     recoil: 1.0,
     reloadTime: 70,
@@ -226,7 +224,7 @@ export const GUNS: readonly Gun[] = [
     maxAmmo: 25,
     fireRate: 3,
     shootPower: 12,
-    recoil: 0.4,
+    recoil: 0.25,
     reloadTime: 50,
   }),
 ];
@@ -235,47 +233,38 @@ function sanitizeObjectiveId(input: string) {
   return input.replace(/[^a-zA-Z0-9_]/g, "_"); // replaces any non-alphanumeric/underscore chars with underscore
 }
 
-function objectiveIdForGun(gun: Gun) {
-  return `absolute_guns_ammo_${sanitizeObjectiveId(gun.id)}`;
-}
-
-function getAmmoObjectiveForGun(gun: Gun) {
-  const id = objectiveIdForGun(gun);
-  let obj = world.scoreboard.getObjective(id);
-  if (!obj) obj = world.scoreboard.addObjective(id, `Ammo: ${gun.name}`);
-  return obj;
+function dynamicPropertyKeyForGun(gun: Gun) {
+  return `abg_ammo_${sanitizeObjectiveId(gun.id)}`;
 }
 
 export function ensurePlayerAmmoInitialized(player: Player, gun: Gun): void {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    const score = obj.getScore(player);
-    if (score === undefined) obj.setScore(player, gun.maxAmmo);
-  } catch (e) {
-    try {
-      obj.setScore(player, gun.maxAmmo);
-    } catch {}
-  }
+    const key = dynamicPropertyKeyForGun(gun);
+    const existing = player.getDynamicProperty(key);
+    if (existing === undefined || typeof existing !== "number") {
+      try {
+        player.setDynamicProperty(key, gun.maxAmmo);
+      } catch {}
+    }
+  } catch {}
 }
 
 export function getPlayerAmmo(player: Player, gun: Gun): number {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    const score = obj.getScore(player);
-    return score === undefined ? gun.maxAmmo : score;
-  } catch (e) {
-    // Scoreboard lookup failed; fall back to gun max ammo.
+    const key = dynamicPropertyKeyForGun(gun);
+    const val = player.getDynamicProperty(key);
+    if (typeof val === "number") return val;
+    return gun.maxAmmo;
+  } catch {
     return gun.maxAmmo;
   }
 }
 
 export function setPlayerAmmo(player: Player, gun: Gun, amount: number): void {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    obj.setScore(player, amount);
-  } catch (e) {
-    // Ignore scoreboard write failures — caller will still continue.
-  }
+    const key = dynamicPropertyKeyForGun(gun);
+    player.setDynamicProperty(key, amount);
+  } catch {}
 }
 
 export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): void {
@@ -283,7 +272,7 @@ export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): void {
     const cur = getPlayerAmmo(player, gun);
     if (cur <= 0) return;
     setPlayerAmmo(player, gun, Math.max(0, cur - amount));
-  } catch (e) {}
+  } catch {}
 }
 
 export const playerFireCooldowns = new Map<string, number>(); // player.id -> ticks until next shot

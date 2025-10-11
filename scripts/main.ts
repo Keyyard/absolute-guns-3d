@@ -132,8 +132,6 @@ class GameController {
   private GameLoop() {
     this.tickId = system.runInterval(() => {
       for (const player of world.getAllPlayers()) {
-        updateActionBar(player);
-
         // Handle continuous shooting
         if (this.playerShooting.get(player.id)) {
           const gun = getHeldGun(player);
@@ -171,6 +169,11 @@ class GameController {
         }
       }
     }, 1);
+    const UILoopId = system.runInterval(() => {
+      for (const player of world.getAllPlayers()) {
+        updateActionBar(player);
+      }
+    }, 4);
   }
 }
 
