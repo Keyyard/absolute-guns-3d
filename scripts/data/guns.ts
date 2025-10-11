@@ -1,4 +1,4 @@
-import { Player, world } from "@minecraft/server";
+import { Player } from "@minecraft/server";
 import { Gun, FireMode } from "./types";
 import { createGun } from "./gunHelpers";
 
@@ -235,47 +235,38 @@ function sanitizeObjectiveId(input: string) {
   return input.replace(/[^a-zA-Z0-9_]/g, "_"); // replaces any non-alphanumeric/underscore chars with underscore
 }
 
-function objectiveIdForGun(gun: Gun) {
-  return `absolute_guns_ammo_${sanitizeObjectiveId(gun.id)}`;
-}
-
-function getAmmoObjectiveForGun(gun: Gun) {
-  const id = objectiveIdForGun(gun);
-  let obj = world.scoreboard.getObjective(id);
-  if (!obj) obj = world.scoreboard.addObjective(id, `Ammo: ${gun.name}`);
-  return obj;
+function dynamicPropertyKeyForGun(gun: Gun) {
+  return `abg_ammo_${sanitizeObjectiveId(gun.id)}`;
 }
 
 export function ensurePlayerAmmoInitialized(player: Player, gun: Gun): void {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    const score = obj.getScore(player);
-    if (score === undefined) obj.setScore(player, gun.maxAmmo);
-  } catch (e) {
-    try {
-      obj.setScore(player, gun.maxAmmo);
-    } catch {}
-  }
+    const key = dynamicPropertyKeyForGun(gun);
+    const existing = player.getDynamicProperty(key);
+    if (existing === undefined || typeof existing !== "number") {
+      try {
+        player.setDynamicProperty(key, gun.maxAmmo);
+      } catch {}
+    }
+  } catch {}
 }
 
 export function getPlayerAmmo(player: Player, gun: Gun): number {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    const score = obj.getScore(player);
-    return score === undefined ? gun.maxAmmo : score;
-  } catch (e) {
-    // Scoreboard lookup failed; fall back to gun max ammo.
+    const key = dynamicPropertyKeyForGun(gun);
+    const val = player.getDynamicProperty(key);
+    if (typeof val === "number") return val;
+    return gun.maxAmmo;
+  } catch {
     return gun.maxAmmo;
   }
 }
 
 export function setPlayerAmmo(player: Player, gun: Gun, amount: number): void {
-  const obj = getAmmoObjectiveForGun(gun);
   try {
-    obj.setScore(player, amount);
-  } catch (e) {
-    // Ignore scoreboard write failures — caller will still continue.
-  }
+    const key = dynamicPropertyKeyForGun(gun);
+    player.setDynamicProperty(key, amount);
+  } catch {}
 }
 
 export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): void {
@@ -283,7 +274,7 @@ export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): void {
     const cur = getPlayerAmmo(player, gun);
     if (cur <= 0) return;
     setPlayerAmmo(player, gun, Math.max(0, cur - amount));
-  } catch (e) {}
+  } catch {}
 }
 
 export const playerFireCooldowns = new Map<string, number>(); // player.id -> ticks until next shot
