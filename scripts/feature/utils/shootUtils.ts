@@ -91,7 +91,9 @@ export function fireBullet(player: Player, gun: Gun): void {
 
 export function fireVfx(player: Player, gun: Gun): void {
   try {
-    player.playSound("gun.shoot", { volume: 0.4, pitch: 1 });
+    const soundToPlay =
+      gun.shootSound && String(gun.shootSound).toLowerCase() !== "none" ? gun.shootSound : "gun.shoot";
+    player.playSound(soundToPlay, { volume: 0.4, pitch: 1 });
     player.playAnimation("animation.player.wields_gun");
     player.runCommand(`camerashake add @s ${gun.recoil} 0.1 rotational`);
   } catch {}
