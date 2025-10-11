@@ -19,7 +19,7 @@
 					"name": "stick",
 					"parent": "rightitem",
 					"pivot": [20.575, -25.4, -3],
-					"rotation": [107.9958, 52.65536, -32.84332]
+					"rotation": [85.4958, 52.65536, -32.84332]
 				},
 				{
 					"name": "stick2",
