@@ -4,26 +4,6 @@
 			"animation.terrorist.hurt1": {
 			"animation_length": 2.1,
 			"bones": {
-				"terry": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.125": {
-							"post": [-2.75, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"1.9": {
-							"post": [-1, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"2.1": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
-				},
 				"waist": {
 					"rotation": {
 						"0.0": {
@@ -39,31 +19,7 @@
 							"lerp_mode": "catmullrom"
 						},
 						"2": {
-							"post": [4.75, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"2.1": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						}
-					}
-				},
-				"head2": {
-					"rotation": {
-						"0.0": {
-							"post": [0, 0, 0],
-							"lerp_mode": "catmullrom"
-						},
-						"0.0833": {
-							"post": [20.88852, 16.41371, 6.15491],
-							"lerp_mode": "catmullrom"
-						},
-						"0.25": {
-							"post": [-10.81699, 14.19987, -3.86688],
-							"lerp_mode": "catmullrom"
-						},
-						"2": {
-							"post": [0, 12.5, 0],
+							"post": [-15, 6.50069, -2.67105],
 							"lerp_mode": "catmullrom"
 						},
 						"2.1": {
