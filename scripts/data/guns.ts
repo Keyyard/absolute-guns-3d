@@ -68,7 +68,7 @@ export const GUNS: readonly Gun[] = [
     fireRate: 10,
     shootPower: 25,
     recoil: 0.1,
-    reloadTime: 40,
+    reloadTime: 30,
     ammoTypeId: "absolute_guns:pistol_ammo",
     mode: FireMode.SEMI,
     shootSound: "gun.abgglock",
