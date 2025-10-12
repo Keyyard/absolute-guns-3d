@@ -60,7 +60,7 @@ class GameController {
       }
     } catch {}
     const messages = [
-      `<Keyyard> Hello, thank you for installing Absolute Guns!`,
+      `/title @a title hi`,
       `<Keyyard> This is a pre-release version, expect bugs and missing features.`,
       `<Keyyard> Join our Discord to request features or report bugs.`,
       `<Keyyard> Type this URL to your browser to get in: discord.gg/s2VfQr69uz`,
