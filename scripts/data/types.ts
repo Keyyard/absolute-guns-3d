@@ -19,7 +19,9 @@ export interface Gun {
   ammoTypeId: string;
   projectileTypeId: string;
   recoil: number; // camera shake
-  shootSound?: string; // optional sound identifier to play when firing; use 'none' to skip and play default
+  shootSound?: string;
+  reloadAnimation?: string;
+  drawAnimation?: string;
   uncertainty?: number; //accuracy
   mode?: FireMode; // default to semi for pistols, auto for rifles/smgs, shotgun for shotguns
 }

@@ -67,6 +67,8 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 40,
     ammoTypeId: "absolute_guns:pistol_ammo",
     mode: FireMode.SEMI,
+    reloadAnimation: "animation.abg3.reload",
+    drawAnimation: "animation.abg3.draw",
   }),
   createGun({
     id: "absolute_guns:glock_tactical",

@@ -10,6 +10,7 @@ import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
 
 class GameController {
   private playerShooting = new Map<string, boolean>();
+  private lastHeldGun = new Map<string, string | null>();
   private tickId?: number;
 
   constructor() {
@@ -43,6 +44,21 @@ class GameController {
   }
 
   private afterPlayerJoin(event: any) {
+    // Ensure we mark the player's current held gun so the draw animation isn't
+    // played automatically if they were already holding a gun before joining.
+    try {
+      const joinedPlayer = (event &&
+        (event.player ?? world.getAllPlayers().find((p) => p.id === event.playerId))) as any;
+      if (joinedPlayer) {
+        const held = getHeldGun(joinedPlayer as any);
+        this.lastHeldGun.set(joinedPlayer.id, held ? held.id : null);
+        if (held) {
+          try {
+            ensurePlayerGunInitialized(joinedPlayer as any, held);
+          } catch {}
+        }
+      }
+    } catch {}
     const messages = [
       `<Keyyard> Hello, thank you for installing Absolute Guns!`,
       `<Keyyard> This is a pre-release version, expect bugs and missing features.`,
@@ -93,11 +109,32 @@ class GameController {
     playerFireCooldowns.delete(playerId);
     playerReloadCooldowns.delete(playerId);
     this.playerShooting.delete(playerId);
+    this.lastHeldGun.delete(playerId);
   }
 
   private GameLoop() {
     this.tickId = system.runInterval(() => {
       for (const player of world.getAllPlayers()) {
+        // Detect when a player starts holding (or switches) a gun so we can play
+        // the gun draw animation and initialize any per-player state for that gun.
+        const currentlyHeld = getHeldGun(player);
+        const currentHeldId = currentlyHeld ? currentlyHeld.id : null;
+        const hadEntry = this.lastHeldGun.has(player.id);
+        const prevHeldId = hadEntry ? this.lastHeldGun.get(player.id) || null : null;
+        if (currentHeldId !== prevHeldId) {
+          if (currentlyHeld) {
+            // Initialize ammo / state for the newly-held gun
+            try {
+              ensurePlayerGunInitialized(player, currentlyHeld);
+            } catch {}
+            // Play draw animation (use configured drawAnimation or fallback)
+            try {
+              player.playAnimation(currentlyHeld.drawAnimation ?? "animation.abg3.draw");
+            } catch {}
+          }
+          this.lastHeldGun.set(player.id, currentHeldId);
+        }
+
         // Handle continuous shooting
         if (this.playerShooting.get(player.id)) {
           const gun = getHeldGun(player);

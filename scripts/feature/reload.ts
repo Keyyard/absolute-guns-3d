@@ -12,7 +12,7 @@ export function startReload(player: Player, gun: Gun): boolean {
 
   // Start reload
   try {
-    player.playAnimation("animation.abg3.reload");
+    player.playAnimation(gun.reloadAnimation ?? "animation.abg3.reload");
   } catch {}
   playerReloadCooldowns.set(player.id, gun.reloadTime);
   return true;
