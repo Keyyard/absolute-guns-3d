@@ -7,8 +7,8 @@ import { fireVfx, fireBullet } from "./utils/shootUtils";
 import { setShootMessage } from "./ui";
 
 export function shoot(player: Player, gun: Gun): void {
-  decreasePlayerAmmo(player, gun);
-
+  const decreaseAmmo = decreasePlayerAmmo(player, gun);
+  if (!decreaseAmmo) return;
   fireVfx(player, gun);
   fireBullet(player, gun);
   setShootMessage(player);

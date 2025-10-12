@@ -267,12 +267,15 @@ export function setPlayerAmmo(player: Player, gun: Gun, amount: number): void {
   } catch {}
 }
 
-export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): void {
+export function decreasePlayerAmmo(player: Player, gun: Gun, amount = 1): boolean {
   try {
     const cur = getPlayerAmmo(player, gun);
-    if (cur <= 0) return;
+    if (cur <= 0) return false;
     setPlayerAmmo(player, gun, Math.max(0, cur - amount));
-  } catch {}
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export const playerFireCooldowns = new Map<string, number>(); // player.id -> ticks until next shot
