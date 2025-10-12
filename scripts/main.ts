@@ -125,7 +125,7 @@ class GameController {
       for (const player of world.getAllPlayers()) {
         updateActionBar(player);
       }
-    }, 1);
+    }, 4);
   }
 }
 
