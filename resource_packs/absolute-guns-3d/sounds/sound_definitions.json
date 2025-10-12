@@ -3,7 +3,7 @@
   "sound_definitions": {
     "gun.shoot": { "sounds": ["sounds/gunshot"] },
     "gun.gun": { "sounds": ["sounds/guns/gun"] },
-    "gun.mgl": { "sounds": ["sounds/guns/mgl"] },
+    "gun.abgmgl": { "sounds": ["sounds/guns/mgl"] },
     "gun.abgmp5": { "sounds": ["sounds/guns/abg_mp5"] },
     "gun.abgmp40": { "sounds": ["sounds/guns/abg_mp40"] },
     "gun.abgmg42": { "sounds": ["sounds/guns/abg_mg42"] },
@@ -16,6 +16,6 @@
     "gun.abgm4": { "sounds": ["sounds/guns/abg_m4"] },
     "gun.abgglock": { "sounds": ["sounds/guns/abg_glock"] },
     "gun.abgsilenced": { "sounds": ["sounds/guns/abg_silenced"] },
-    "gun.flamethrower": { "sounds": ["sounds/guns/flamethrower"] }
+    "gun.abgflamethrower": { "sounds": ["sounds/guns/flamethrower"] }
   }
 }
