@@ -66,7 +66,7 @@ export const GUNS: readonly Gun[] = [
     type: "pistol",
     maxAmmo: 17,
     fireRate: 10,
-    shootPower: 12,
+    shootPower: 25,
     recoil: 0.1,
     reloadTime: 40,
     ammoTypeId: "absolute_guns:pistol_ammo",
