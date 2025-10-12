@@ -101,8 +101,10 @@ class GameController {
         // Handle continuous shooting
         if (this.playerShooting.get(player.id)) {
           const gun = getHeldGun(player);
-          const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
-          if (gun) {
+          if (!gun) {
+            this.playerShooting.set(player.id, false);
+          } else {
+            const reloadCooldown = playerReloadCooldowns.get(player.id) || 0;
             const currentAmmo = getCurrentAmmo(player, gun);
             if (currentAmmo > 0 && reloadCooldown === 0 && this.playerShooting.get(player.id) === true) {
               if ((playerFireCooldowns.get(player.id) || 0) === 0) {
