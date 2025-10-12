@@ -252,7 +252,7 @@
 				}
 			}
     },
-    		"animation.deagle.draw.tpp": {
+    	"animation.player.draw": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -355,7 +355,7 @@
 						"1.0": [0, 0, 0]
 					}
 				},
-				"degel": {
+				"rightitem": {
 					"rotation": {
 						"0.0": [370.17, -1.29, -16.95],
 						"0.0833": [370.17, -1.29, -16.95],
