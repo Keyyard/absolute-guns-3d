@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
     	"animation.player.reload": {
-			"animation_length": 0.9167,
+			"animation_length": 1.5,
 			"bones": {
 				"terry": {
 					"rotation": {
@@ -136,7 +136,7 @@
 							"post": [7.31767, 2.84607, 6.76868],
 							"lerp_mode": "catmullrom"
 						},
-						"0.9167": [0, 0, 0]
+						"1.5": [0, 0, 0]
 					},
 					"position": {
 						"0.0": {
@@ -155,7 +155,7 @@
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						},
-						"0.9167": [0, 0, 0]
+						"1.5": [0, 0, 0]
 					}
 				},
 				"leftLeg": {
@@ -355,7 +355,7 @@
 						"1.0": [0, 0, 0]
 					}
 				},
-				"rightitem": {
+				"degel": {
 					"rotation": {
 						"0.0": [370.17, -1.29, -16.95],
 						"0.0833": [370.17, -1.29, -16.95],
