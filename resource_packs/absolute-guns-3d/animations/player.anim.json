@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
 			"animation.terrorist.hurt1": {
-			"animation_length": 2.1,
+			"animation_length": 2.3,
 			"bones": {
 				"waist": {
 					"rotation": {
@@ -18,11 +18,11 @@
 							"post": [-12.21749, 6.50069, -2.67105],
 							"lerp_mode": "catmullrom"
 						},
-						"1.9": {
+						"1.7": {
 							"post": [-15, 6.50069, -2.67105],
 							"lerp_mode": "catmullrom"
 						},
-						"2.1": {
+						"2.3": {
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
