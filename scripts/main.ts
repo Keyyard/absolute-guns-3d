@@ -1,12 +1,10 @@
-import { system, world, ItemStack, Player } from "@minecraft/server";
+import { system, world } from "@minecraft/server";
 import { GUNS, playerFireCooldowns, playerReloadCooldowns } from "./data/guns";
+import { completeReload, startReload } from "./feature/reload";
 import { shoot } from "./feature/shoot";
-import { startReload, completeReload } from "./feature/reload";
-import { updateActionBar, setReloadingMessage, setReloadedMessage, setOutOfAmmoMessage } from "./feature/ui";
-import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./feature/utils/gunUtils";
-import { Vector3Utils } from "@minecraft/math";
-import { getHeldItem } from "./feature/utils/inventoryUtils";
-import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
+import { throwTacticalKnife } from "./feature/throwingKnife";
+import { setOutOfAmmoMessage, setReloadedMessage, setReloadingMessage, updateActionBar } from "./feature/ui";
+import { ensurePlayerGunInitialized, getCurrentAmmo, getHeldGun } from "./feature/utils/gunUtils";
 
 class GameController {
   private playerShooting = new Map<string, boolean>();
@@ -27,19 +25,7 @@ class GameController {
 
   private afterItemUse(event: any) {
     const { source: player, itemStack } = event;
-    if (itemStack.typeId !== "absolute_guns:tactical_knife_scope") return;
-    const throwKnife = player.dimension.spawnEntity(
-      "absolute_guns_bullet:tactical_knife_scope2",
-      Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5))
-    );
-    if (!throwKnife) return;
-    const proj = throwKnife.getComponent("minecraft:projectile");
-    if (proj) {
-      proj.shoot(Vector3Utils.scale(player.getViewDirection(), 2));
-    }
-    // Update durability for the held item (uses minecraft:durability component).
-    const held = getHeldItem(player);
-    if (held) applyDurabilityDamage(player, held);
+    throwTacticalKnife(player, itemStack);
   }
 
   private afterPlayerJoin(event: any) {
