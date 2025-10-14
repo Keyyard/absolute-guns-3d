@@ -15,9 +15,10 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.3,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+    projectileTypeId: "absolute_guns_bullet:gun",
     // Example weapon stats for the AK47 used by the new damage system
     stats: {
-      damage: 6,
+      damage: 10,
       damageDropOff: 0.04,
       armorPenetration: 0.2,
       maxRange: 90,
@@ -34,11 +35,11 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.15,
     reloadTime: 60,
     shootSound: "gun.abgak47",
-        stats: {
+    stats: {
       damage: 6.5,
       damageDropOff: 0.04,
       armorPenetration: 0.2,
-      maxRange: 90,
+      maxRange: 3,
       knockback: { x: 0.5, y: 0.5 },
     },
   }),
@@ -52,7 +53,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.4,
     reloadTime: 60,
     shootSound: "gun.abgak47",
-        stats: {
+    stats: {
       damage: 5.5,
       damageDropOff: 0.04,
       armorPenetration: 0.2,
@@ -70,7 +71,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.1,
     reloadTime: 50,
     shootSound: "gun.abgbizon",
-      stats: {
+    stats: {
       damage: 5,
       damageDropOff: 0.05,
       armorPenetration: 0.2,
@@ -88,7 +89,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.05,
     reloadTime: 80,
     shootSound: "gun.abgflamethrower",
-        stats: {
+    stats: {
       damage: 1,
       damageDropOff: 0.0,
       armorPenetration: 0.2,
@@ -110,7 +111,7 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgglock",
     reloadAnimation: "animation.abg3.reload",
     drawAnimation: "animation.abg3.draw",
-      stats: {
+    stats: {
       damage: 3,
       damageDropOff: 0.06,
       armorPenetration: 0.2,
