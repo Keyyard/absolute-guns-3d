@@ -90,7 +90,7 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgflamethrower",
         stats: {
       damage: 1,
-      damageDropOff: 0.04,
+      damageDropOff: 0.0,
       armorPenetration: 0.2,
       maxRange: 10,
       knockback: { x: 0.5, y: 0.5 },

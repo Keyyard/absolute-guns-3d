@@ -55,20 +55,8 @@
         "width": 0.1,
         "height": 0.1
       },
-      "minecraft:explode": {
-        "fuseLength": 1,
-        "fuseLit": true,
-        "power": 0,
-        "fire_affected_by_griefing": true,
-        "destroy_affected_by_griefing": true
-      },
       "minecraft:projectile": {
         "on_hit": {
-          "impact_damage": {
-            "damage": [5, 5],
-            "knockback": false,
-            "catch_fire": true
-          },
           "remove_on_hit": {},
           "stick_in_ground": {
             "shake_time": 0
