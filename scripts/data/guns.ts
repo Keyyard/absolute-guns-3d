@@ -11,7 +11,7 @@ export const GUNS: readonly Gun[] = [
     type: "rifle",
     maxAmmo: 30,
     fireRate: 3,
-    shootPower: 13,
+    shootPower: 999,
     recoil: 0.3,
     reloadTime: 60,
     shootSound: "gun.abgak47",
