@@ -15,7 +15,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.3,
     reloadTime: 60,
     shootSound: "gun.abgak47",
-    projectileTypeId: "absolute_guns_bullet:gun",
+    projectileTypeId: "absolute_guns_bullet:ak47",
     // Example weapon stats for the AK47 used by the new damage system
     stats: {
       damage: 10,
@@ -35,6 +35,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.15,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+    projectileTypeId: "absolute_guns_bullet:ak47_gold",
     stats: {
       damage: 6.5,
       damageDropOff: 0.04,
@@ -53,6 +54,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.4,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+    projectileTypeId: "absolute_guns_bullet:ak74u",
     stats: {
       damage: 5.5,
       damageDropOff: 0.04,
@@ -71,6 +73,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.1,
     reloadTime: 50,
     shootSound: "gun.abgbizon",
+    projectileTypeId: "absolute_guns_bullet:bizon",
     stats: {
       damage: 5,
       damageDropOff: 0.05,
@@ -89,6 +92,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.05,
     reloadTime: 80,
     shootSound: "gun.abgflamethrower",
+    projectileTypeId: "absolute_guns_bullet:flame",
     stats: {
       damage: 1,
       damageDropOff: 0.0,
@@ -111,6 +115,7 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgglock",
     reloadAnimation: "animation.abg3.reload",
     drawAnimation: "animation.abg3.draw",
+    projectileTypeId: "absolute_guns_bullet:glock",
     stats: {
       damage: 3,
       damageDropOff: 0.06,
@@ -130,6 +135,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 40,
     shootSound: "gun.abgsilenced",
     ammoTypeId: "absolute_guns:pistol_ammo",
+    projectileTypeId: "absolute_guns_bullet:glock_tactical",
     mode: FireMode.SEMI,
   }),
   createGun({
@@ -142,6 +148,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 1.0,
     reloadTime: 70,
     shootSound: "gun.abgm1014",
+    projectileTypeId: "absolute_guns_bullet:m1014",
     mode: FireMode.SHOTGUN,
   }),
   createGun({
@@ -154,6 +161,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.2,
     reloadTime: 60,
     shootSound: "gun.abgm4",
+    projectileTypeId: "absolute_guns_bullet:m16",
   }),
   createGun({
     id: "absolute_guns:m3",
@@ -165,6 +173,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 1.0,
     reloadTime: 70,
     shootSound: "gun.abgm3",
+    projectileTypeId: "absolute_guns_bullet:m3",
     mode: FireMode.SHOTGUN,
   }),
   createGun({
@@ -177,6 +186,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.21,
     reloadTime: 60,
     shootSound: "gun.abgm4",
+    projectileTypeId: "absolute_guns_bullet:m4",
   }),
   createGun({
     id: "absolute_guns:mg42",
@@ -188,6 +198,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.1,
     reloadTime: 120,
     shootSound: "gun.abgmg42",
+    projectileTypeId: "absolute_guns_bullet:mg42",
   }),
   createGun({
     id: "absolute_guns:mgl",
@@ -212,6 +223,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.3,
     reloadTime: 50,
     shootSound: "gun.abgmp40",
+    projectileTypeId: "absolute_guns_bullet:mp40",
   }),
   createGun({
     id: "absolute_guns:mp5",
@@ -223,6 +235,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.35,
     reloadTime: 50,
     shootSound: "gun.abgmp5",
+    projectileTypeId: "absolute_guns_bullet:mp5",
   }),
   createGun({
     id: "absolute_guns:mp5k",
@@ -234,6 +247,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.4,
     reloadTime: 40,
     shootSound: "gun.abgmp5",
+    projectileTypeId: "absolute_guns_bullet:mp5k",
   }),
   createGun({
     id: "absolute_guns:pkm",
@@ -245,6 +259,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.3,
     reloadTime: 100,
     shootSound: "gun.abgak47",
+    projectileTypeId: "absolute_guns_bullet:pkm",
   }),
   createGun({
     id: "absolute_guns:rpg7",
@@ -269,6 +284,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.2,
     reloadTime: 80,
     shootSound: "gun.abgak47",
+    projectileTypeId: "absolute_guns_bullet:rpk",
   }),
   createGun({
     id: "absolute_guns:spas",
@@ -281,6 +297,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 70,
     mode: FireMode.SHOTGUN,
     shootSound: "gun.abgm1014",
+    projectileTypeId: "absolute_guns_bullet:spas",
   }),
   createGun({
     id: "absolute_guns:ump45",
@@ -292,6 +309,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.25,
     reloadTime: 50,
     shootSound: "gun.abgump45",
+    projectileTypeId: "absolute_guns_bullet:ump45",
   }),
 ];
 
