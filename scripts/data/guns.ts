@@ -18,7 +18,7 @@ export const GUNS: readonly Gun[] = [
     // Example weapon stats for the AK47 used by the new damage system
     stats: {
       damage: 6,
-      damageDropOff: 0.1,
+      damageDropOff: 0.04,
       armorPenetration: 0.2,
       maxRange: 90,
       knockback: { x: 0.5, y: 0.5 },
