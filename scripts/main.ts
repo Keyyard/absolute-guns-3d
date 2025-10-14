@@ -1,4 +1,4 @@
-import { system, world, ItemStack, Player } from "@minecraft/server";
+import { system, world, ItemStack, Player, EntityDamageCause } from "@minecraft/server";
 import { GUNS, playerFireCooldowns, playerReloadCooldowns } from "./data/guns";
 import { shoot } from "./feature/shoot";
 import { startReload, completeReload } from "./feature/reload";
@@ -7,6 +7,8 @@ import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./featur
 import { Vector3Utils } from "@minecraft/math";
 import { getHeldItem } from "./feature/utils/inventoryUtils";
 import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
+import { throwTacticalKnife } from "./feature/throwingKnife";
+import { DamageHandler } from "./feature/damageHandler";
 
 class GameController {
   private playerShooting = new Map<string, boolean>();
@@ -24,23 +26,70 @@ class GameController {
     world.afterEvents.playerLeave.subscribe((event) => this.afterPlayerLeave(event));
     world.afterEvents.playerJoin.subscribe((event) => this.afterPlayerJoin(event));
     world.afterEvents.itemUse.subscribe((event) => this.afterItemUse(event));
+    world.afterEvents.projectileHitEntity.subscribe((event) => this.afterProjectileHitEntity(event));
   }
 
+  private afterProjectileHitEntity(event: any) {
+    try {
+      const projectile = event?.projectile ?? event?.projectileEntity;
+      const shooter = event?.source ?? event?.sourceEntity ?? null;
+      const hitInfo = typeof event?.getEntityHit === "function" ? event.getEntityHit() : undefined;
+      const hitEntity = hitInfo?.entity ?? event?.entity;
+      if (!hitEntity || !projectile) return;
+
+      // Identify the weapon that spawned this projectile (we tag bullets on
+      // spawn). If no tag is found, fall back to matching projectile type.
+      let weaponId: string | undefined;
+      try {
+        const tags = typeof projectile.getTags === "function" ? projectile.getTags() : [];
+        for (const t of tags || []) {
+          if (typeof t === "string" && t.startsWith("abg_weapon:")) {
+            weaponId = t.split(":")[1];
+            break;
+          }
+        }
+      } catch {}
+
+      let gun = weaponId ? GUNS.find((g) => g.id === weaponId) : undefined;
+      if (!gun) gun = GUNS.find((g) => g.projectileTypeId === projectile.typeId);
+      if (!gun) return;
+
+      const stats = (gun as any).stats;
+      if (!stats) return; // advanced system only for guns that expose stats
+
+      const bullet: any = projectile;
+      if (!bullet.spawnLocation) bullet.spawnLocation = bullet.location;
+      const damage = DamageHandler.getDamages(stats, hitEntity, bullet);
+      if (!damage || damage <= 0) return;
+
+      try {
+        hitEntity.applyDamage(damage, {
+          cause: EntityDamageCause.override,
+          damagingProjectile: projectile,
+          damagingEntity: shooter,
+        });
+        world.sendMessage(`Dealt ${damage} damage to ${hitEntity.id}`);
+      } catch {}
+
+      // Apply knockback adjusted by armor knockback resistance
+      try {
+        const direction = shooter ? shooter.getViewDirection() : { x: 0, y: 0, z: 0 };
+        const knockbackRes = DamageHandler.getKnockbackResistance(hitEntity);
+        const kbX = (stats.knockback?.x || 0) * knockbackRes;
+        const kbY = (stats.knockback?.y || 0) * knockbackRes;
+        if (typeof hitEntity.applyKnockback === "function") {
+          hitEntity.applyKnockback(direction.x, direction.z, kbX, kbY);
+        }
+      } catch {}
+
+      try {
+        DamageHandler.handleArmorDurability(hitEntity, damage);
+      } catch {}
+    } catch {}
+  }
   private afterItemUse(event: any) {
     const { source: player, itemStack } = event;
-    if (itemStack.typeId !== "absolute_guns:tactical_knife_scope") return;
-    const throwKnife = player.dimension.spawnEntity(
-      "absolute_guns_bullet:tactical_knife_scope2",
-      Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5))
-    );
-    if (!throwKnife) return;
-    const proj = throwKnife.getComponent("minecraft:projectile");
-    if (proj) {
-      proj.shoot(Vector3Utils.scale(player.getViewDirection(), 2));
-    }
-    // Update durability for the held item (uses minecraft:durability component).
-    const held = getHeldItem(player);
-    if (held) applyDurabilityDamage(player, held);
+    throwTacticalKnife(player as Player, itemStack as ItemStack);
   }
 
   private afterPlayerJoin(event: any) {

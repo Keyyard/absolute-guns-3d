@@ -15,6 +15,14 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.3,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+    // Example weapon stats for the AK47 used by the new damage system
+    stats: {
+      damage: 2,
+      damageDropOff: 1,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:ak47_gold",
@@ -25,7 +33,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.15,
     reloadTime: 60,
-    shootSound: "gun.abgak47"
+    shootSound: "gun.abgak47",
   }),
   createGun({
     id: "absolute_guns:ak74u",
@@ -36,7 +44,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.4,
     reloadTime: 60,
-    shootSound: "gun.abgak47"
+    shootSound: "gun.abgak47",
   }),
   createGun({
     id: "absolute_guns:bizon",
@@ -47,7 +55,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 12,
     recoil: 0.1,
     reloadTime: 50,
-    shootSound: "gun.abgbizon"
+    shootSound: "gun.abgbizon",
   }),
   createGun({
     id: "absolute_guns:flamethrower",
@@ -58,7 +66,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 4,
     recoil: 0.05,
     reloadTime: 80,
-    shootSound: "gun.abgflamethrower"
+    shootSound: "gun.abgflamethrower",
   }),
   createGun({
     id: "absolute_guns:glock",
@@ -109,7 +117,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.2,
     reloadTime: 60,
-    shootSound: "gun.abgm4"
+    shootSound: "gun.abgm4",
   }),
   createGun({
     id: "absolute_guns:m3",
@@ -132,7 +140,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.21,
     reloadTime: 60,
-    shootSound: "gun.abgm4"
+    shootSound: "gun.abgm4",
   }),
   createGun({
     id: "absolute_guns:mg42",
@@ -143,7 +151,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.1,
     reloadTime: 120,
-    shootSound: "gun.abgmg42"
+    shootSound: "gun.abgmg42",
   }),
   createGun({
     id: "absolute_guns:mgl",
@@ -156,7 +164,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 90,
     ammoTypeId: "absolute_guns:mgl_ammo",
     projectileTypeId: "absolute_guns_bullet:mgl",
-    shootSound: "gun.abgmgl"
+    shootSound: "gun.abgmgl",
   }),
   createGun({
     id: "absolute_guns:mp40",
@@ -167,7 +175,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 12,
     recoil: 0.3,
     reloadTime: 50,
-    shootSound: "gun.abgmp40"
+    shootSound: "gun.abgmp40",
   }),
   createGun({
     id: "absolute_guns:mp5",
@@ -178,7 +186,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 12,
     recoil: 0.35,
     reloadTime: 50,
-    shootSound: "gun.abgmp5"
+    shootSound: "gun.abgmp5",
   }),
   createGun({
     id: "absolute_guns:mp5k",
@@ -189,7 +197,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 12,
     recoil: 0.4,
     reloadTime: 40,
-    shootSound: "gun.abgmp5"
+    shootSound: "gun.abgmp5",
   }),
   createGun({
     id: "absolute_guns:pkm",
@@ -200,7 +208,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.3,
     reloadTime: 100,
-    shootSound: "gun.abgak47"
+    shootSound: "gun.abgak47",
   }),
   createGun({
     id: "absolute_guns:rpg7",
@@ -213,7 +221,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 100,
     ammoTypeId: "absolute_guns:rpg7_ammo",
     projectileTypeId: "absolute_guns_bullet:rpg7",
-    shootSound: "gun.abgrpg7"
+    shootSound: "gun.abgrpg7",
   }),
   createGun({
     id: "absolute_guns:rpk",
@@ -224,7 +232,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 13,
     recoil: 0.2,
     reloadTime: 80,
-    shootSound: "gun.abgak47"
+    shootSound: "gun.abgak47",
   }),
   createGun({
     id: "absolute_guns:spas",
@@ -236,7 +244,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 1.0,
     reloadTime: 70,
     mode: FireMode.SHOTGUN,
-    shootSound: "gun.abgm1014"
+    shootSound: "gun.abgm1014",
   }),
   createGun({
     id: "absolute_guns:ump45",
@@ -247,7 +255,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 12,
     recoil: 0.25,
     reloadTime: 50,
-    shootSound: "gun.abgump45"
+    shootSound: "gun.abgump45",
   }),
 ];
 

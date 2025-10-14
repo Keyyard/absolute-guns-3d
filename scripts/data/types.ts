@@ -22,6 +22,14 @@ export interface Gun {
   shootSound?: string;
   reloadAnimation?: string;
   drawAnimation?: string;
+  /** Optional weapon statistics used by the projectile damage system (damage, dropoff, penetration, range, knockback). */
+  stats?: {
+    damage: number;
+    damageDropOff: number;
+    armorPenetration?: number;
+    maxRange?: number;
+    knockback?: { x: number; y: number };
+  };
   uncertainty?: number; //accuracy
   mode?: FireMode; // default to semi for pistols, auto for rifles/smgs, shotgun for shotguns
 }

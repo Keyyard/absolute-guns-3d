@@ -67,6 +67,14 @@ export function fireBullet(player: Player, gun: Gun): void {
 
       const pellet = player.dimension.spawnEntity(gun.projectileTypeId, spawnLoc);
       if (!pellet) continue;
+      // mark the pellet with its originating weapon so hit handlers can identify
+      // which gun fired it (projectile types are often shared between guns).
+      try {
+        pellet.addTag(`abg_weapon:${gun.id}`);
+      } catch {}
+      try {
+        (pellet as any).spawnLocation = spawnLoc;
+      } catch {}
       const proj = pellet.getComponent("minecraft:projectile");
       if (proj) {
         proj.shoot(Vector3Utils.scale(dir, gun.shootPower * 0.95), { uncertainty: gun.uncertainty || 0 });
@@ -79,6 +87,12 @@ export function fireBullet(player: Player, gun: Gun): void {
   // Default single projectile behavior
   const bullet = player.dimension.spawnEntity(gun.projectileTypeId, spawnLoc);
   if (!bullet) return;
+  try {
+    bullet.addTag(`abg_weapon:${gun.id}`);
+  } catch {}
+  try {
+    (bullet as any).spawnLocation = spawnLoc;
+  } catch {}
   const projectileComponent = bullet.getComponent("minecraft:projectile");
   if (projectileComponent) {
     // Shoot towards player's view direction
@@ -91,7 +105,9 @@ export function fireBullet(player: Player, gun: Gun): void {
 
 export function fireVfx(player: Player, gun: Gun): void {
   try {
-    player.playSound(gun.shootSound ? gun.shootSound : "gun.shoot", { volume: 4, pitch: 1 });
+    const soundToPlay =
+      gun.shootSound && String(gun.shootSound).toLowerCase() !== "none" ? gun.shootSound : "gun.shoot";
+    player.playSound(soundToPlay, { volume: 4, pitch: 1 });
     player.playAnimation("animation.recoil.generic");
     player.runCommand(`camerashake add @s ${gun.recoil} 0.1 rotational`);
   } catch {}
