@@ -17,8 +17,8 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgak47",
     // Example weapon stats for the AK47 used by the new damage system
     stats: {
-      damage: 2,
-      damageDropOff: 1,
+      damage: 6,
+      damageDropOff: 0.0,
       armorPenetration: 0.2,
       maxRange: 90,
       knockback: { x: 0.5, y: 0.5 },
