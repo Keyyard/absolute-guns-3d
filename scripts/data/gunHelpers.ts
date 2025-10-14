@@ -41,7 +41,7 @@ export function createGun(input: GunInput): Gun {
     ammoTypeId ??
     (rest.type === "special"
       ? rest.id === "absolute_guns:flamethrower"
-        ? "minecraft:slime_ball"
+        ? "minecraft:blaze_powder"
         : rest.id === "absolute_guns:rpg7"
         ? "absolute_guns:rpg7_ammo"
         : rest.id === "absolute_guns:mgl"
