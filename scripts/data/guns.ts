@@ -34,6 +34,13 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.15,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+        stats: {
+      damage: 6.5,
+      damageDropOff: 0.04,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:ak74u",
@@ -45,6 +52,13 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.4,
     reloadTime: 60,
     shootSound: "gun.abgak47",
+        stats: {
+      damage: 5.5,
+      damageDropOff: 0.04,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:bizon",
@@ -56,6 +70,13 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.1,
     reloadTime: 50,
     shootSound: "gun.abgbizon",
+      stats: {
+      damage: 5,
+      damageDropOff: 0.05,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:flamethrower",
@@ -67,6 +88,13 @@ export const GUNS: readonly Gun[] = [
     recoil: 0.05,
     reloadTime: 80,
     shootSound: "gun.abgflamethrower",
+        stats: {
+      damage: 1,
+      damageDropOff: 0.04,
+      armorPenetration: 0.2,
+      maxRange: 10,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:glock",
@@ -82,6 +110,13 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgglock",
     reloadAnimation: "animation.abg3.reload",
     drawAnimation: "animation.abg3.draw",
+      stats: {
+      damage: 3,
+      damageDropOff: 0.06,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:glock_tactical",
