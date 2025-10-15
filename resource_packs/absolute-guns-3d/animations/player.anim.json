@@ -156,6 +156,7 @@
 		},
     	"animation.abg3.reload": {
 			"animation_length": 1.5,
+			"anim_time_update": "query.anim_time + query.delta_time * 2",
 			"bones": {
 				"waist": {
 					"rotation": {
