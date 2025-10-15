@@ -95,21 +95,14 @@
 				},
 				"rightArm": {
 					"rotation": {
-						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.125": ["-5.00954*variable.is_first_person", "4.99523*variable.is_first_person", "-0.21865*variable.is_first_person"],
-						"0.25": ["5.23*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.4167": ["4.0806*variable.is_first_person", "-2.59485*variable.is_first_person", "-0.54533*variable.is_first_person"],
-						"0.5833": ["-2.26425*variable.is_first_person", "-2.49805*variable.is_first_person", "-0.13771*variable.is_first_person"],
-						"0.7083": ["-3.6077*variable.is_first_person", "0*variable.is_first_person", "-0.2662*variable.is_first_person"],
-						"0.8333": ["-2.5*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+						"0.04": ["-70-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0],
+						"0.08": ["-72.5-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0],
+						"0.16": ["-70-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0]
 					},
 					"position": {
-						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
-						"0.2917": ["0*variable.is_first_person", "0.3*variable.is_first_person", "0.5*variable.is_first_person"],
-						"0.4583": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
-						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"]
+						"0.0": [0, 0, 0],
+						"0.04": [0, 0, 1.5],
+						"0.12": [0, 0, 0]
 					}
 				},
 				"root": {
