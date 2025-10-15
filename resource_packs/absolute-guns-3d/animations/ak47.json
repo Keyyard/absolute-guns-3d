@@ -29,28 +29,17 @@
 			"bones": {
 				"waist": {
 					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.0417": ["variable.is_first_person ? -27.5 : -12", "variable.is_first_person ? 5.75 : 1", "variable.is_first_person ? -2.5 : -0.26"],
-						"0.0833": [-20, 5.75, -5],
-						"0.125": [-10.75, 3.75, -7.5],
-						"0.1667": [-6.84, 3.05, -6.52],
-						"0.25": [3.36, 1.31, -2.94],
-						"0.3333": [10, 0, 0],
-						"0.4167": [8.57, -0.28, 0.56],
-						"0.5": [3.73, -0.14, 0.28],
-						"0.5833": [0, 0, 0]
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*17.5", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*-2.61", "variable.is_third_person*17.05", "variable.is_third_person*-1.8"],
+						"0.125": ["variable.is_third_person*-2.86", "variable.is_third_person*17.01", "variable.is_third_person*-1.98"],
+						"0.1667": ["variable.is_third_person*-2.38", "variable.is_third_person*17.1", "variable.is_third_person*-1.63"],
+						"0.25": ["variable.is_third_person*-0.92", "variable.is_third_person*17.35", "variable.is_third_person*-0.61"],
+						"0.3333": ["variable.is_third_person*0.15", "variable.is_third_person*17.52", "variable.is_third_person*0.08"]
 					},
 					"position": {
-						"0.0": [0, 0, 0],
-						"0.0417": ["variable.is_first_person ? -0.4 : 0", "variable.is_first_person ? -1 : 0", "variable.is_first_person ? -6.4 : 0"],
-						"0.0833": ["variable.is_first_person ? -0.15 : 0", "variable.is_first_person ? 1.06 : 0", "variable.is_first_person ? -4.47 : 0"],
-						"0.125": ["variable.is_first_person ? -0.15 : 0", "variable.is_first_person ? 1.89 : 0", "variable.is_first_person ? -1.91 : 0"],
-						"0.1667": ["variable.is_first_person ? -0.3 : 0", "variable.is_first_person ? 1.66 : 0", "variable.is_first_person ? -1.46 : 0"],
-						"0.25": ["variable.is_first_person ? -0.75 : 0", "variable.is_first_person ? 0.75 : 0", "variable.is_first_person ? -0.6 : 0"],
-						"0.3333": ["variable.is_first_person ? -1 : 0", 0, 0],
-						"0.4167": ["variable.is_first_person ? -0.77 : 0", "variable.is_first_person ? -0.14 : 0", "variable.is_first_person ? 0.14 : 0"],
-						"0.5": [-0.33, -0.07, 0.07],
-						"0.5833": [0, 0, 0]
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*2"],
+						"0.125": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*2.01"],
+						"0.2917": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*2.03"]
 					}
 				},
 				"shell": {
