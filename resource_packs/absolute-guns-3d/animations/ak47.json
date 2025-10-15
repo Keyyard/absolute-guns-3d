@@ -95,13 +95,13 @@
 				},
 				"rightArm": {
 					"rotation": {
-						"0.04": ["-70-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0],
-						"0.08": ["-72.5-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0],
-						"0.16": ["-70-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation", 0]
+						"0.04": ["-70-20*q.is_sneaking+q.target_x_rotation*!variable.is_first_person", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.08": ["-72.5-20*q.is_sneaking+q.target_x_rotation*!variable.is_first_person", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.16": ["-70-20*q.is_sneaking+q.target_x_rotation*!variable.is_first_person", "q.target_y_rotation*!variable.is_first_person", 0]
 					},
 					"position": {
 						"0.0": [0, 0, 0],
-						"0.04": [0, 0, 1.5],
+						"0.04": [0, 0, "1.5*!variable.is_first_person"],
 						"0.12": [0, 0, 0]
 					}
 				},
