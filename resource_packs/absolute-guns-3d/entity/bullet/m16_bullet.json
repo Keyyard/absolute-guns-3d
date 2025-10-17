@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "absolute_guns_bullet:m16",
+      "materials": {
+        "default": "iron_golem"
+      },
+      "textures": {
+        "default": "textures/ammo"
+      },
+      "geometry": {
+        "default": "geometry.bullet_old"
+      },
+      "scripts": {
+        "animate": [
+          "particles",
+          "face"
+        ]
+      },
+      "animations": {
+        "particles": "controller.animation.abg_particles",
+        "face": "animation.abg_tracer"
+      },
+      "particle_effects": {
+        "tracer": "abg:laser"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}
