@@ -34,6 +34,7 @@ item.absolute_guns:mgl_ammo.name=MGL Ammo
 item.absolute_guns:mgl_bullet.name=MGL Shell
 
 absolute_guns:itemGroup.name.rifles=Rifles
+absolute_guns:itemGroup.name.machineguns=Machine Guns
 absolute_guns:itemGroup.name.smgs=SMGs
 absolute_guns:itemGroup.name.shotguns=Shotguns
 absolute_guns:itemGroup.name.specials=Specials

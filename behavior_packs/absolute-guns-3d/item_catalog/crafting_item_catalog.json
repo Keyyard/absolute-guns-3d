@@ -5,6 +5,17 @@
       {
         "category_name": "equipment",
         "groups": [
+                    {
+            "group_identifier": {
+              "icon": "absolute_guns:rpk",
+              "name": "absolute_guns:itemGroup.name.machineguns"
+            },
+            "items": [
+              "absolute_guns:mg42",
+              "absolute_guns:pkm",
+              "absolute_guns:rpk"
+            ]
+          },
           {
             "group_identifier": {
               "icon": "absolute_guns:ak47",
@@ -15,10 +26,7 @@
               "absolute_guns:ak47_gold",
               "absolute_guns:ak74u",
               "absolute_guns:m16",
-              "absolute_guns:m4",
-              "absolute_guns:mg42",
-              "absolute_guns:pkm",
-              "absolute_guns:rpk"
+              "absolute_guns:m4"
             ]
           },
           {
