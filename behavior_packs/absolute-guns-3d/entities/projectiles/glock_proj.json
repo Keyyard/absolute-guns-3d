@@ -27,23 +27,10 @@
           "wheat"
         ]
       },
-      "minecraft:explode": {
-        "fuseLength": 3,
-        "fuseLit": true,
-        "power": 0,
-        "fire_affected_by_griefing": true,
-        "destroy_affected_by_griefing": true
-      },
       "minecraft:projectile": {
         "on_hit": {
-          "impact_damage": {
-            "damage": [
-              5,
-              5
-            ],
-            "knockback": true
-          },
           "remove_on_hit": {},
+          "knockback": true,
           "stick_in_ground": {
             "shake_time": 0
           }

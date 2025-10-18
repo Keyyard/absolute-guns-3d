@@ -27,13 +27,6 @@
           "wheat"
         ]
       },
-      "minecraft:explode": {
-        "fuseLength": 3,
-        "fuseLit": true,
-        "power": 0,
-        "fire_affected_by_griefing": true,
-        "destroy_affected_by_griefing": true
-      },
       "minecraft:projectile": {
         "on_hit": {
           "impact_damage": {
@@ -54,11 +47,6 @@
         "offset": [0, 0, 0],
         "reflectOnHurt": false,
         "catch_fire": false
-      },
-      "minecraft:tick_world": {
-        "distance_to_players": 70,
-        "never_despawn": false,
-        "radius": 2
       },
       "minecraft:physics": {}
     },

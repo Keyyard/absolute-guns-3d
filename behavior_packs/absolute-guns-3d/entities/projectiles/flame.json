@@ -72,11 +72,6 @@
         "reflectOnHurt": false,
         "catch_fire": true
       },
-      "minecraft:tick_world": {
-        "distance_to_players": 70,
-        "never_despawn": false,
-        "radius": 2
-      },
       "minecraft:physics": {}
     },
     "events": {
