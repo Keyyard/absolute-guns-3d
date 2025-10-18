@@ -18,7 +18,7 @@ export const GUNS: readonly Gun[] = [
     projectileTypeId: "absolute_guns_bullet:ak47",
     // Example weapon stats for the AK47 used by the new damage system
     stats: {
-      damage: 10,
+      damage: 5,
       damageDropOff: 0.04,
       armorPenetration: 0.2,
       maxRange: 90,
