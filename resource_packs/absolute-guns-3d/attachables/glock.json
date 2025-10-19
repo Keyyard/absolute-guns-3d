@@ -18,7 +18,7 @@
         "third_0": "geometry.glock_third"
       },
       "animations": {
-        "wield_3d": "animation.absolute_guns_.wield_glock",
+        "wield_3d": "animation.absolute_guns_.tactical_knife",
         "run_3d": "animation.absolute_guns_.run_glock"
 	},
       "scripts": {
