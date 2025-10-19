@@ -6,6 +6,12 @@
 			"bones": {
 				"stick": {
 					"scale": 1
+				},
+				"stick2": {
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.9
 				}
 			}
 		}
