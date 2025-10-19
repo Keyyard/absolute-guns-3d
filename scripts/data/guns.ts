@@ -97,7 +97,7 @@ export const GUNS: readonly Gun[] = [
       damage: 1,
       damageDropOff: 0.0,
       armorPenetration: 0.2,
-      maxRange: 10,
+      maxRange: 4,
       knockback: { x: 0.5, y: 0.5 },
     },
   }),
