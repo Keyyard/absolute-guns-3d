@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns_.wield_glock": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"scale": 1
+				},
+				"stick2": {
+					"scale": 2
+				},
+				"stick2_t": {
+					"scale": 0.4
+				}
+			}
+		}
+	}
+}
