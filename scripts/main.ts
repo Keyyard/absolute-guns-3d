@@ -109,15 +109,13 @@ class GameController {
       }
     } catch {}
     const messages = [
-      `/title @a title hi`,
-      `<Keyyard> This is a pre-release version, expect bugs and missing features.`,
-      `<Keyyard> Join our Discord to request features or report bugs.`,
-      `<Keyyard> Type this URL to your browser to get in: discord.gg/s2VfQr69uz`,
-      `<Keyyard> Or type the code: s2VfQr69uz`,
-      `<Keyyard> You can star the project on GitHub at github.com/Keyyard/absolute-guns-3d`,
-      `<Keyyard> Starring on GitHub encourages us to update the addon`,
-      `<Keyyard> And you can request feature, report bug directly at Issues tab too!`,
-      `<Keyyard> Enjoy the addon!`,
+      `§4Absolute Guns §l3 §rBeta v1.0`,
+      `Welcome Back! this is a beta version, so expect missing features & bugs.`,
+      `Join our discord to report bugs: §bdiscord.gg/5zeEqwFbww`,
+      `And check out our Github: github.com/Keyyard/absolute-guns-3d`,
+      `Please forward all bugs and suggestions there in the Issues tab!`,
+      `Creators: §4AzozGamer936, §cKeyyard, §jBeyond64`,
+      `Enjoy the addon!`,
     ];
     messages.forEach((m) => {
       system.runTimeout(() => {
