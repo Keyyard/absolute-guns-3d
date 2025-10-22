@@ -9,6 +9,7 @@ import { getHeldItem } from "./feature/utils/inventoryUtils";
 import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
 import { throwTacticalKnife } from "./feature/throwingKnife";
 import { DamageHandler } from "./feature/damageHandler";
+import { distanceBetween } from "./feature/damageHandler";
 
 class GameController {
   private playerShooting = new Map<string, boolean>();
@@ -230,6 +231,28 @@ class GameController {
         }
       }
     }, 1);
+    // Check projectile maxRange and remove if exceeded
+    system.runInterval(() => {
+      const dims = ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"];
+      for (const dimId of dims) {
+        const dim = world.getDimension(dimId);
+        const entities = dim.getEntities();
+        for (const entity of entities) {
+          if (entity.typeId.startsWith("absolute_guns_bullet:")) {
+            const gun = GUNS.find((g) => g.projectileTypeId === entity.typeId);
+            if (gun && gun.stats && gun.stats.maxRange) {
+              const spawnLoc = (entity as any).spawnLocation;
+              if (spawnLoc) {
+                const dist = distanceBetween(spawnLoc, entity.location);
+                if (dist > gun.stats.maxRange) {
+                  entity.remove();
+                }
+              }
+            }
+          }
+        }
+      }
+    }, 1); // Check every tick
     const UILoopId = system.runInterval(() => {
       for (const player of world.getAllPlayers()) {
         updateActionBar(player);

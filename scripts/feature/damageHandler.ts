@@ -29,7 +29,7 @@ export const ARMOR_PROTECTION_VALUES: Record<string, any> = {
   "minecraft:turtle_helemt": { toughness: 0, protection: 1 },
 };
 
-function distanceBetween(a: any, b: any) {
+export function distanceBetween(a: any, b: any) {
   if (!a || !b) return 0;
   const dx = (a.x || 0) - (b.x || 0);
   const dy = (a.y || 0) - (b.y || 0);
