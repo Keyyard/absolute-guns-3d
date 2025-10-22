@@ -27,6 +27,15 @@ class GameController {
     world.afterEvents.playerJoin.subscribe((event) => this.afterPlayerJoin(event));
     world.afterEvents.itemUse.subscribe((event) => this.afterItemUse(event));
     world.afterEvents.projectileHitEntity.subscribe((event) => this.afterProjectileHitEntity(event));
+    world.afterEvents.playerBreakBlock.subscribe((event) => this.afterPlayerBreakBlock(event));
+  }
+
+  private afterPlayerBreakBlock(event: any) {
+    const player = event.player;
+    const itemStack = getHeldItem(player);
+    if (itemStack && itemStack.typeId === "absolute_guns:tactical_knife_scope") {
+      applyDurabilityDamage(player, itemStack);
+    }
   }
 
   private afterProjectileHitEntity(event: any) {
@@ -89,7 +98,7 @@ class GameController {
   }
   private afterItemUse(event: any) {
     const { source: player, itemStack } = event;
-    throwTacticalKnife(player as Player, itemStack as ItemStack);
+    throwTacticalKnife(player, itemStack);
   }
 
   private afterPlayerJoin(event: any) {

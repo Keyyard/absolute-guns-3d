@@ -4,7 +4,7 @@ import { applyDurabilityDamage } from "./utils/durabilityUtils";
 import { getHeldItem } from "./utils/inventoryUtils";
 
 export function throwTacticalKnife(player: Player, itemStack: ItemStack): void {
-  if (!itemStack || itemStack.typeId !== "absolute_guns:throwing_knife_tactical") return;
+  if (!itemStack || itemStack.typeId !== "absolute_guns:tactical_knife_scope") return;
   const throwKnife = player.dimension.spawnEntity(
     "absolute_guns_bullet:tactical_knife_scope2",
     Vector3Utils.add(player.getHeadLocation(), Vector3Utils.scale(player.getViewDirection(), 1.5))
