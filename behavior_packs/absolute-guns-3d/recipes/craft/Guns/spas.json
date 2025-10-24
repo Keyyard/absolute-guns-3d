@@ -20,7 +20,7 @@
         "item": "minecraft:flint"
       },
       "A": {
-        "item": "ammo:shotgun"
+        "item": "absolute_guns:shotgun_ammo"
       },
       "H": {
         "item": "minecraft:tripwire_hook"

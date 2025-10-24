@@ -24,7 +24,7 @@
         "item": "minecraft:iron_bars"
       },
       "A": {
-        "item": "ammo:machine_gun"
+        "item": "absolute_guns:machinegun_ammo"
       }
     },
     "result": {

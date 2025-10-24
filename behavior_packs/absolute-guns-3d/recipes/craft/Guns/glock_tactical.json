@@ -17,7 +17,7 @@
         "item": "minecraft:iron_ingot"
       },
       "G": {
-        "item": "absolute_guns:glock"
+        "item": "absolute_guns:pistol_ammo"
       }
     },
     "result": {

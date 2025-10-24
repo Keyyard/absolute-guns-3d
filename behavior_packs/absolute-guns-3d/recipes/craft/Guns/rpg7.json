@@ -20,7 +20,7 @@
         "item": "minecraft:redstone"
       },
       "A": {
-        "item": "ammo:rpg7"
+        "item": "absolute_guns:rpg7_ammo"
       }
     },
     "result": {

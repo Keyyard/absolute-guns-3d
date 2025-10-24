@@ -20,7 +20,7 @@
         "item": "minecraft:rail"
       },
       "A": {
-        "item": "ammo:rifle"
+        "item": "absolute_guns:rifle_ammo"
       }
     },
     "result": {

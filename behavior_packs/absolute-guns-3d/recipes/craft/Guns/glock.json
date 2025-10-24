@@ -20,7 +20,7 @@
         "item": "minecraft:flint"
       },
       "A": {
-        "item": "ammo:pistol"
+        "item": "absolute_guns:pistol_ammo"
       }
     },
     "result": {

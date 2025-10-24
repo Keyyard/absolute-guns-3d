@@ -20,7 +20,7 @@
         "item": "minecraft:iron_ingot"
       },
       "A": {
-        "item": "ammo:smg"
+        "item": "absolute_guns:smg_ammo"
       }
     },
     "result": {
