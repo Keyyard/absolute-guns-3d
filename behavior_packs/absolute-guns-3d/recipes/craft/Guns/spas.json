@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:spas"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "I H",
+      " IF",
+      "AFI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "F": {
+        "item": "minecraft:flint"
+      },
+      "A": {
+        "item": "ammo:shotgun"
+      },
+      "H": {
+        "item": "minecraft:tripwire_hook"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:spas"
+    }
+  }
+}

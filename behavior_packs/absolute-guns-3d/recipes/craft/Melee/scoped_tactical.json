@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "craft:scoped_tactical_knife"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "I",
+      "S"
+    ],
+    "key": {
+      "I": {
+        "item": "absolute_guns:tactical_knife"
+      },
+      "S": {
+        "item": "diamond"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:scoped_tactical_knife"
+    }
+  }
+}

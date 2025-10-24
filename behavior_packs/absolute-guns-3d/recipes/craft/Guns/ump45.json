@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:ump45"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " I ",
+      "A H"
+    ],
+    "key": {
+      "H": {
+        "item": "minecraft:iron_hoe"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "A": {
+        "item": "ammo:smg"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:ump45"
+    }
+  }
+}

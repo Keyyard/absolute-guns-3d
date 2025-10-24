@@ -1,0 +1,34 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:rpk"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "W  ",
+      "TB ",
+      "A W"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:wood",
+        "data": 12
+      },
+      "T": {
+        "item": "minecraft:tripwire_hook"
+      },
+      "B": {
+        "item": "minecraft:blackstone"
+      },
+      "A": {
+        "item": "ammo:machine_gun"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:rpk"
+    }
+  }
+}

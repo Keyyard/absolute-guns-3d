@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:m1014"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "I  ",
+      " IF",
+      "AFI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "F": {
+        "item": "minecraft:flint"
+      },
+      "A": {
+        "item": "ammo:shotgun"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:m1014"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:flamethrower"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "B  ",
+      "FIR",
+      "GPR"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:iron_bars"
+      },
+      "R": {
+        "item": "minecraft:wool",
+        "data": 14
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "G": {
+        "item": "minecraft:stained_glass",
+        "data": 0
+      },
+      "P": {
+        "item": "minecraft:blaze_powder"
+      },
+      "F": {
+        "item": "minecraft:flint_and_steel"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:flamethrower"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "absolute_guns_reload:spas"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "absolute_guns:spas"
+      },
+      {
+        "item": "ammo:shotgun"
+      }
+    ],
+    "result": {
+      "item": "absolute_guns:spas"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "absolute_guns_reload:rpk"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "absolute_guns:rpk"
+      },
+      {
+        "item": "ammo:machine_gun"
+      }
+    ],
+    "result": {
+      "item": "absolute_guns:rpk"
+    }
+  }
+}

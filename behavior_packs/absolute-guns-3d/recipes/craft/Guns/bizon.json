@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:bizon"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "I H",
+      "AIF",
+      "AFI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "F": {
+        "item": "minecraft:flint"
+      },
+      "A": {
+        "item": "ammo:smg"
+      },
+      "H": {
+        "item": "minecraft:tripwire_hook"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:bizon"
+    }
+  }
+}

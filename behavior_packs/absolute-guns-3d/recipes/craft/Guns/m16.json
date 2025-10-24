@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "absolute_guns_craft:m16"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "RRR",
+      " B ",
+      "A  "
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:bow"
+      },
+      "R": {
+        "item": "minecraft:rail"
+      },
+      "A": {
+        "item": "ammo:rifle"
+      }
+    },
+    "result": {
+      "item": "absolute_guns:m16"
+    }
+  }
+}
