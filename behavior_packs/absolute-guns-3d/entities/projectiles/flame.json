@@ -60,7 +60,8 @@
           "remove_on_hit": {},
           "stick_in_ground": {
             "shake_time": 0
-          }
+          },
+        "catch_fire": true
         },
         "power": 1.5,
         "gravity": 0.01,
