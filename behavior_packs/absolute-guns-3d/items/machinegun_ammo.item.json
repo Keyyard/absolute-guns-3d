@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "absolute_guns:machinegun_ammo",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "minecraft:icon": { "textures": { "default": "ammo_machinegun" } },
+      "minecraft:allow_off_hand": true,
+      "minecraft:display_name": { "value": "item.absolute_guns:machinegun_ammo.name" },
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": false,
+      "minecraft:tags": { "tags": ["absolute_guns:machinegun_ammo"] }
+    }
+  }
+}
