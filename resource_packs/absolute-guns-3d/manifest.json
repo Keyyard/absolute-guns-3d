@@ -2,14 +2,14 @@
   "format_version": 2,
   "header": {
     "name": "Absolute Guns 3",
-    "description": "§l§bAdd-on by §l§4@AzozGamer936 §r& §l§a@Keyyard §l§2[Official MCPEDL Release]",
+    "description": "§l§bAdd-on by §l§4@AzozGamer936 §r& §l§a@Keyyard §l§2[Official Release]",
     "uuid": "41b2d2ac-831d-4d5f-933b-86f7e7446663",
     "version": [1, 0, 0],
     "min_engine_version": [1, 20, 30]
   },
   "modules": [
     {
-      "description": "§l§bAdd-on by §l§4@AzozGamer936 §r& §l§a@Keyyard §l§2[Official MCPEDL Release]",
+      "description": "§l§bAdd-on by §l§4@AzozGamer936 §r& §l§a@Keyyard §l§2[Official Release]",
       "type": "resources",
       "uuid": "e3e330f2-97ec-4f5d-9a1b-fd9b8d7d2e52",
       "version": [1, 0, 0]
