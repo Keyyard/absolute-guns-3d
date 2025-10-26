@@ -7,7 +7,7 @@
         "groups": [
                     {
             "group_identifier": {
-              "icon": "absolute_guns:rpk",
+              "icon": "absolute_guns:mg42",
               "name": "absolute_guns:itemGroup.name.machineguns"
             },
             "items": [
@@ -74,7 +74,8 @@
               "absolute_guns:shotgun_ammo",
               "absolute_guns:sniper_ammo",
               "absolute_guns:pistol_ammo",
-              "absolute_guns:rpg7_ammo"
+              "absolute_guns:rpg7_ammo",
+              "absolute_guns:machinegun_ammo"
             ]
           }
         ]
