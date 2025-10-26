@@ -8,9 +8,9 @@
     
     "tags": [ "crafting_table" ],
     "pattern": [
-      "I",
-      "I",
-      "S"
+      "  I",
+      " IN",
+      "S  "
     ],
     "key": {
       "I": {
@@ -18,6 +18,9 @@
       },
       "S": {
         "item": "minecraft:stick"
+      },
+      "N": {
+        "item": "minecraft:iron_nugget"
       }
     },
     "result": {
