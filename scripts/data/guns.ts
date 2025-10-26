@@ -251,7 +251,7 @@ export const GUNS: readonly Gun[] = [
     shootPower: 4,
     recoil: 0.3,
     reloadTime: 90,
-    ammoTypeId: "absolute_guns:mgl_ammo",
+    ammoTypeId: "minecraft:tnt",
     projectileTypeId: "absolute_guns_bullet:mgl",
     shootSound: "gun.abgmgl",
     stats: {

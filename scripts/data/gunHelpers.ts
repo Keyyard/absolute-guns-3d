@@ -45,7 +45,7 @@ export function createGun(input: GunInput): Gun {
         : rest.id === "absolute_guns:rpg7"
         ? "absolute_guns:rpg7_ammo"
         : rest.id === "absolute_guns:mgl"
-        ? "minecraft:gunpowder"
+        ? "minecraft:tnt"
         : "absolute_guns:rifle_ammo"
       : getAmmoItemId(rest.type));
 
