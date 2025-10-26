@@ -18,3 +18,9 @@ export function throwTacticalKnife(player: Player, itemStack: ItemStack): void {
   const held = getHeldItem(player);
   if (held) applyDurabilityDamage(player, held);
 }
+
+export function modifyMovement(player: Player) {
+  const held = getHeldItem(player);
+  if (held?.typeId != "absolute_guns:tactical_knife_scope") return;
+  if (player.isSneaking) player.addEffect(`slowness`, 4, { amplifier: 8, showParticles: false });
+}

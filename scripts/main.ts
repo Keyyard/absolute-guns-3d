@@ -7,7 +7,7 @@ import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./featur
 import { Vector3Utils } from "@minecraft/math";
 import { getHeldItem } from "./feature/utils/inventoryUtils";
 import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
-import { throwTacticalKnife } from "./feature/throwingKnife";
+import { modifyMovement, throwTacticalKnife } from "./feature/throwingKnife";
 import { DamageHandler } from "./feature/damageHandler";
 import { distanceBetween } from "./feature/damageHandler";
 
@@ -47,21 +47,9 @@ class GameController {
       const hitEntity = hitInfo?.entity ?? event?.entity;
       if (!hitEntity || !projectile) return;
 
-      // Identify the weapon that spawned this projectile (we tag bullets on
-      // spawn). If no tag is found, fall back to matching projectile type.
       let weaponId: string | undefined;
-      try {
-        const tags = typeof projectile.getTags === "function" ? projectile.getTags() : [];
-        for (const t of tags || []) {
-          if (typeof t === "string" && t.startsWith("abg_weapon:")) {
-            weaponId = t.split(":")[1];
-            break;
-          }
-        }
-      } catch {}
 
       let gun = weaponId ? GUNS.find((g) => g.id === weaponId) : undefined;
-      if (!gun) gun = GUNS.find((g) => g.projectileTypeId === projectile.typeId);
       if (!gun) return;
 
       const stats = (gun as any).stats;
@@ -172,6 +160,9 @@ class GameController {
   private GameLoop() {
     this.tickId = system.runInterval(() => {
       for (const player of world.getAllPlayers()) {
+        //Modify player fov when scoped through tactical knife
+        modifyMovement(player);
+
         // Detect when a player starts holding (or switches) a gun so we can play
         // the gun draw animation and initialize any per-player state for that gun.
         const currentlyHeld = getHeldGun(player);
