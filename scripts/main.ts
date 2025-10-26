@@ -47,21 +47,9 @@ class GameController {
       const hitEntity = hitInfo?.entity ?? event?.entity;
       if (!hitEntity || !projectile) return;
 
-      // Identify the weapon that spawned this projectile (we tag bullets on
-      // spawn). If no tag is found, fall back to matching projectile type.
       let weaponId: string | undefined;
-      try {
-        const tags = typeof projectile.getTags === "function" ? projectile.getTags() : [];
-        for (const t of tags || []) {
-          if (typeof t === "string" && t.startsWith("abg_weapon:")) {
-            weaponId = t.split(":")[1];
-            break;
-          }
-        }
-      } catch {}
 
       let gun = weaponId ? GUNS.find((g) => g.id === weaponId) : undefined;
-      if (!gun) gun = GUNS.find((g) => g.projectileTypeId === projectile.typeId);
       if (!gun) return;
 
       const stats = (gun as any).stats;
