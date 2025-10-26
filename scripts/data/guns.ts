@@ -137,6 +137,13 @@ export const GUNS: readonly Gun[] = [
     ammoTypeId: "absolute_guns:pistol_ammo",
     projectileTypeId: "absolute_guns_bullet:glock_tactical",
     mode: FireMode.SEMI,
+    stats: {
+      damage: 3.5,
+      damageDropOff: 0.06,
+      armorPenetration: 0.2,
+      maxRange: 90,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:m1014",
@@ -150,6 +157,13 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgm1014",
     projectileTypeId: "absolute_guns_bullet:m1014",
     mode: FireMode.SHOTGUN,
+    stats: {
+      damage: 8,
+      damageDropOff: 0.1,
+      armorPenetration: 0.1,
+      maxRange: 30,
+      knockback: { x: 1.0, y: 1.0 },
+    },
   }),
   createGun({
     id: "absolute_guns:m16",
@@ -162,6 +176,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 60,
     shootSound: "gun.abgm4",
     projectileTypeId: "absolute_guns_bullet:m16",
+    stats: {
+      damage: 5.5,
+      damageDropOff: 0.04,
+      armorPenetration: 0.25,
+      maxRange: 100,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:m3",
@@ -175,6 +196,13 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgm3",
     projectileTypeId: "absolute_guns_bullet:m3",
     mode: FireMode.SHOTGUN,
+    stats: {
+      damage: 7,
+      damageDropOff: 0.1,
+      armorPenetration: 0.1,
+      maxRange: 25,
+      knockback: { x: 1.0, y: 1.0 },
+    },
   }),
   createGun({
     id: "absolute_guns:m4",
@@ -187,6 +215,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 60,
     shootSound: "gun.abgm4",
     projectileTypeId: "absolute_guns_bullet:m4",
+    stats: {
+      damage: 5,
+      damageDropOff: 0.04,
+      armorPenetration: 0.25,
+      maxRange: 100,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:mg42",
@@ -199,6 +234,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 120,
     shootSound: "gun.abgmg42",
     projectileTypeId: "absolute_guns_bullet:mg42",
+    stats: {
+      damage: 6,
+      damageDropOff: 0.03,
+      armorPenetration: 0.3,
+      maxRange: 120,
+      knockback: { x: 0.6, y: 0.6 },
+    },
   }),
   createGun({
     id: "absolute_guns:mgl",
@@ -212,6 +254,13 @@ export const GUNS: readonly Gun[] = [
     ammoTypeId: "absolute_guns:mgl_ammo",
     projectileTypeId: "absolute_guns_bullet:mgl",
     shootSound: "gun.abgmgl",
+    stats: {
+      damage: 20,
+      damageDropOff: 0.0,
+      armorPenetration: 0.5,
+      maxRange: 50,
+      knockback: { x: 2.0, y: 2.0 },
+    },
   }),
   createGun({
     id: "absolute_guns:mp40",
@@ -224,6 +273,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 50,
     shootSound: "gun.abgmp40",
     projectileTypeId: "absolute_guns_bullet:mp40",
+    stats: {
+      damage: 4.5,
+      damageDropOff: 0.05,
+      armorPenetration: 0.15,
+      maxRange: 70,
+      knockback: { x: 0.4, y: 0.4 },
+    },
   }),
   createGun({
     id: "absolute_guns:mp5",
@@ -236,6 +292,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 50,
     shootSound: "gun.abgmp5",
     projectileTypeId: "absolute_guns_bullet:mp5",
+    stats: {
+      damage: 4,
+      damageDropOff: 0.05,
+      armorPenetration: 0.2,
+      maxRange: 80,
+      knockback: { x: 0.4, y: 0.4 },
+    },
   }),
   createGun({
     id: "absolute_guns:mp5k",
@@ -248,6 +311,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 40,
     shootSound: "gun.abgmp5",
     projectileTypeId: "absolute_guns_bullet:mp5k",
+    stats: {
+      damage: 4,
+      damageDropOff: 0.05,
+      armorPenetration: 0.2,
+      maxRange: 75,
+      knockback: { x: 0.4, y: 0.4 },
+    },
   }),
   createGun({
     id: "absolute_guns:pkm",
@@ -260,6 +330,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 100,
     shootSound: "gun.abgak47",
     projectileTypeId: "absolute_guns_bullet:pkm",
+    stats: {
+      damage: 6,
+      damageDropOff: 0.03,
+      armorPenetration: 0.3,
+      maxRange: 110,
+      knockback: { x: 0.6, y: 0.6 },
+    },
   }),
   createGun({
     id: "absolute_guns:rpg7",
@@ -273,6 +350,13 @@ export const GUNS: readonly Gun[] = [
     ammoTypeId: "absolute_guns:rpg7_ammo",
     projectileTypeId: "absolute_guns_bullet:rpg7",
     shootSound: "gun.abgrpg7",
+    stats: {
+      damage: 50,
+      damageDropOff: 0.0,
+      armorPenetration: 1.0,
+      maxRange: 100,
+      knockback: { x: 3.0, y: 3.0 },
+    },
   }),
   createGun({
     id: "absolute_guns:rpk",
@@ -285,6 +369,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 80,
     shootSound: "gun.abgak47",
     projectileTypeId: "absolute_guns_bullet:rpk",
+    stats: {
+      damage: 5.5,
+      damageDropOff: 0.03,
+      armorPenetration: 0.25,
+      maxRange: 105,
+      knockback: { x: 0.5, y: 0.5 },
+    },
   }),
   createGun({
     id: "absolute_guns:spas",
@@ -298,6 +389,13 @@ export const GUNS: readonly Gun[] = [
     mode: FireMode.SHOTGUN,
     shootSound: "gun.abgm1014",
     projectileTypeId: "absolute_guns_bullet:spas",
+    stats: {
+      damage: 8,
+      damageDropOff: 0.1,
+      armorPenetration: 0.1,
+      maxRange: 30,
+      knockback: { x: 1.0, y: 1.0 },
+    },
   }),
   createGun({
     id: "absolute_guns:ump45",
@@ -310,6 +408,13 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 50,
     shootSound: "gun.abgump45",
     projectileTypeId: "absolute_guns_bullet:ump45",
+    stats: {
+      damage: 4.5,
+      damageDropOff: 0.05,
+      armorPenetration: 0.2,
+      maxRange: 85,
+      knockback: { x: 0.4, y: 0.4 },
+    },
   }),
 ];
 

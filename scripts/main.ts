@@ -243,6 +243,9 @@ class GameController {
         for (const entity of entities) {
           if (entity.typeId.startsWith("absolute_guns_bullet:")) {
             const gun = GUNS.find((g) => g.projectileTypeId === entity.typeId);
+            if (!gun) continue;
+            if (!gun.stats) continue;
+            if (gun?.stats?.maxRange === undefined) gun.stats.maxRange = 100;
             if (gun && gun.stats && gun.stats.maxRange) {
               const spawnLoc = (entity as any).spawnLocation;
               if (spawnLoc) {
