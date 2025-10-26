@@ -7,7 +7,7 @@ import { getHeldGun, ensurePlayerGunInitialized, getCurrentAmmo } from "./featur
 import { Vector3Utils } from "@minecraft/math";
 import { getHeldItem } from "./feature/utils/inventoryUtils";
 import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
-import { throwTacticalKnife } from "./feature/throwingKnife";
+import { modifyMovement, throwTacticalKnife } from "./feature/throwingKnife";
 import { DamageHandler } from "./feature/damageHandler";
 import { distanceBetween } from "./feature/damageHandler";
 
@@ -172,6 +172,9 @@ class GameController {
   private GameLoop() {
     this.tickId = system.runInterval(() => {
       for (const player of world.getAllPlayers()) {
+        //Modify player fov when scoped through tactical knife
+        modifyMovement(player);
+
         // Detect when a player starts holding (or switches) a gun so we can play
         // the gun draw animation and initialize any per-player state for that gun.
         const currentlyHeld = getHeldGun(player);
