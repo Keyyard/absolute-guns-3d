@@ -16,10 +16,14 @@
       },
       "minecraft:durability": {
         "damage_chance": {
-          "min": 10,
-          "max": 50
+          "min": 100,
+          "max": 100
         },
         "max_durability": 36
+      },
+      "minecraft:cooldown": {
+        "category": "reload",
+        "duration": 1.6
       },
       "minecraft:food": {
         "can_always_eat": true
