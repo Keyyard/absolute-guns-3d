@@ -3,6 +3,7 @@
   "sound_definitions": {
     "gun.shoot": { "sounds": ["sounds/gunshot"] },
     "gun.gun": { "sounds": ["sounds/guns/gun"] },
+    "gun.abgawm": { "sounds": ["sounds/guns/abg_awm"] },
     "gun.abgmgl": { "sounds": ["sounds/guns/mgl"] },
     "gun.abgmp5": { "sounds": ["sounds/guns/abg_mp5"] },
     "gun.abgmp40": { "sounds": ["sounds/guns/abg_mp40"] },
