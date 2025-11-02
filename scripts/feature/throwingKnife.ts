@@ -14,6 +14,11 @@ export function throwTacticalKnife(player: Player, itemStack: ItemStack): void {
   if (proj) {
     proj.shoot(Vector3Utils.scale(player.getViewDirection(), 2));
   }
+  // Add sound and recoil effects
+  try {
+    player.playSound("random.bow", { volume: 2, pitch: 1.2 });
+    player.runCommand(`camerashake add @s 0.3 0.1 rotational`);
+  } catch {}
   // Update durability for the held item (uses minecraft:durability component).
   const held = getHeldItem(player);
   if (held) applyDurabilityDamage(player, held);
