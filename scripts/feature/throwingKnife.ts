@@ -16,7 +16,7 @@ export function throwTacticalKnife(player: Player, itemStack: ItemStack): void {
   }
   // Add sound and recoil effects
   try {
-    player.playSound("random.bow", { volume: 1, pitch: 1.2 });
+    player.playSound("random.bow", { volume: 2, pitch: 1.2 });
     player.runCommand(`camerashake add @s 0.3 0.1 rotational`);
   } catch {}
   // Update durability for the held item (uses minecraft:durability component).
