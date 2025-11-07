@@ -1,0 +1,36 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "absolute_guns:spas",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/3d/absolute_guns/spas"
+            },
+            "geometry": {
+                "default": "geometry.spas12"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "animations": {
+                "first_person_hold": "animation.absolute_guns.spas12.first_person_hold",
+                "use_item": "animation.absolute_guns.spas12.shoot",
+                "third_person_hold": "animation.absolute_guns.spas12.third_person_hold",
+                "first_person_controller": "controller.animation.common.absolute_guns.attachable.use"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "first_person_controller": "c.is_first_person"
+                    },
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}
