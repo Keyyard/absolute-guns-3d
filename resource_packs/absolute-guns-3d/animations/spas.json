@@ -1,29 +1,73 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.absolute_guns_.wield_spas": {
+		"animation.absolute_guns.spas12.first_person_hold": {
 			"loop": true,
 			"bones": {
-				"stick": {
-					"rotation": [107.5, 0, 0],
-					"position": [24, 13, 42],
-					"scale": 4
+				"root_item": {
+					"rotation": [63.58773, 62.32475, -65.01226],
+					"position": [1, 23, 5],
+					"scale": 1.25
+				}
+			}
+		},
+		"animation.absolute_guns.spas12.shoot": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.6667,
+			"bones": {
+				"root_item": {
+					"rotation": {
+						"0.0": [63.58773, 62.32475, -65.01226],
+						"0.125": {
+							"pre": [63.59, 62.32, -65.01],
+							"post": [63.59, 62.32, -65.01],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [43.59, 62.32, -65.01],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4583": {
+							"post": [51.09, 62.32, -65.01],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6667": [63.58773, 62.32475, -65.01226]
+					},
+					"position": {
+						"0.0": [1, 23, 5],
+						"0.125": {
+							"pre": [1, 23, 5],
+							"post": [1, 23, 5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [-1, 23, 5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4583": {
+							"post": [-1, 25, 5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6667": [1, 23, 5]
+					},
+					"scale": 1.25
 				},
-				"stick2": {
-					"rotation": [-73.22121, 3.22147, 180.82304],
-					"position": [-3, -25, -23],
-					"scale": 2
-				},
-				"stick2_t": {
-					"scale": 0.6
-				},
-				"stick_t": {
-					"rotation": [90, 0, 0],
-					"position": [-5, -6, 3]
-				},
-				"rightItem": {
-					"position": [0, 5, 1],
-					"scale": 1.5
+				"trigger": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2083": [0, 0, 3],
+						"0.5417": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.absolute_guns.spas12.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [72.5, 0, 0],
+					"position": [0.5, 15.5, -4.5],
+					"scale": 0.8
 				}
 			}
 		}
