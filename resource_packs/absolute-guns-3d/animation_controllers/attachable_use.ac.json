@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.common.absolute_guns.attachable.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "blend_transition": 0.2,
+                    "animations": ["first_person_hold"],
+                    "transitions": [
+                        {
+                            "using_item": "query.is_using_item == true"
+                        }
+                    ]
+                },
+                "using_item": {
+                    "blend_transition": 0.2,
+                    "animations": [
+                        "use_item"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.is_using_item == false"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
