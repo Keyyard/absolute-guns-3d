@@ -27,7 +27,7 @@
         "animate": [
 						"wield_3d",
                     {
-                        "first_person_controller": "c.is_first_person"
+                        "first_person_controller": "!c.is_first_person"
                     }
         ]
       },
