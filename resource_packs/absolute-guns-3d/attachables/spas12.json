@@ -4,7 +4,8 @@
         "description": {
             "identifier": "absolute_guns:spas",
             "materials": {
-                "default": "entity_alphatest"
+                "default": "entity_alphatest",
+"invisible": "entity_alphablend"
             },
             "textures": {
                 "default": "textures/3d/absolute_guns/spas"
@@ -13,7 +14,7 @@
                 "default": "geometry.spas12"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.spider"
             ],
             "animations": {
                 "first_person_hold": "animation.absolute_guns.spas12.first_person_hold",
