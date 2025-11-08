@@ -24,7 +24,7 @@
 				},
 				"idle": {
 					"blend_transition": 0.2,
-					"blend_via_shortest_path": true
+					"blend_via_shortest_path": true,
 					"transitions": [
 						{
 							"draw": "q.get_equipped_item_name(0) != 'glock'"
