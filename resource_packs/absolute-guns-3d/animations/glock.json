@@ -1,6 +1,201 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.absolute_guns.glock.draw.tpp": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*-1.06", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.1667": ["variable.is_third_person*-2.2", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.2083": ["variable.is_third_person*-2.25", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.25": ["variable.is_third_person*-1.2", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.3333": ["variable.is_third_person*2.01", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.3542": ["variable.is_third_person*2.25", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.4167": ["variable.is_third_person*1.36", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5": ["variable.is_third_person*-1.05", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5625": ["variable.is_third_person*-2", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5833": ["variable.is_third_person*-1.94", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.6667": ["variable.is_third_person*-0.65", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.75": ["variable.is_third_person*1.15", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.8125": ["variable.is_third_person*1.91", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.8333": ["variable.is_third_person*1.94", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.9167": ["variable.is_third_person*1.04", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"1.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"]
+					}
+				},
+				"waist": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*-0.5", "variable.is_third_person*-0.81", "variable.is_third_person*-2.52"],
+						"0.1042": ["variable.is_third_person*0.01", "variable.is_third_person*-0.69", "variable.is_third_person*-2.51"],
+						"0.1667": ["variable.is_third_person*5.34", "variable.is_third_person*1.23", "variable.is_third_person*1.27"],
+						"0.2083": ["variable.is_third_person*8", "variable.is_third_person*2.9", "variable.is_third_person*3.66"],
+						"0.25": ["variable.is_third_person*7.4", "variable.is_third_person*4.07", "variable.is_third_person*3.95"],
+						"0.3333": ["variable.is_third_person*3.72", "variable.is_third_person*6.4", "variable.is_third_person*3.08"],
+						"0.3542": ["variable.is_third_person*3.24", "variable.is_third_person*6.83", "variable.is_third_person*2.92"],
+						"0.4167": ["variable.is_third_person*3.55", "variable.is_third_person*8.38", "variable.is_third_person*2.59"],
+						"0.4792": ["variable.is_third_person*4.37", "variable.is_third_person*8.25", "variable.is_third_person*2.3"],
+						"0.5": ["variable.is_third_person*4.4", "variable.is_third_person*6.9", "variable.is_third_person*2.19"],
+						"0.5833": ["variable.is_third_person*3.69", "variable.is_third_person*-1.24", "variable.is_third_person*1.9"],
+						"0.6667": ["variable.is_third_person*0.56", "variable.is_third_person*-1.48", "variable.is_third_person*2.31"],
+						"0.6875": ["variable.is_third_person*-0.37", "variable.is_third_person*-1.57", "variable.is_third_person*2.16"],
+						"0.75": ["variable.is_third_person*-3.45", "variable.is_third_person*-3.36", "variable.is_third_person*0.62"],
+						"0.8125": ["variable.is_third_person*-5.36", "variable.is_third_person*-4.54", "variable.is_third_person*-0.85"],
+						"0.8333": ["variable.is_third_person*-5.19", "variable.is_third_person*-4.34", "variable.is_third_person*-0.92"],
+						"0.9167": ["variable.is_third_person*-2.58", "variable.is_third_person*-2.12", "variable.is_third_person*-0.53"],
+						"1.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*9.48", "variable.is_third_person*3.92", "variable.is_third_person*2.73"],
+						"0.1667": ["variable.is_third_person*19.31", "variable.is_third_person*7.95", "variable.is_third_person*5.61"],
+						"0.25": ["variable.is_third_person*22.37", "variable.is_third_person*9.55", "variable.is_third_person*6.84"],
+						"0.3333": ["variable.is_third_person*22.16", "variable.is_third_person*8.87", "variable.is_third_person*6.81"],
+						"0.4167": ["variable.is_third_person*18.94", "variable.is_third_person*3.78", "variable.is_third_person*4.69"],
+						"0.5": ["variable.is_third_person*15.37", "variable.is_third_person*-1.42", "variable.is_third_person*2.42"],
+						"0.5833": ["variable.is_third_person*15.28", "variable.is_third_person*-2.2", "variable.is_third_person*2.17"],
+						"0.6667": ["variable.is_third_person*15.99", "variable.is_third_person*-2.11", "variable.is_third_person*2.33"],
+						"0.75": ["variable.is_third_person*16.24", "variable.is_third_person*-1.68", "variable.is_third_person*2.51"],
+						"0.8125": ["variable.is_third_person*15.37", "variable.is_third_person*-1.42", "variable.is_third_person*2.42"],
+						"0.8333": ["variable.is_third_person*14.25", "variable.is_third_person*-1.32", "variable.is_third_person*2.24"],
+						"0.9167": ["variable.is_third_person*6.62", "variable.is_third_person*-0.61", "variable.is_third_person*1.04"],
+						"1.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*8.16", "variable.is_third_person*3.8", "variable.is_third_person*-6.62"],
+						"0.1667": ["variable.is_third_person*13.44", "variable.is_third_person*9.2", "variable.is_third_person*-16.04"],
+						"0.2083": ["variable.is_third_person*7.39", "variable.is_third_person*11.92", "variable.is_third_person*-20.8"],
+						"0.25": ["variable.is_third_person*-5.65", "variable.is_third_person*14.37", "variable.is_third_person*-24.97"],
+						"0.3333": ["variable.is_third_person*-48.06", "variable.is_third_person*20.03", "variable.is_third_person*-34.35"],
+						"0.4167": ["variable.is_third_person*-91.02", "variable.is_third_person*24.84", "variable.is_third_person*-42.78"],
+						"0.4583": ["variable.is_third_person*-104.74", "variable.is_third_person*26.23", "variable.is_third_person*-45.76"],
+						"0.5": ["variable.is_third_person*-112.63", "variable.is_third_person*26.75", "variable.is_third_person*-48.54"],
+						"0.5625": ["variable.is_third_person*-107.18", "variable.is_third_person*22.87", "variable.is_third_person*-49.49"],
+						"0.5833": ["variable.is_third_person*-110.33", "variable.is_third_person*21", "variable.is_third_person*-51.19"],
+						"0.6667": ["variable.is_third_person*-128.64", "variable.is_third_person*10.13", "variable.is_third_person*-59.39"],
+						"0.6875": ["variable.is_third_person*-130.12", "variable.is_third_person*7.24", "variable.is_third_person*-58.15"],
+						"0.75": ["variable.is_third_person*-122.61", "variable.is_third_person*-5.13", "variable.is_third_person*-41.43"],
+						"0.8125": ["variable.is_third_person*-108.56", "variable.is_third_person*-10.9", "variable.is_third_person*-19.49"],
+						"0.8333": ["variable.is_third_person*-105.47", "variable.is_third_person*-8.98", "variable.is_third_person*-15.39"],
+						"0.9167": ["variable.is_third_person*-90.64", "variable.is_third_person*9.31", "variable.is_third_person*1.48"],
+						"1.0": ["variable.is_third_person*-79.17", "variable.is_third_person*26.35", "variable.is_third_person*13.62"]
+					},
+					"position": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*-0.21", "variable.is_third_person*0.08", "variable.is_third_person*0.2"],
+						"0.1667": ["variable.is_third_person*-0.51", "variable.is_third_person*0.14", "variable.is_third_person*0.3"],
+						"0.2083": ["variable.is_third_person*-0.66", "variable.is_third_person*0.1", "variable.is_third_person*0.12"],
+						"0.25": ["variable.is_third_person*-0.8", "variable.is_third_person*-0.02", "variable.is_third_person*-0.27"],
+						"0.3333": ["variable.is_third_person*-1.13", "variable.is_third_person*-0.4", "variable.is_third_person*-1.49"],
+						"0.4167": ["variable.is_third_person*-1.39", "variable.is_third_person*-0.76", "variable.is_third_person*-2.72"],
+						"0.4583": ["variable.is_third_person*-1.46", "variable.is_third_person*-0.85", "variable.is_third_person*-3.11"],
+						"0.5": ["variable.is_third_person*-1.37", "variable.is_third_person*-0.73", "variable.is_third_person*-3.51"],
+						"0.5625": ["variable.is_third_person*-1.07", "variable.is_third_person*-0.45", "variable.is_third_person*-3.18"],
+						"0.5833": ["variable.is_third_person*-1.05", "variable.is_third_person*-0.52", "variable.is_third_person*-2.85"],
+						"0.6667": ["variable.is_third_person*-1.07", "variable.is_third_person*-1.15", "variable.is_third_person*-0.69"],
+						"0.6875": ["variable.is_third_person*-1.07", "variable.is_third_person*-1.23", "variable.is_third_person*-0.33"],
+						"0.75": ["variable.is_third_person*-0.97", "variable.is_third_person*-1.13", "variable.is_third_person*0.05"],
+						"0.8125": ["variable.is_third_person*-0.98", "variable.is_third_person*-0.88", "variable.is_third_person*-0.12"],
+						"0.8333": ["variable.is_third_person*-1.04", "variable.is_third_person*-0.83", "variable.is_third_person*-0.23"],
+						"0.9167": ["variable.is_third_person*-1.45", "variable.is_third_person*-0.59", "variable.is_third_person*-1.02"],
+						"1.0": ["variable.is_third_person*-1.81", "variable.is_third_person*-0.4", "variable.is_third_person*-1.71"]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*9.33", "variable.is_third_person*-4.06", "variable.is_third_person*4.48"],
+						"0.1667": ["variable.is_third_person*17.47", "variable.is_third_person*-9.38", "variable.is_third_person*10.7"],
+						"0.2083": ["variable.is_third_person*14.51", "variable.is_third_person*-11.43", "variable.is_third_person*13.65"],
+						"0.25": ["variable.is_third_person*5.55", "variable.is_third_person*-12.64", "variable.is_third_person*16.51"],
+						"0.3333": ["variable.is_third_person*-25.4", "variable.is_third_person*-14.38", "variable.is_third_person*23.61"],
+						"0.4167": ["variable.is_third_person*-56.75", "variable.is_third_person*-15.66", "variable.is_third_person*27.93"],
+						"0.4583": ["variable.is_third_person*-66.22", "variable.is_third_person*-16.29", "variable.is_third_person*27.3"],
+						"0.5": ["variable.is_third_person*-68.34", "variable.is_third_person*-17.28", "variable.is_third_person*13.19"],
+						"0.5625": ["variable.is_third_person*-59.07", "variable.is_third_person*-19.34", "variable.is_third_person*-9.24"],
+						"0.5833": ["variable.is_third_person*-60.21", "variable.is_third_person*-20.34", "variable.is_third_person*-8.84"],
+						"0.6667": ["variable.is_third_person*-69.8", "variable.is_third_person*-26.71", "variable.is_third_person*4.21"],
+						"0.75": ["variable.is_third_person*-79.99", "variable.is_third_person*-29.95", "variable.is_third_person*18.83"],
+						"0.8333": ["variable.is_third_person*-90.22", "variable.is_third_person*-15.05", "variable.is_third_person*27.68"],
+						"0.8542": ["variable.is_third_person*-91.43", "variable.is_third_person*-13.03", "variable.is_third_person*26.5"],
+						"0.9167": ["variable.is_third_person*-90.93", "variable.is_third_person*-16.49", "variable.is_third_person*14.85"],
+						"1.0": ["variable.is_third_person*-88.28", "variable.is_third_person*-24.33", "variable.is_third_person*-3.15"]
+					},
+					"position": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*0.17", "variable.is_third_person*0.56", "variable.is_third_person*-0.14"],
+						"0.1667": ["variable.is_third_person*0.42", "variable.is_third_person*1.16", "variable.is_third_person*-0.37"],
+						"0.2083": ["variable.is_third_person*0.54", "variable.is_third_person*1.2", "variable.is_third_person*-0.52"],
+						"0.25": ["variable.is_third_person*0.65", "variable.is_third_person*0.99", "variable.is_third_person*-0.68"],
+						"0.3333": ["variable.is_third_person*0.9", "variable.is_third_person*0.12", "variable.is_third_person*-1.08"],
+						"0.4167": ["variable.is_third_person*1.12", "variable.is_third_person*-0.81", "variable.is_third_person*-1.45"],
+						"0.4583": ["variable.is_third_person*1.19", "variable.is_third_person*-1.1", "variable.is_third_person*-1.57"],
+						"0.5": ["variable.is_third_person*1.24", "variable.is_third_person*-1.25", "variable.is_third_person*-1.63"],
+						"0.5625": ["variable.is_third_person*1.19", "variable.is_third_person*-1.1", "variable.is_third_person*-1.57"],
+						"0.5833": ["variable.is_third_person*1.18", "variable.is_third_person*-1.13", "variable.is_third_person*-1.62"],
+						"0.6667": ["variable.is_third_person*1.13", "variable.is_third_person*-1.32", "variable.is_third_person*-1.97"],
+						"0.6875": ["variable.is_third_person*1.12", "variable.is_third_person*-1.34", "variable.is_third_person*-2"],
+						"0.75": ["variable.is_third_person*1.1", "variable.is_third_person*-1.34", "variable.is_third_person*-1.89"],
+						"0.7917": ["variable.is_third_person*1.08", "variable.is_third_person*-1.19", "variable.is_third_person*-1.71"],
+						"0.8333": ["variable.is_third_person*1.06", "variable.is_third_person*-1", "variable.is_third_person*-1.58"],
+						"0.9167": ["variable.is_third_person*1.03", "variable.is_third_person*-0.44", "variable.is_third_person*-1.25"],
+						"1.0": ["variable.is_third_person*1", "variable.is_third_person*0", "variable.is_third_person*-1"]
+					}
+				},
+				"stick": {
+					"rotation": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*0.06", "variable.is_third_person*-0.03", "variable.is_third_person*0.34"],
+						"0.1667": ["variable.is_third_person*0.14", "variable.is_third_person*-0.06", "variable.is_third_person*0.83"],
+						"0.25": ["variable.is_third_person*0.23", "variable.is_third_person*-0.11", "variable.is_third_person*1.39"],
+						"0.3333": ["variable.is_third_person*0.32", "variable.is_third_person*-0.15", "variable.is_third_person*1.93"],
+						"0.4167": ["variable.is_third_person*0.4", "variable.is_third_person*-0.18", "variable.is_third_person*2.35"],
+						"0.4583": ["variable.is_third_person*0.42", "variable.is_third_person*-0.19", "variable.is_third_person*2.49"],
+						"0.5": ["variable.is_third_person*0.45", "variable.is_third_person*-0.21", "variable.is_third_person*2.67"],
+						"0.5625": ["variable.is_third_person*0.42", "variable.is_third_person*-0.19", "variable.is_third_person*2.49"],
+						"0.5833": ["variable.is_third_person*0.42", "variable.is_third_person*-0.19", "variable.is_third_person*2.37"],
+						"0.6667": ["variable.is_third_person*0.45", "variable.is_third_person*-0.2", "variable.is_third_person*0.95"],
+						"0.75": ["variable.is_third_person*0.42", "variable.is_third_person*-0.19", "variable.is_third_person*2.49"],
+						"0.8333": ["variable.is_third_person*0.3", "variable.is_third_person*-0.13", "variable.is_third_person*9.16"],
+						"0.9167": ["variable.is_third_person*0.12", "variable.is_third_person*-0.06", "variable.is_third_person*18.33"],
+						"1.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*25"]
+					},
+					"position": {
+						"0.0": ["variable.is_third_person*0", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.0833": ["variable.is_third_person*-0.06", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.1667": ["variable.is_third_person*-0.15", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.25": ["variable.is_third_person*-0.25", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.3333": ["variable.is_third_person*-0.35", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.4167": ["variable.is_third_person*-0.43", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.4583": ["variable.is_third_person*-0.45", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5": ["variable.is_third_person*-0.48", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5625": ["variable.is_third_person*-0.45", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.5833": ["variable.is_third_person*-0.45", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.6667": ["variable.is_third_person*-0.43", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.75": ["variable.is_third_person*-0.45", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.8333": ["variable.is_third_person*-0.54", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"0.9167": ["variable.is_third_person*-0.65", "variable.is_third_person*0", "variable.is_third_person*0"],
+						"1.0": ["variable.is_third_person*-0.74", "variable.is_third_person*0", "variable.is_third_person*0"]
+					}
+				},
+				"upper_receiver2": {
+					"position": {
+						"0.5625": [0, 0, 0],
+						"0.6875": [0, 0, "variable.is_third_person*1.25"],
+						"0.7708": [0, 0, 0],
+						"1.0": [0, 0, 0]
+					}
+				}
+			}
+		},
 		"animation.absolute_guns_.wield_glock": {
 			"loop": true,
 			"bones": {

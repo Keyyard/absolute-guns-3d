@@ -19,11 +19,16 @@
       },
       "animations": {
         "wield_3d": "animation.absolute_guns_.glock",
-        "run_3d": "animation.absolute_guns_.run_glock"
+        "run_3d": "animation.absolute_guns_.run_glock",
+"draw": "animation.absolute_guns.glock.draw.tpp",
+                "first_person_controller": "controller.animation.absolute_guns.glock.ctrl"
 	},
       "scripts": {
         "animate": [
-						"wield_3d"
+						"wield_3d",
+                    {
+                        "first_person_controller": "c.is_first_person"
+                    }
         ]
       },
       "render_controllers": [
