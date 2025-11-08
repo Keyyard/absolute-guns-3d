@@ -9,7 +9,7 @@
 					"blend_via_shortest_path": true,
 					"animations": [
 						{
-							"draw": "q.get_equipped_item_name(0) == 'glock'"
+							"draw": "q.get_equipped_item_name(0) == 'glock' && !c.is_first_person"
 						}
 					],
 					"transitions": [
