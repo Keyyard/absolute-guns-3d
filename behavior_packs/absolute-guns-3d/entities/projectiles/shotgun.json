@@ -44,7 +44,7 @@
             "shake_time": 0
           }
         },
-        "power": 5,
+        "power": 3,
         "gravity": 0,
         "inertia": 1,
         "uncertaintyBase": 7.0,

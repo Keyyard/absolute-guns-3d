@@ -2,7 +2,7 @@
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
-      "identifier": "absolute_guns_bullet:spas",
+      "identifier": "absolute_guns_bullet:shotgun",
       "materials": {
         "default": "iron_golem"
       },
