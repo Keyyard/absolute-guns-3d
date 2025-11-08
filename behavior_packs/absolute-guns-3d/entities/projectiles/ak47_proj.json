@@ -8,7 +8,34 @@
       "is_experimental": false,
       "runtime_identifier": "minecraft:snowball"
     },
+    "component_groups": {
+      "water_timer": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2.5,
+          "time_down_event": {
+            "event": "trigger_despawn"
+          }
+        }
+      },
+      "despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
     "components": {
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "test": "in_water",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "enter_water"
+          }
+        ]
+      },
       "minecraft:collision_box": {
         "width": 0.1,
         "height": 0.1
@@ -66,6 +93,20 @@
         "queue_command": {
           "command": [
             "kill @s"
+          ]
+        }
+      },
+      "enter_water": {
+        "add": {
+          "component_groups": [
+            "water_timer"
+          ]
+        }
+      },
+      "trigger_despawn": {
+        "add": {
+          "component_groups": [
+            "despawn"
           ]
         }
       }
