@@ -155,7 +155,6 @@ export const GUNS: readonly Gun[] = [
     recoil: 1.0,
     reloadTime: 70,
     shootSound: "gun.abgm1014",
-    projectileTypeId: "absolute_guns_bullet:m1014",
     mode: FireMode.SHOTGUN,
     stats: {
       damage: 8,
@@ -194,7 +193,6 @@ export const GUNS: readonly Gun[] = [
     recoil: 1.0,
     reloadTime: 70,
     shootSound: "gun.abgm3",
-    projectileTypeId: "absolute_guns_bullet:m3",
     mode: FireMode.SHOTGUN,
     stats: {
       damage: 7,
@@ -388,7 +386,6 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 70,
     mode: FireMode.SHOTGUN,
     shootSound: "gun.abgm1014",
-    projectileTypeId: "absolute_guns_bullet:spas",
     stats: {
       damage: 8,
       damageDropOff: 0.1,
