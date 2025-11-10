@@ -5,6 +5,19 @@
             "initial_state": "default",
             "states": {
                 "default": {
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+                    "animations": [
+                        "use_item"
+                    ],
+					"transitions": [
+						{
+							"holding": "q.all_animations_finished"
+						}
+					],
+					"on_entry": [ "v.tick_delay = q.life_time;" ]
+				},
+                "holding": {
                     "animations": ["first_person_hold"],
                     "transitions": [
                         {
