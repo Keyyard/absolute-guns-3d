@@ -22,6 +22,9 @@
                     "transitions": [
                         {
                             "using_item": "query.is_using_item == true"
+                        },
+                        {
+                            "default": "query.is_selected_item == 0"
                         }
                     ]
                 },
