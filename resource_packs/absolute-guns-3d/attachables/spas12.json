@@ -25,7 +25,7 @@
             "scripts": {
                 "animate": [
                     {
-                        "first_person_controller": "c.is_first_person"
+                        "first_person_controller": "c.is_first_person && query.get_equipped_item_name('main_hand') == 'spas'"
                     },
                     {
                         "third_person_hold": "!c.is_first_person"
