@@ -14,17 +14,13 @@
 						{
 							"holding": "q.all_animations_finished"
 						}
-					],
-					"on_entry": [ "v.tick_delay = q.life_time;" ]
+					]
 				},
                 "holding": {
                     "animations": ["first_person_hold"],
                     "transitions": [
                         {
                             "using_item": "query.is_using_item == true"
-                        },
-                        {
-                            "default": "!q.is_item_equipped('main_hand')"
                         }
                     ]
                 },
@@ -35,9 +31,6 @@
                     "transitions": [
                         {
                             "holding": "q.all_animations_finished"
-                        },
-                        {
-                            "default": "!q.is_item_equipped('main_hand')"
                         }
                     ]
                 }
