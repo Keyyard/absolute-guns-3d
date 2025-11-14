@@ -18,7 +18,7 @@
           "animations": ["first_person_hold"],
           "transitions": [
             {
-              "default": "query.get_equipped_item_name('main_hand') != 'absolute_guns:spas'"
+              "default": "query.get_equipped_item_name('main_hand') != 'spas'"
             }
           ]
         }
