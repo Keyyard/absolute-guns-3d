@@ -1,40 +1,36 @@
 {
-    "format_version": "1.10.0",
-    "animation_controllers": {
-        "controller.animation.common.absolute_guns.attachable.use": {
-            "initial_state": "default",
-            "states": {
-                "default": {
-					"blend_transition": 0.1,
-					"blend_via_shortest_path": true,
-                    "animations": [
-                        "use_item"
-                    ],
-					"transitions": [
-						{
-							"holding": "q.all_animations_finished"
-						}
-					]
-				},
-                "holding": {
-                    "animations": ["first_person_hold"],
-                    "transitions": [
-                        {
-                            "using_item": "query.is_using_item == true"
-                        }
-                    ]
-                },
-                "using_item": {
-                    "animations": [
-                        "use_item"
-                    ],
-                    "transitions": [
-                        {
-                            "holding": "q.all_animations_finished"
-                        }
-                    ]
-                }
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.common.absolute_guns.attachable.use": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "blend_via_shortest_path": true,
+          "animations": ["use_item"],
+          "transitions": [
+            {
+              "holding": "q.all_animations_finished"
             }
+          ]
+        },
+        "holding": {
+          "animations": ["first_person_hold"],
+          "transitions": [
+            {
+              "using_item": "query.is_using_item == 1"
+            }
+          ]
+        },
+        "using_item": {
+          "animations": ["use_item"],
+          "transitions": [
+            {
+              "holding": "q.all_animations_finished"
+            }
+          ]
         }
+      }
     }
+  }
 }
