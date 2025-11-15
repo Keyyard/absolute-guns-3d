@@ -18,7 +18,7 @@
             ],
             "animations": {
                 "first_person_hold": "animation.absolute_guns.spas12.first_person_hold",
-                "use_item": "animation.absolute_guns.spas12.shoot",
+                "use_item": "animation.absolute_guns.spas12.first_person_shoot",
                 "third_person_hold": "animation.absolute_guns.spas12.third_person_hold",
                 "first_person_controller": "controller.animation.common.absolute_guns.attachable.use"
             },
@@ -26,9 +26,6 @@
                 "animate": [
                     {
                         "first_person_controller": "c.is_first_person && query.get_equipped_item_name('main_hand') == 'spas'"
-                    },
-                    {
-                        "first_person_controller2": "c.is_first_person && query.get_equipped_item_name('main_hand') != 'spas'"
                     },
                     {
                         "third_person_hold": "!c.is_first_person"
