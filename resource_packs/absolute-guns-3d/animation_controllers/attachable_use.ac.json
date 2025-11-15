@@ -5,7 +5,7 @@
             "initial_state": "default",
             "states": {
                 "default": {
-                    "blend_transition": 0.2,
+                    "blend_transition": 0.0,
                     "animations": ["first_person_hold"],
                     "transitions": [
                         {
@@ -14,13 +14,13 @@
                     ]
                 },
                 "using_item": {
-                    "blend_transition": 0.2,
+                    "blend_transition": 0.0,
                     "animations": [
                         "use_item"
                     ],
                     "transitions": [
                         {
-                            "default": "query.is_using_item == false"
+                            "default": "query.all_animations_finished"
                         }
                     ]
                 }
