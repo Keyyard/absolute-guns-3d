@@ -386,7 +386,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 70,
    reloadAnimation: "animation.absolute_guns.spas12.first_person_reload",
     drawAnimation: "animation.absolute_guns.spas12.first_person_draw",
-    mode: FireMode.SEMI,
+    mode: FireMode.SHOTGUN,
     shootSound: "gun.abgm1014",
     stats: {
       damage: 8,
