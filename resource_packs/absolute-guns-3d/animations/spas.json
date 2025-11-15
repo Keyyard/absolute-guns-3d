@@ -158,6 +158,7 @@
 		},
 		"animation.absolute_guns.spas12.first_person_shoot": {
 			"animation_length": 1.4333,
+"loop": "hold_on_last_frame",
 			"bones": {
 				"root_item": {
 					"rotation": {
