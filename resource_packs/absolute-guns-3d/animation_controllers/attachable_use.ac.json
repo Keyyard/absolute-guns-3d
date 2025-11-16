@@ -9,7 +9,7 @@
                     "animations": ["first_person_hold"],
                     "transitions": [
                         {
-                            "using_item": "q.cooldown_time_remaining('shooting') == 0.09"
+                            "using_item": "q.cooldown_time_remaining('shooting') == 0.0"
                         }
                     ]
                 },
