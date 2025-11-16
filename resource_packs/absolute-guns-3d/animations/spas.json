@@ -25,7 +25,7 @@
 				}
 			}
 		},
-		"animation.absolute_guns.spas12.first_person_draw": {
+		"animation.absolute_guns.spas12.draw": {
 			"animation_length": 0.8667,
 			"bones": {
 				"root_item": {
@@ -156,11 +156,10 @@
 				}
 			}
 		},
-		"animation.absolute_guns.spas12.first_person_shoot": {
+		"animation.absolute_guns.spas12.shoot": {
 			"animation_length": 1.4333,
-"loop": "hold_on_last_frame",
 			"bones": {
-				"rightitem": {
+				"root_item": {
 					"rotation": {
 						"0.0": [62.64804, 61.45872, -65.95195],
 						"0.0333": {
@@ -385,7 +384,7 @@
 				}
 			}
 		},
-		"animation.absolute_guns.spas12.first_person_reload": {
+		"animation.absolute_guns.spas12.reload": {
 			"animation_length": 4.9,
 			"bones": {
 				"root_item": {
