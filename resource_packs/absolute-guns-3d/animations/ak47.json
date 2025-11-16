@@ -71,7 +71,8 @@
 						"0.0417": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
 						"0.0833": ["-72.5*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
 						"0.1667": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
-						"0.25": ["0*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0]
+						"0.25": ["0*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.3": ["0*variable.is_first_person", "0*variable.is_first_person", "0.0*variable.is_first_person"]
 					},
 					"position": {
 						"0.0": [0, 0, 0],
