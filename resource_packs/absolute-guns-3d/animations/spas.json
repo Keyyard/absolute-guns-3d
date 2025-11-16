@@ -157,6 +157,7 @@
 			}
 		},
 		"animation.absolute_guns.spas12.shoot": {
+"loop": "hold_on_last_frame",
 			"animation_length": 1.4333,
 			"bones": {
 				"root_item": {
