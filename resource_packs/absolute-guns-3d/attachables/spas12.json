@@ -18,9 +18,9 @@
             ],
             "animations": {
                 "first_person_hold": "animation.absolute_guns.spas12.first_person_hold",
-                "use_item": "animation.absolute_guns.spas12.shoot",
+                "draw": "animation.absolute_guns.spas12.draw",
                 "third_person_hold": "animation.absolute_guns.spas12.third_person_hold",
-                "first_person_controller": "controller.animation.common.absolute_guns.attachable.use"
+                "first_person_controller": "controller.animation.absolute_guns"
             },
             "scripts": {
                 "animate": [
