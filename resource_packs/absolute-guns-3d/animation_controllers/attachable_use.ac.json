@@ -1,22 +1,22 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.common.absolute_guns.attachable.use": {
+        "controller.animation.absolute_guns": {
             "initial_state": "default",
             "states": {
                 "default": {
                     "blend_transition": 0.1,
-                    "animations": ["first_person_hold"],
+                    "animations": ["draw"],
                     "transitions": [
                         {
-                            "using_item": "q.cooldown_time_remaining('shooting') == 0.1"
+                            "hold": "query.all_animations_finished"
                         }
                     ]
                 },
-                "using_item": {
+                "hold": {
                     "blend_transition": 0.1,
                     "animations": [
-                        "use_item"
+                        "first_person_hold"
                     ],
                     "transitions": [
                         {
