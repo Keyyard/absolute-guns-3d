@@ -26,7 +26,7 @@
 		},
 		"animation.recoil.generic": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 1,
+			"animation_length": 999999,
 			"bones": {
 				"waist": {
 					"rotation": {
