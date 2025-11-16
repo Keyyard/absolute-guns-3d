@@ -9,7 +9,7 @@
                     "animations": ["draw"],
                     "transitions": [
                         {
-                            "hold": "1.0"
+                            "hold": "q.any_animation_finished"
                         }
                     ]
                 },
