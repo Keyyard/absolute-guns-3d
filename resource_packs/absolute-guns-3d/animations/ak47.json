@@ -25,7 +25,7 @@
 			}
 		},
 		"animation.recoil.generic": {
-			"animation_length": 0.32,
+			"animation_length": 0.334,
 			"bones": {
 				"waist": {
 					"rotation": {
@@ -34,7 +34,8 @@
 						"0.125": ["variable.is_first_person*-2.86", "variable.is_first_person*2.01", "variable.is_first_person*-1.98"],
 						"0.1667": ["variable.is_first_person*-2.38", "variable.is_first_person*2.1", "variable.is_first_person*-1.63"],
 						"0.25": ["variable.is_first_person*-0.92", "variable.is_first_person*2.35", "variable.is_first_person*-0.61"],
-						"0.3333": ["variable.is_first_person*0.15", "variable.is_first_person*0.0", "variable.is_first_person*0.08"]
+						"0.3333": ["variable.is_first_person*0.15", "variable.is_first_person*0.0", "variable.is_first_person*0.08"],
+						"0.344": ["variable.is_first_person*0", "variable.is_first_person*0.0", "variable.is_first_person*0"],
 					}
 				},
 				"slide": {
