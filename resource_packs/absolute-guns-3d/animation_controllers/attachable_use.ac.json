@@ -9,7 +9,7 @@
                     "animations": ["draw"],
                     "transitions": [
                         {
-                            "hold": "query.all_animations_finished"
+                            "hold": "1.0"
                         }
                     ]
                 },
@@ -20,7 +20,7 @@
                     ],
                     "transitions": [
                         {
-                            "default": "query.all_animations_finished"
+                            "default": "query.get_equipped_item_name('main_hand') != 'spas'"
                         }
                     ]
                 }

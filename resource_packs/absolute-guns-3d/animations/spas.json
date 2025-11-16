@@ -27,6 +27,7 @@
 		},
 		"animation.absolute_guns.spas12.draw": {
 			"animation_length": 0.8667,
+"loop": "hold_on_last_frame",
 			"bones": {
 				"root_item": {
 					"rotation": {
