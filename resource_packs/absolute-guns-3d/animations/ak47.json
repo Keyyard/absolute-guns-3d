@@ -26,6 +26,7 @@
 		},
 		"animation.recoil.generic": {
 			"animation_length": 0.34,
+"loop": "hold_on_last_frame",
 			"bones": {
 				"waist": {
 					"rotation": {
@@ -71,7 +72,7 @@
 						"0.04": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
 						"0.08": ["-72.5*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
 						"0.16": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
-						"0.24": ["0*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.24": ["0*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0]
 					},
 					"position": {
 						"0.0": [0, 0, 0],
