@@ -1,4 +1,4 @@
-g{
+{
     "format_version": "1.10.0",
     "animation_controllers": {
         "controller.animation.common.absolute_guns.attachable.use": {
@@ -9,7 +9,7 @@ g{
                     "animations": ["first_person_hold"],
                     "transitions": [
                         {
-                            "using_item": "query.is_using_item == true"
+                            "using_item": "q.cooldown_time_remaining('shooting') == 0.0"
                         }
                     ]
                 },

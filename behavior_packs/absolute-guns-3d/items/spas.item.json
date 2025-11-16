@@ -21,7 +21,11 @@
       },
       "minecraft:use_modifiers": {
         "use_duration": 99999
-      },
+},
+			"minecraft:cooldown": {
+				"duration": 1,
+				"category": "shooting"
+			},
       "minecraft:food": {
         "can_always_eat": true,
         "nutrition": 0,
