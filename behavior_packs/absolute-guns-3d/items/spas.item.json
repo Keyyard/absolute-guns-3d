@@ -23,7 +23,7 @@
         "use_duration": 99999
 },
 			"minecraft:cooldown": {
-				"duration": 0.1,
+				"duration": 0.4,
 				"category": "shooting"
 			},
       "minecraft:food": {
