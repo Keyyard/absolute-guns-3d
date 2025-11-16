@@ -160,7 +160,7 @@
 			"animation_length": 1.4333,
 "loop": "hold_on_last_frame",
 			"bones": {
-				"root_item": {
+				"rightitem": {
 					"rotation": {
 						"0.0": [62.64804, 61.45872, -65.95195],
 						"0.0333": {
