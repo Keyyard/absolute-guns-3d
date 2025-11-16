@@ -2,10 +2,21 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.simple_reload30": {
+			"loop": "hold_on_last_frame",
 			"animation_length": 3,
-"loop": "hold_on_last_frame",
 			"bones": {
 				"waist": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2917": [0, -10, 0],
+						"0.5833": [0, -14.72, 0],
+						"1.1667": [0, -12.5, 0],
+						"1.2917": [0, -11.5, 0],
+						"1.5417": [0, -12.5, 0],
+						"2.0833": [0, -6, 0],
+						"2.4583": [0, 0, 0],
+						"3.0": [0, 0, 0]
+					},
 					"position": {
 						"0.0": [0, 0, 0],
 						"0.125": [-2, 0.5, 2.5],
@@ -17,6 +28,7 @@
 						"0.5833": [-8.07, -11.88, 2.5],
 						"0.625": [-8, -12.5, 2.5],
 						"0.7917": [-8, -12.5, 2.5],
+						"1.7917": [-8, -12.5, 2.5],
 						"2.125": [-8, -6.67, 2.5],
 						"2.4167": [-2, 0.5, 2.5],
 						"2.4583": [-1.17, 0.9, 1.99],
@@ -36,8 +48,8 @@
 					}
 				}
 			}
-		      },
-			"animation.abg3.reload2": {
+		},
+		"animation.abg3.reload2": {
 			"animation_length": 2.3,
 			"bones": {
 				"waist": {
@@ -190,7 +202,7 @@
 				}
 			}
 		},
-    	"animation.abg3.reload": {
+		"animation.abg3.reload": {
 			"animation_length": 1.5,
 			"loop": "hold_on_last_frame",
 			"anim_time_update": "query.anim_time + query.delta_time * 1.3",
@@ -471,7 +483,7 @@
 				}
 			}
 		},
-    	"animation.abg3.draw": {
+		"animation.abg3.draw": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -496,23 +508,23 @@
 				},
 				"root": {
 					"rotation": {
-    "0.0": ["!variable.is_first_person*0", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.0833": ["!variable.is_first_person*-1.06", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.1667": ["!variable.is_first_person*-2.2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.2083": ["!variable.is_first_person*-2.25", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.25": ["!variable.is_first_person*-1.2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.3333": ["!variable.is_first_person*2.01", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.3542": ["!variable.is_first_person*2.25", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.4167": ["!variable.is_first_person*1.36", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.5": ["!variable.is_first_person*-1.05", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.5625": ["!variable.is_first_person*-2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.5833": ["!variable.is_first_person*-1.94", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.6667": ["!variable.is_first_person*-0.65", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.75": ["!variable.is_first_person*1.15", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.8125": ["!variable.is_first_person*1.91", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.8333": ["!variable.is_first_person*1.94", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "0.9167": ["!variable.is_first_person*1.04", "!variable.is_first_person*0", "!variable.is_first_person*0"],
-    "1.0": ["!variable.is_first_person*0", "!variable.is_first_person*0", "!variable.is_first_person*0"]
+						"0.0": ["!variable.is_first_person*0", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.0833": ["!variable.is_first_person*-1.06", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.1667": ["!variable.is_first_person*-2.2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.2083": ["!variable.is_first_person*-2.25", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.25": ["!variable.is_first_person*-1.2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.3333": ["!variable.is_first_person*2.01", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.3542": ["!variable.is_first_person*2.25", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.4167": ["!variable.is_first_person*1.36", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.5": ["!variable.is_first_person*-1.05", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.5625": ["!variable.is_first_person*-2", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.5833": ["!variable.is_first_person*-1.94", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.6667": ["!variable.is_first_person*-0.65", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.75": ["!variable.is_first_person*1.15", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.8125": ["!variable.is_first_person*1.91", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.8333": ["!variable.is_first_person*1.94", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"0.9167": ["!variable.is_first_person*1.04", "!variable.is_first_person*0", "!variable.is_first_person*0"],
+						"1.0": ["!variable.is_first_person*0", "!variable.is_first_person*0", "!variable.is_first_person*0"]
 					}
 				},
 				"head": {
@@ -629,7 +641,7 @@
 				}
 			}
 		},
-    	"animation.abg3.draw3": {
+		"animation.abg3.draw3": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
