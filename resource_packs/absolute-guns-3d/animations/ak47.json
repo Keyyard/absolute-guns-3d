@@ -28,6 +28,16 @@
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": ["variable.is_first_person*0", "variable.is_first_person*0.5", "variable.is_first_person*0"],
+						"0.0833": ["variable.is_first_person*-2.61", "variable.is_first_person*1.05", "variable.is_first_person*-1.8"],
+						"0.125": ["variable.is_first_person*-2.86", "variable.is_first_person*2.01", "variable.is_first_person*-1.98"],
+						"0.1667": ["variable.is_first_person*-2.38", "variable.is_first_person*2.1", "variable.is_first_person*-1.63"],
+						"0.25": ["variable.is_first_person*-0.92", "variable.is_first_person*2.35", "variable.is_first_person*-0.61"],
+						"0.3333": ["variable.is_first_person*0", "variable.is_first_person*0.0", "variable.is_first_person*0"]
+					}
+				},
 				"slide": {
 					"position": {
 						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
@@ -58,21 +68,15 @@
 				},
 				"rightArm": {
 					"rotation": {
-						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.125": ["-5.00954*variable.is_first_person", "4.99523*variable.is_first_person", "-0.21865*variable.is_first_person"],
-						"0.25": ["5.23*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.4167": ["4.0806*variable.is_first_person", "-2.59485*variable.is_first_person", "-0.54533*variable.is_first_person"],
-						"0.5833": ["-2.26425*variable.is_first_person", "-2.49805*variable.is_first_person", "-0.13771*variable.is_first_person"],
-						"0.7083": ["-3.6077*variable.is_first_person", "0*variable.is_first_person", "-0.2662*variable.is_first_person"],
-						"0.8333": ["-2.5*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"]
+						"0.0417": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.0833": ["-72.5*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.1667": ["-70*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0],
+						"0.25": ["0*!variable.is_first_person-20*q.is_sneaking+q.target_x_rotation", "q.target_y_rotation*!variable.is_first_person", 0]
 					},
 					"position": {
-						"0.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0*variable.is_first_person"],
-						"0.125": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
-						"0.2917": ["0*variable.is_first_person", "0.3*variable.is_first_person", "0.5*variable.is_first_person"],
-						"0.4583": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"],
-						"1.0": ["0*variable.is_first_person", "0*variable.is_first_person", "0.5*variable.is_first_person"]
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, "1.5*!variable.is_first_person"],
+						"0.125": [0, 0, 0]
 					}
 				},
 				"root": {
