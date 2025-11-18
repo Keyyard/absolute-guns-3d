@@ -115,6 +115,7 @@ export const GUNS: readonly Gun[] = [
     shootSound: "gun.abgglock",
     reloadAnimation: "animation.abg3.reload",
     drawAnimation: "animation.abg3.draw",
+    shootAnimation: "animation.abg3.shoot",
     projectileTypeId: "absolute_guns_bullet:glock",
     stats: {
       damage: 3,
@@ -386,6 +387,7 @@ export const GUNS: readonly Gun[] = [
     reloadTime: 60,
     reloadAnimation: "animation.simple_reload30",
     drawAnimation: "animation.abg3.draw",
+    shootAnimation: "animation.abg3.shoot",
     mode: FireMode.SHOTGUN,
     shootSound: "gun.abgm1014",
     stats: {

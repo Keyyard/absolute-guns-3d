@@ -22,6 +22,7 @@ export interface Gun {
   shootSound?: string;
   reloadAnimation?: string;
   drawAnimation?: string;
+  shootAnimation?: string;
   /** Optional weapon statistics used by the projectile damage system (damage, dropoff, penetration, range, knockback). */
   stats?: {
     damage: number;

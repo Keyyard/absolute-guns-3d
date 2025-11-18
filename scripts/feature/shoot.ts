@@ -12,5 +12,11 @@ export function shoot(player: Player, gun: Gun): void {
   fireVfx(player, gun);
   fireBullet(player, gun);
   setShootMessage(player);
+  // Play shoot animation if defined
+  if (gun.shootAnimation) {
+    try {
+      player.playAnimation(gun.shootAnimation);
+    } catch {}
+  }
   playerFireCooldowns.set(player.id, gun.fireRate);
 }
