@@ -12,11 +12,9 @@ export function shoot(player: Player, gun: Gun): void {
   fireVfx(player, gun);
   fireBullet(player, gun);
   setShootMessage(player);
-  // Play shoot animation if defined
-  if (gun.shootAnimation) {
-    try {
-      player.playAnimation(gun.shootAnimation);
-    } catch {}
-  }
+  // Play shoot animation (use configured shootAnimation or fallback)
+  try {
+    player.playAnimation(gun.shootAnimation ?? "animation.abg3.shoot");
+  } catch {}
   playerFireCooldowns.set(player.id, gun.fireRate);
 }
