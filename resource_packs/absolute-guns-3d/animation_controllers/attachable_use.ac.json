@@ -20,7 +20,7 @@
                     ],
                     "transitions": [
                         {
-                            "default": "query.get_equipped_item_name('main_hand') != 'spas'"
+                            "default": "query.get_equipped_item_name('main_hand') != 'spas' || query.get_equipped_item_name('main_hand') != 'mp5'"
                         }
                     ]
                 }
