@@ -10,8 +10,8 @@
 						"62.32475+Math.cos(query.anim_time * 130 + 150)",
 						"-65.01226+Math.cos(query.anim_time * -160 + 160)"
 					],
-					"position": [7.9, 18.3, 1],
-					"scale": 1
+					"position": [7.9, 18.3, 4],
+					"scale": 0.7
 				}
 			}
 		},
@@ -20,7 +20,7 @@
 			"bones": {
 				"root_item": {
 					"rotation": [72.5, 0, 0],
-					"position": [0.5, 15.5, -4.5],
+					"position": [0.5, 15.5, -3.5],
 					"scale": 0.5
 				}
 			}
