@@ -20,7 +20,7 @@
                 "first_person_hold": "animation.absolute_guns.saps12.first_person_hold",
                 "third_person_hold": "animation.absolute_guns.spas12.third_person_hold",
 "draw": "animation.absolute_guns.spas12.draw",
-                "first_person_controller": "controller.animation.absolute_guns"
+                "first_person_controller": "controller.animation.absolute_guns_mp5"
             },
             "scripts": {
                 "animate": [

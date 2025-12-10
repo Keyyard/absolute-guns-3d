@@ -1,7 +1,7 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.absolute_guns": {
+        "controller.animation.absolute_guns_spas": {
             "initial_state": "default",
             "states": {
                 "default": {
@@ -20,7 +20,32 @@
                     ],
                     "transitions": [
                         {
-                            "default": "query.get_equipped_item_name('main_hand') != 'spas' || query.get_equipped_item_name('main_hand') != 'mp5'"
+                            "default": "query.get_equipped_item_name('main_hand') != 'spas'"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.absolute_guns_mp5": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "blend_transition": 0.1,
+                    "animations": ["draw"],
+                    "transitions": [
+                        {
+                            "hold": "q.any_animation_finished"
+                        }
+                    ]
+                },
+                "hold": {
+                    "blend_transition": 0.1,
+                    "animations": [
+                        "first_person_hold"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.get_equipped_item_name('main_hand') != 'mp5'"
                         }
                     ]
                 }
