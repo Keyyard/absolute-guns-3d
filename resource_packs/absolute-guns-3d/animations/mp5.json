@@ -10,8 +10,8 @@
 						"62.32475+Math.cos(query.anim_time * 130 + 150)",
 						"-65.01226+Math.cos(query.anim_time * -160 + 160)"
 					],
-					"position": [7.9, 20.3, 6],
-					"scale": 0.7
+					"position": [7.9, 25.3, 10],
+					"scale": 0.84
 				}
 			}
 		},
