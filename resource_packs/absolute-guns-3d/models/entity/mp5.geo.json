@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.mp5k",
+				"identifier": "geometry.mp5",
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 4,
