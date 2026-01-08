@@ -11,7 +11,7 @@
                 "default": "textures/3d/absolute_guns/rpg7"
             },
             "geometry": {
-                "default": "geometry.rpg712"
+                "default": "geometry.rpg7"
             },
             "render_controllers": [
                 "controller.render.spider"
