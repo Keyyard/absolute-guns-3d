@@ -347,7 +347,7 @@ export const GUNS: readonly Gun[] = [
     recoil: 2.0,
     reloadTime: 100,
     ammoTypeId: "absolute_guns:rpg7_ammo",
-    reloadAnimation: "animation.simple_reload30",
+    reloadAnimation: "animation.simple_reload50",
     projectileTypeId: "absolute_guns_bullet:rpg7",
     shootSound: "gun.abgrpg7",
     stats: {
