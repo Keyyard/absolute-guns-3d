@@ -343,7 +343,7 @@ export const GUNS: readonly Gun[] = [
     type: "special",
     maxAmmo: 1,
     fireRate: 40,
-    shootPower: 5,
+    shootPower: 5, 
     recoil: 2.0,
     reloadTime: 100,
     ammoTypeId: "absolute_guns:rpg7_ammo",
