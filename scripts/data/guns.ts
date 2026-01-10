@@ -350,7 +350,7 @@ export const GUNS: readonly Gun[] = [
     reloadAnimation: "animation.simple_reload50",
     projectileTypeId: "absolute_guns_bullet:rpg7",
     shootSound: "gun.abgrpg7",
-    stats: {
+    stats: { 
       damage: 50,
       damageDropOff: 0.0,
       armorPenetration: 1.0,
