@@ -2,6 +2,8 @@ import { Gun, GunInput, GunType } from "./types";
 
 function getAmmoItemId(type: GunType): string {
   switch (type) {
+    case "lmg":
+      return "absolute_guns:machinegun_ammo";
     case "rifle":
       return "absolute_guns:rifle_ammo";
     case "pistol":
