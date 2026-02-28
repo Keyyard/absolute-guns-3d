@@ -78,7 +78,7 @@ class GameController {
           damagingProjectile: projectile,
           damagingEntity: shooter,
         });
-        world.sendMessage(`Dealt ${damage} damage to ${hitEntity.id}`);
+        world.sendMessage(``);
       } catch {}
 
       // Apply knockback adjusted by armor knockback resistance
