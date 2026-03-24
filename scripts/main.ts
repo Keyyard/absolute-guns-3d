@@ -118,8 +118,8 @@ class GameController {
       }
     } catch {}
     const messages = [
-      `§4Absolute Guns §l3 §rBeta v1.3`,
-      `Welcome Back! this is a beta version, it's §uonly 9%% complete§r from what we envision for the addon. §4Please be patient§f.`,
+      `§4Absolute Guns §l3 §rBeta v1.4`,
+      `Welcome Back! this is a beta version, it's §uonly 12%% complete§r from what we envision for the addon. §4Please be patient§f.`,
       `Join our discord to report bugs: §bdiscord.gg/5zeEqwFbww`,
       `And check out our Github: github.com/Keyyard/absolute-guns-3d`,
       `Please forward all bugs and suggestions there in the Issues tab!`,
