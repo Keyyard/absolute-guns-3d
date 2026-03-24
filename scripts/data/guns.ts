@@ -259,7 +259,7 @@ export const GUNS: readonly Gun[] = [
       armorPenetration: 0.5,
       maxRange: 50,
       knockback: { x: 2.0, y: 2.0 },
-    },
+    }, 
   }),
   createGun({
     id: "absolute_guns:mp40",
