@@ -1,38 +1,28 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.m4a1.idle.fpp": {
+		"animation.absolute_guns.m16a1.first_person_hold": {
 			"loop": true,
-			"animation_length": 9999,
 			"bones": {
-				"root": {
-					"rotation": [0, 180, 0],
-					"position": [1, 0, 0]
-				},
-				"leftArm": {
-					"rotation": [-105.54737, 51.51663, 26.38617],
-					"position": ["-4.325+math.sin(query.anim_time*90)*-0.025", "-4.95+math.sin(query.anim_time*90)*-0.1", "-13.8755+math.sin(query.anim_time*90)*-0.0755"],
-					"scale": ["variable.is_first_person ? 0.8 : 1", "variable.is_first_person ? 1 : 1", "variable.is_first_person ? 0.8 : 1"]
+				"root_item": {
+					"rotation": [
+						"63.58773+Math.cos(query.anim_time * 160 + 160)",
+						"62.32475+Math.cos(query.anim_time * 130 + 150)",
+						"-65.01226+Math.cos(query.anim_time * -160 + 160)"
+					],
+					"position": [7.9, 18.3, 1],
+					"scale": 1.25
 				},
 				"rightArm": {
-					"rotation": ["-101.9412+math.sin(query.anim_time*90)*0.5", "-15.7152+math.sin(query.anim_time*90)*0.1", -4.2352],
-					"position": [-2.975, -4.25, -6],
-					"scale": ["variable.is_first_person ? 0.8 : 1", "variable.is_first_person ? 0.8 : 1", "variable.is_first_person ? 0.8 : 1"]
+					"rotation": [
+						"63.58773+Math.cos(query.anim_time * 160 + 160)",
+						"62.32475+Math.cos(query.anim_time * 130 + 150)",
+						"-65.01226+Math.cos(query.anim_time * -160 + 160)"
+					],
+					"position": [7.9, 18.3, 1]
 				},
-				"m16": {
-					"rotation": [97.16, -3.21, 4.59],
-					"position": [-4.81, 3.79, 0.75]
-				},
-				"body": {
-					"rotation": [0, 0, 0],
-					"position": [0, 0, 0]
-				},
-				"magazine": {
-					"rotation": [0, 0, 0],
-					"position": [0, 0, 0]
-				},
-				"foward_assist": {
-					"position": [0, 0, 0]
+				"shell": {
+					"scale": 0
 				}
 			}
 		},

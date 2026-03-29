@@ -17,7 +17,7 @@
                 "controller.render.spider"
             ],
             "animations": {
-                "first_person_hold": "animation.m4a1.idle.fpp",
+                "first_person_hold": "animation.absolute_guns.m16a1.first_person_hold",
                 "draw": "animation.absolute_guns.spas12.draw",
                 "third_person_hold": "animation.absolute_guns.spas12.third_person_hold",
                 "first_person_controller": "controller.animation.absolute_guns_m16"
