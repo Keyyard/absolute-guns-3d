@@ -181,6 +181,10 @@ class GameController {
         const hadEntry = this.lastHeldGun.has(player.id);
         const prevHeldId = hadEntry ? this.lastHeldGun.get(player.id) || null : null;
         if (currentHeldId !== prevHeldId) {
+          if ((playerReloadCooldowns.get(player.id) || 0) > 0) {
+            playerReloadCooldowns.delete(player.id);
+            this.playerShooting.set(player.id, false);
+          }
           if (currentlyHeld) {
             // Initialize ammo / state for the newly-held gun
             try {
