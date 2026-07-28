@@ -46,6 +46,7 @@ class GameController {
       const hitInfo = typeof event?.getEntityHit === "function" ? event.getEntityHit() : undefined;
       const hitEntity = hitInfo?.entity ?? event?.entity;
       if (!hitEntity || !projectile) return;
+      if (shooter && hitEntity.id === shooter.id) return;
 
       // Identify the weapon that spawned this projectile (we tag bullets on
       // spawn). If no tag is found, fall back to matching projectile type.
