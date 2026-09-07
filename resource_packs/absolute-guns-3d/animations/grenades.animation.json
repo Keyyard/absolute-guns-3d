@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.absolute_guns.wield_grenade": {
+      "loop": true,
+      "bones": {
+        "grenade": {
+          "scale": 0.55
+        }
+      }
+    }
+  }
+}

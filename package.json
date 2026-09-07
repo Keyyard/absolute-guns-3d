@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@minecraft/math": "^2.2.7",
-    "@minecraft/server": "^2.0.0",
+    "@minecraft/server": "2.0.0",
     "@minecraft/server-ui": "^2.0.0",
     "@minecraft/vanilla-data": "^1.21.90",
     "local-deploy": "^0.0.1",

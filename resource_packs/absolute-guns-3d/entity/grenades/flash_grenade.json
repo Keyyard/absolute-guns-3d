@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "absolute_guns_grenade:flash_grenade",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/3d/absolute_guns/flash_grenade"
+      },
+      "geometry": {
+        "default": "geometry.flash_grenade_entity"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

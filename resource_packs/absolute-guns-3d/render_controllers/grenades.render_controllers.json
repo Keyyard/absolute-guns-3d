@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.abg_grenade_first": {
+      "geometry": "geometry.first_0",
+      "materials": [
+        {
+          "*": "variable.is_enchanted ? material.enchanted : material.ghost"
+        }
+      ],
+      "textures": [
+        "texture.default"
+      ]
+    },
+    "controller.render.abg_grenade_third": {
+      "geometry": "geometry.third_0",
+      "materials": [
+        {
+          "*": "variable.is_enchanted ? material.enchanted : material.ghost"
+        }
+      ],
+      "textures": [
+        "texture.default"
+      ]
+    }
+  }
+}

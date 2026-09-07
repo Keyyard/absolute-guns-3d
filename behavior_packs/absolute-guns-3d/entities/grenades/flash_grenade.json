@@ -1,0 +1,48 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "absolute_guns_grenade:flash_grenade",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:scale": {
+        "value": 0.5
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "stick_in_ground": {
+            "shake_time": 0
+          }
+        },
+        "power": 1.5,
+        "gravity": 0.06,
+        "inertia": 0.99,
+        "liquid_inertia": 0.6,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "reflectOnHurt": false,
+        "catch_fire": false,
+        "hit_sound": "random.pop"
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@ import { getHeldItem } from "./feature/utils/inventoryUtils";
 import { applyDurabilityDamage } from "./feature/utils/durabilityUtils";
 import { modifyMovement, throwTacticalKnife } from "./feature/throwingKnife";
 import { DamageHandler } from "./feature/damageHandler";
+import { throwGrenade, tickGrenades, clearGrenadeState } from "./feature/grenades";
 import { distanceBetween } from "./feature/damageHandler";
 
 class GameController {
@@ -100,6 +101,7 @@ class GameController {
   private afterItemUse(event: any) {
     const { source: player, itemStack } = event;
     throwTacticalKnife(player, itemStack);
+    throwGrenade(player, itemStack);
   }
 
   private afterPlayerJoin(event: any) {
@@ -167,10 +169,13 @@ class GameController {
     playerReloadCooldowns.delete(playerId);
     this.playerShooting.delete(playerId);
     this.lastHeldGun.delete(playerId);
+    clearGrenadeState(playerId);
   }
 
   private GameLoop() {
     this.tickId = system.runInterval(() => {
+      tickGrenades();
+
       for (const player of world.getAllPlayers()) {
         //Modify player fov when scoped through tactical knife
         modifyMovement(player);

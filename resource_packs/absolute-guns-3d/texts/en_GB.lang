@@ -42,3 +42,8 @@ item.absolute_guns:pistol_ammo.name=Pistol Ammo
 absolute_guns:itemGroup.name.ammo=Ammo
 absolute_guns:itemGroup.name.pistols=Pistols
 
+
+item.absolute_guns:frag_grenade.name=Frag Grenade
+item.absolute_guns:flash_grenade.name=Flashbang
+item.absolute_guns:smoke_grenade.name=Smoke Grenade
+absolute_guns:itemGroup.name.throwables=Throwables

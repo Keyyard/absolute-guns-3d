@@ -65,6 +65,17 @@
           },
           {
             "group_identifier": {
+              "icon": "absolute_guns:frag_grenade",
+              "name": "absolute_guns:itemGroup.name.throwables"
+            },
+            "items": [
+              "absolute_guns:frag_grenade",
+              "absolute_guns:flash_grenade",
+              "absolute_guns:smoke_grenade"
+            ]
+          },
+          {
+            "group_identifier": {
               "icon": "absolute_guns:rifle_ammo",
               "name": "absolute_guns:itemGroup.name.ammo"
             },
