@@ -1,13 +1,20 @@
 {
-  "format_version": "1.8.0",
-  "animations": {
-    "animation.absolute_guns.wield_grenade": {
-      "loop": true,
-      "bones": {
-        "grenade": {
-          "scale": 0.55
-        }
-      }
-    }
-  }
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.absolute_guns.wield_grenade": {
+			"loop": true,
+			"bones": {
+				"grenade": {
+					"rotation": [-15, 25, 188],
+					"position": [0.5, -1.5, 1],
+					"scale": 0.8
+				},
+				"grenade_t": {
+					"rotation": [90, 0, 0],
+					"position": [-5, 11, -1],
+					"scale": 0.6
+				}
+			}
+		}
+	}
 }

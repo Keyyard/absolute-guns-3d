@@ -96,13 +96,13 @@
       "textures": "textures/ammo/sniper"
     },
     "absolute_guns_frag_grenade": {
-      "textures": "textures/3d/absolute_guns/frag_grenade"
+      "textures": "textures/grenades/absolute_guns_frag_grenade"
     },
     "absolute_guns_flash_grenade": {
-      "textures": "textures/3d/absolute_guns/flash_grenade"
+      "textures": "textures/grenades/absolute_guns_flash_grenade"
     },
     "absolute_guns_smoke_grenade": {
-      "textures": "textures/3d/absolute_guns/smoke_grenade"
+      "textures": "textures/grenades/absolute_guns_smoke_grenade"
     }
   }
 }

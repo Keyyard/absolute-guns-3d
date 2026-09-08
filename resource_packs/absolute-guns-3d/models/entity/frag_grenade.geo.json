@@ -31,11 +31,6 @@
             2.0,
             0
           ],
-          "rotation": [
-            -15,
-            25,
-            0
-          ],
           "cubes": [
             {
               "origin": [
@@ -686,16 +681,11 @@
           ]
         },
         {
-          "name": "grenade",
+          "name": "grenade_t",
           "parent": "rightitem",
           "pivot": [
             0,
             2.0,
-            0
-          ],
-          "rotation": [
-            0,
-            0,
             0
           ],
           "cubes": [
